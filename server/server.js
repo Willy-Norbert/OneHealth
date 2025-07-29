@@ -24,6 +24,7 @@ app.use(cors({
     const allowedOrigins = [
       'http://localhost:3000',
       'http://localhost:3001',
+      'https://onehealth-ebon.vercel.app/',
       process.env.FRONTEND_URL
     ].filter(Boolean);
     
