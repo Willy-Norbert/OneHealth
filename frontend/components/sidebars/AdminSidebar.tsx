@@ -3,6 +3,7 @@
 import { useSidebar } from "@/context/SidebarContext";
 import { Users, Calendar, FileText, Settings, BarChart3, Shield, LogOut } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 
@@ -53,7 +54,22 @@ export default function AdminSidebar() {
         {/* Header */}
         <div className="p-6 border-b border-border">
           <div className="flex items-center">
-            <Shield className="h-8 w-8 text-primary" />
+            <Link href="/" className="lg:hidden">
+            <Image
+              width={154}
+              height={32}
+              className="dark:hidden"
+              src="/logo.png"
+              alt="Logo"
+            />
+            <Image
+              width={154}
+              height={32}
+              className="hidden dark:block"
+              src="/logo.png"
+              alt="Logo"
+            />
+          </Link>
             {isVisible && (
               <div className="ml-3">
                 <h2 className="text-lg font-bold text-primary">HealthLine</h2>
