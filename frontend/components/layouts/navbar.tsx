@@ -7,6 +7,7 @@ import { Menu, Globe, User, LogOut } from "lucide-react"
 import { useAuth } from "@/contexts/AuthContext"
 import { useState } from "react"
 import UserDropdown from "../header/UserDropdown"
+import { ThemeToggleButton } from "@/components/common/ThemeToggleButton"
 
 export default function Navbar() {
   const { user, logout, isAuthenticated, loading } = useAuth()
@@ -51,6 +52,7 @@ export default function Navbar() {
               <Globe className="mr-2 h-4 w-4 text-blue-600" />
               EN | KIN
             </Button>
+              <ThemeToggleButton /> 
               <UserDropdown /> 
             {!loading && (
               <>
