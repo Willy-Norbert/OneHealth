@@ -6,16 +6,16 @@ export default function DoctorsHero() {
   return (
     <section className="relative pt-20 pb-24 overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-green-50 rounded-bl-full opacity-70"></div>
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-50 rounded-tr-full opacity-70"></div>
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-green-50 dark:bg-green-900/20 rounded-bl-full opacity-70"></div>
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-50 dark:bg-blue-900/20 rounded-tr-full opacity-70"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Meet Our <span className="text-green-600">Expert</span> Healthcare Professionals
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+              Meet Our <span className="text-green-600 dark:text-green-400">Expert</span> Healthcare Professionals
             </h1>
-            <p className="text-xl text-gray-600 max-w-xl">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-xl">
               Connect with Rwanda&apos;s top medical specialists for consultations, appointments, and personalized care.
             </p>
 
@@ -25,7 +25,7 @@ export default function DoctorsHero() {
               <input
                 type="text"
                 placeholder="Search for a doctor or specialty..."
-                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent dark:text-white dark:placeholder:text-gray-400"
               />
             </div>
 

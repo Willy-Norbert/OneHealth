@@ -10,7 +10,7 @@ import AppointmentCta from "@/components/appointments/appointment-cta"
 
 export default function AppointmentsPage() {
   return (
-    <main className="min-h-screen  m-10 bg-white">
+    <main className="min-h-screen  m-10 bg-background">
       <Navbar />
       <AppointmentsHero />
       <AppointmentTypes />
