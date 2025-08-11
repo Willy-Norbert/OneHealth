@@ -6,20 +6,20 @@ export default function AppointmentsHero() {
   return (
     <section className="relative pt-20 pb-24 overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-green-50 rounded-bl-full opacity-70"></div>
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-50 rounded-tr-full opacity-70"></div>
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-green-50 dark:bg-green-900/20 rounded-bl-full opacity-70"></div>
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-50 dark:bg-blue-900/20 rounded-tr-full opacity-70"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full">
+            <div className="inline-flex items-center px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">
               <Calendar className="h-4 w-4 mr-2" />
               <span className="text-sm font-medium">Easy Scheduling</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
               Book Your <span className="text-green-600">Medical</span> Appointment
             </h1>
-            <p className="text-xl text-gray-600 max-w-xl">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-xl">
               Schedule appointments with top healthcare providers in Rwanda, either virtually or in-person, at your
               convenience.
             </p>

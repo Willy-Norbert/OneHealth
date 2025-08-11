@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen  m-10">
+    <main className="min-h-screen  m-10 bg-background">
       <BlogHero />
       <FeaturedPosts />
       <section className="container mx-auto px-4 py-12">

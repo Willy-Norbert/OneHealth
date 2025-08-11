@@ -4,27 +4,27 @@ export default function ContactHero() {
   return (
     <section className="relative pt-20 pb-24 overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-green-50 rounded-bl-full opacity-70"></div>
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-50 rounded-tr-full opacity-70"></div>
+      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-green-50 dark:bg-green-900/20 rounded-bl-full opacity-70"></div>
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-50 dark:bg-blue-900/20 rounded-tr-full opacity-70"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
               Get in <span className="text-green-600">Touch</span> With Us
             </h1>
-            <p className="text-xl text-gray-600 max-w-xl">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-xl">
               Have questions or need assistance? Our team is here to help you with any inquiries about our healthcare
               services.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <div className="flex items-center bg-green-50 px-4 py-2 rounded-full">
+              <div className="flex items-center bg-green-50 dark:bg-green-900/20 px-4 py-2 rounded-full">
                 <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-                <span className="text-green-800 font-medium">24/7 Support Available</span>
+                <span className="text-green-800 dark:text-green-300 font-medium">24/7 Support Available</span>
               </div>
-              <div className="flex items-center bg-blue-50 px-4 py-2 rounded-full">
+              <div className="flex items-center bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
                 <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                <span className="text-blue-800 font-medium">Multiple Contact Channels</span>
+                <span className="text-blue-800 dark:text-blue-300 font-medium">Multiple Contact Channels</span>
               </div>
             </div>
           </div>

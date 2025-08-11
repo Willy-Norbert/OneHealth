@@ -11,7 +11,7 @@ import DoctorsCta from "@/components/doctors/doctors-cta"
 
 export default function DoctorsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-background">
       <Navbar />
       <DoctorsHero />
       <DoctorsSearch />

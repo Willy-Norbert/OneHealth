@@ -11,7 +11,7 @@ import AboutCta from "@/components/about/about-cta"
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen  bg-white">
+    <main className="min-h-screen bg-background">
       <div className=" m-10">
       <Navbar />
       <AboutHero />
