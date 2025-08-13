@@ -1,61 +1,29 @@
-import { Clock, Truck, Shield, CreditCard, Pill, MessageSquare, RefreshCw, FileText } from "lucide-react"
+"use client";
+import { Clock, Truck, Shield, CreditCard, Pill, MessageSquare, RefreshCw, FileText } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function PharmacyFeatures() {
+  const { t } = useLanguage();
+
   const features = [
-    {
-      icon: <Clock className="h-10 w-10 text-purple-600" />,
-      title: "24/7 Ordering",
-      description: "Order medications anytime, day or night, through our online platform or mobile app.",
-    },
-    {
-      icon: <Truck className="h-10 w-10 text-purple-600" />,
-      title: "Fast Delivery",
-      description:
-        "Get medications delivered to your doorstep within 3 hours in urban areas and same-day in rural areas.",
-    },
-    {
-      icon: <Shield className="h-10 w-10 text-purple-600" />,
-      title: "Verified Medications",
-      description: "All medications are sourced from licensed pharmacies and verified for authenticity.",
-    },
-    {
-      icon: <CreditCard className="h-10 w-10 text-purple-600" />,
-      title: "Secure Payments",
-      description: "Multiple payment options including mobile money, credit cards, and insurance coverage.",
-    },
-    {
-      icon: <Pill className="h-10 w-10 text-purple-600" />,
-      title: "Medication Reminders",
-      description: "Set up reminders to take your medications on time and never miss a dose.",
-    },
-    {
-      icon: <MessageSquare className="h-10 w-10 text-purple-600" />,
-      title: "Pharmacist Consultation",
-      description: "Chat with licensed pharmacists for advice on medications and potential side effects.",
-    },
-    {
-      icon: <RefreshCw className="h-10 w-10 text-purple-600" />,
-      title: "Easy Refills",
-      description: "Quickly reorder your prescriptions with one-click refills and automatic renewals.",
-    },
-    {
-      icon: <FileText className="h-10 w-10 text-purple-600" />,
-      title: "Digital Prescriptions",
-      description: "Upload your prescription digitally or have your doctor send it directly to our platform.",
-    },
-  ]
+    { icon: <Clock className="h-10 w-10 text-purple-600" />, title: t("pharmacy_features.24_7_ordering.title"), description: t("pharmacy_features.24_7_ordering.description") },
+    { icon: <Truck className="h-10 w-10 text-purple-600" />, title: t("pharmacy_features.fast_delivery.title"), description: t("pharmacy_features.fast_delivery.description") },
+    { icon: <Shield className="h-10 w-10 text-purple-600" />, title: t("pharmacy_features.verified_medications.title"), description: t("pharmacy_features.verified_medications.description") },
+    { icon: <CreditCard className="h-10 w-10 text-purple-600" />, title: t("pharmacy_features.secure_payments.title"), description: t("pharmacy_features.secure_payments.description") },
+    { icon: <Pill className="h-10 w-10 text-purple-600" />, title: t("pharmacy_features.medication_reminders.title"), description: t("pharmacy_features.medication_reminders.description") },
+    { icon: <MessageSquare className="h-10 w-10 text-purple-600" />, title: t("pharmacy_features.pharmacist_consultation.title"), description: t("pharmacy_features.pharmacist_consultation.description") },
+    { icon: <RefreshCw className="h-10 w-10 text-purple-600" />, title: t("pharmacy_features.easy_refills.title"), description: t("pharmacy_features.easy_refills.description") },
+    { icon: <FileText className="h-10 w-10 text-purple-600" />, title: t("pharmacy_features.digital_prescriptions.title"), description: t("pharmacy_features.digital_prescriptions.description") },
+  ];
 
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose Our <span className="text-purple-600">Pharmacy Service</span>
+            {t("pharmacy_features.heading")} <span className="text-purple-600">{t("pharmacy_features.highlight")}</span>
           </h2>
-          <p className="text-xl text-gray-600">
-            ONE HEALTHLINE CONNECT offers a comprehensive medication service designed to make healthcare more accessible and
-            convenient for all Rwandans.
-          </p>
+          <p className="text-xl text-gray-600">{t("pharmacy_features.description")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -74,5 +42,5 @@ export default function PharmacyFeatures() {
         </div>
       </div>
     </section>
-  )
+  );
 }

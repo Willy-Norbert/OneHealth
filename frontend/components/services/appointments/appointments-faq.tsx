@@ -1,58 +1,54 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+"use client";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AppointmentsFaq() {
+  const { t } = useLanguage();
+
   const faqs = [
     {
-      question: "How do I book an appointment?",
-      answer:
-        "You can book an appointment through our website or mobile app. Simply create an account, search for a doctor or specialty, select your preferred date and time, and confirm your booking. You'll receive an immediate confirmation via email and SMS.",
+      question: t("appointments_faq.q1.question"),
+      answer: t("appointments_faq.q1.answer"),
     },
     {
-      question: "Can I book an appointment for someone else?",
-      answer:
-        "Yes, you can book appointments for family members or others. During the booking process, you'll have the option to specify who the appointment is for. You'll need to provide their basic information to complete the booking.",
+      question: t("appointments_faq.q2.question"),
+      answer: t("appointments_faq.q2.answer"),
     },
     {
-      question: "How far in advance can I book an appointment?",
-      answer:
-        "Most specialists allow bookings up to 3 months in advance. Some high-demand specialists may have shorter booking windows. Emergency appointments can often be booked for the same day or next day depending on availability.",
+      question: t("appointments_faq.q3.question"),
+      answer: t("appointments_faq.q3.answer"),
     },
     {
-      question: "What if I need to cancel or reschedule my appointment?",
-      answer:
-        "You can cancel or reschedule your appointment through your account up to 24 hours before the scheduled time without any penalty. For cancellations less than 24 hours in advance, a small fee may apply depending on the specialist's policy.",
+      question: t("appointments_faq.q4.question"),
+      answer: t("appointments_faq.q4.answer"),
     },
     {
-      question: "Do I need to pay when booking an appointment?",
-      answer:
-        "Some specialists require a deposit or full payment at the time of booking, while others allow payment at the time of the appointment. The payment requirements will be clearly indicated during the booking process.",
+      question: t("appointments_faq.q5.question"),
+      answer: t("appointments_faq.q5.answer"),
     },
     {
-      question: "What insurance providers do you accept?",
-      answer:
-        "We work with most major insurance providers in Rwanda. During the booking process, you can enter your insurance information to see which specialists accept your specific insurance plan.",
+      question: t("appointments_faq.q6.question"),
+      answer: t("appointments_faq.q6.answer"),
     },
     {
-      question: "How long before my appointment will I receive a reminder?",
-      answer:
-        "We send appointment reminders 48 hours and 2 hours before your scheduled appointment via SMS and email. You can adjust your reminder preferences in your account settings.",
+      question: t("appointments_faq.q7.question"),
+      answer: t("appointments_faq.q7.answer"),
     },
     {
-      question: "What should I bring to my appointment?",
-      answer:
-        "Please bring your ID, insurance card (if applicable), any relevant medical records or test results, a list of current medications, and any referral documents if required. For first-time visits, please arrive 15 minutes early to complete registration.",
+      question: t("appointments_faq.q8.question"),
+      answer: t("appointments_faq.q8.answer"),
     },
-  ]
+  ];
 
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Frequently Asked <span className="text-green-600">Questions</span>
+            {t("appointments_faq.title")} <span className="text-green-600">{t("appointments_faq.title_highlight")}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Find answers to common questions about our appointment booking service.
+            {t("appointments_faq.subtitle")}
           </p>
         </div>
 
@@ -70,9 +66,9 @@ export default function AppointmentsFaq() {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-gray-600 mb-4">Still have questions about our appointment booking service?</p>
+          <p className="text-gray-600 mb-4">{t("appointments_faq.need_more_help")}</p>
           <div className="inline-flex items-center justify-center bg-green-50 rounded-full px-6 py-3">
-            <span className="text-green-800 font-medium">Contact our support team at</span>
+            <span className="text-green-800 font-medium">{t("appointments_faq.contact_us_text")}</span>
             <a href="tel:+250788123456" className="ml-2 text-green-600 font-bold hover:underline">
               +250 788 123 456
             </a>
@@ -80,5 +76,5 @@ export default function AppointmentsFaq() {
         </div>
       </div>
     </section>
-  )
+  );
 }

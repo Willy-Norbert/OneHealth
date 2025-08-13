@@ -15,6 +15,1423 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const translations = {
   en: {
+    pharmacy_cta: {
+      heading: "Get Your Medications Delivered Today",
+      description: "Never run out of essential medications again. Order now and experience the convenience of having your prescriptions delivered right to your doorstep.",
+      features: {
+        easy_ordering: {
+          title: "Easy Ordering",
+          description: "Upload your prescription or select from our wide range of over-the-counter medications.",
+        },
+        fast_delivery: {
+          title: "Fast Delivery",
+          description: "Receive your medications within hours in urban areas and same-day in most locations.",
+        },
+        expert_support: {
+          title: "Expert Support",
+          description: "Get advice from licensed pharmacists about your medications and potential interactions.",
+        },
+      },
+      buttons: {
+        order: "Order Medications",
+        upload: "Upload Prescription",
+        call: "Call a Pharmacist",
+      },
+    },
+    pharmacy_faq: {
+      heading: "Frequently Asked",
+      highlight: "Questions",
+      description: "Find answers to common questions about our pharmacy and medication delivery services.",
+      questions: {
+        upload_prescription: {
+          question: "How do I upload my prescription?",
+          answer: "You can upload your prescription by taking a clear photo of it through our mobile app or website. Simply navigate to the 'Upload Prescription' section, take a photo or select an image from your gallery, and submit it. Our pharmacists will review it and process your order.",
+        },
+        medication_types: {
+          question: "What types of medications can I order?",
+          answer: "You can order both prescription and over-the-counter medications through our platform. We offer a wide range of products including chronic disease medications, antibiotics, pain relievers, vitamins, supplements, and medical devices. All medications are sourced from licensed pharmacies.",
+        },
+        delivery_time: {
+          question: "How long does delivery take?",
+          answer: "Delivery times vary based on your location. In Kigali urban areas, deliveries typically arrive within 1-3 hours. Provincial cities receive same-day delivery, while rural areas may take up to 24 hours. Express delivery options are available in most areas for urgent medication needs.",
+        },
+        minimum_order: {
+          question: "Is there a minimum order amount?",
+          answer: "There is no minimum order amount for medication orders. However, orders below RWF 10,000 may incur the standard delivery fee based on your location. Orders above RWF 10,000 qualify for free delivery in most urban areas.",
+        },
+        payment_methods: {
+          question: "How do I pay for my medications?",
+          answer: "We offer multiple payment options including mobile money (MTN MoMo, Airtel Money), credit/debit cards, and cash on delivery. For insurance coverage, you can upload your insurance card along with your prescription, and we'll process the claim directly with your provider.",
+        },
+        medication_authenticity: {
+          question: "Are the medications authentic and safe?",
+          answer: "Yes, all medications are sourced directly from licensed pharmacies and authorized distributors in Rwanda. We maintain strict quality control standards and proper storage conditions. Each medication comes with verification seals and batch numbers that can be verified.",
+        },
+        refund_policy: {
+          question: "Can I get a refund if I receive the wrong medication?",
+          answer: "Yes, if you receive incorrect medications or if there are quality issues, we offer a full refund or replacement. Please report any issues within 24 hours of receiving your order by contacting our customer support team.",
+        },
+        temperature_sensitive: {
+          question: "Do you deliver temperature-sensitive medications?",
+          answer: "Yes, we deliver temperature-sensitive medications like insulin using specialized temperature-controlled packaging. Our delivery personnel are trained to handle such medications properly, ensuring they maintain their efficacy throughout the delivery process.",
+        },
+      },
+      contact: {
+        prompt: "Still have questions about our pharmacy services?",
+        message: "Contact our pharmacist team at {{email}} or call {{phone}}",
+      },
+    },
+    pharmacy_testimonials: {
+      heading_part1: "What Our",
+      heading_part2: "Customers Say",
+      description: "Thousands of Rwandans rely on our pharmacy service for their medication needs. Here's what they have to say.",
+      quotes: {
+        jean: "The medication delivery service has been life-changing for my mother who has diabetes. We no longer worry about running out of insulin as it's delivered right to our doorstep every month.",
+        emmanuel: "I was skeptical at first, but after using the service for my blood pressure medication, I'm impressed with the reliability and speed. The pharmacist consultation was also very helpful.",
+        marie: "Even though I live in a rural area, ONE HEALTHLINE CONNECT delivers my family's medications consistently. The packaging is secure and the delivery person is always professional.",
+      },
+      stats_heading: "Our Pharmacy Service in Numbers",
+      stats_description: "We're committed to providing reliable medication services across Rwanda",
+      stats: {
+        on_time: "On-time delivery",
+        monthly_deliveries: "Monthly deliveries",
+        customer_satisfaction: "Customer satisfaction",
+        medication_authenticity: "Medication authenticity",
+      },
+    },
+        pharmacy_delivery: {
+      heading: "Fast & Reliable",
+      highlight: "Medication Delivery",
+      description: "We deliver medications safely and promptly to your doorstep, ensuring you never run out of essential treatments.",
+      image_alt: "Medication delivery service",
+      features: {
+        nationwide: { title: "Nationwide Coverage", description: "We deliver to all provinces in Rwanda, including remote areas, ensuring everyone has access to essential medications." },
+        express: { title: "Express Delivery", description: "Need medications urgently? Our express delivery service ensures you receive critical medications within 1-3 hours in urban areas." },
+        secure: { title: "Secure Packaging", description: "All medications are securely packaged to maintain integrity, protect privacy, and ensure they reach you in perfect condition." },
+        temp: { title: "Temperature Control", description: "Sensitive medications are transported in temperature-controlled containers to maintain their efficacy and safety." },
+      },
+      zones_heading: "Delivery Zones & Timeframes",
+      table: { zone: "Zone", standard: "Standard Delivery", fee: "Delivery Fee", express: "Express Option" },
+      zones: { kigali_urban: "Kigali Urban", kigali_suburbs: "Kigali Suburbs", provincial_cities: "Provincial Cities", rural_areas: "Rural Areas" },
+      same_day: "Same day",
+      next_day: "Next day",
+      map_alt: "Rwanda medication delivery coverage map",
+      map_title: "Nationwide Coverage",
+      map_description: "Our delivery network covers all 30 districts of Rwanda, ensuring medication access for everyone.",
+    },
+     pharmacy_products: {
+      heading: "Browse Our",
+      highlight: "Product Categories",
+      description: "From prescription medications to healthcare essentials, we offer a comprehensive range of products for all your health needs.",
+      categories: {
+        prescription: "Prescription Medications",
+        otc: "Over-the-Counter",
+        chronic: "Chronic Conditions",
+        vitamins: "Vitamins & Supplements",
+        personal_care: "Personal Care",
+        devices: "Medical Devices",
+        first_aid: "First Aid",
+        baby_maternal: "Baby & Maternal",
+      },
+      featured_heading: "Featured Products",
+      reviews: "reviews",
+      add_to_cart: "Add",
+      view_all: "View All Products",
+      featured: {
+        bp_monitor: { name: "Blood Pressure Monitor", category: "Medical Devices" },
+        multivitamin: { name: "Multivitamin Complex", category: "Vitamins & Supplements" },
+        diabetes_strips: { name: "Diabetes Test Strips", category: "Chronic Conditions" },
+        first_aid_kit: { name: "First Aid Kit", category: "First Aid" },
+      },
+    },
+     pharmacy_partners: {
+      heading: "Our Trusted",
+      highlight: "Pharmacy Partners",
+      description: "We've partnered with Rwanda's most reliable pharmacies to ensure you receive authentic medications with professional service.",
+      labels: { locations: "Locations", specialties: "Specialties" },
+      footer_note: "All partner pharmacies are licensed by the Rwanda Pharmacy Council and follow strict quality standards.",
+      kigali: {
+        name: "Kigali Pharmacy Network",
+        description: "A network of 20+ pharmacies across Kigali providing a wide range of medications and healthcare products.",
+        locations: "Kigali City",
+        specialties: "Prescription medications, Chronic disease management",
+      },
+      butare: {
+        name: "Butare Medical Supplies",
+        description: "Specialized in hospital-grade medications and supplies with extensive inventory of rare medications.",
+        locations: "Southern Province",
+        specialties: "Specialized medications, Hospital supplies",
+      },
+      musanze: {
+        name: "Musanze Health Pharmacy",
+        description: "Serving the Northern Province with focus on rural healthcare needs and affordable medication options.",
+        locations: "Northern Province",
+        specialties: "Rural healthcare, Affordable medications",
+      },
+      rubavu: {
+        name: "Rubavu Medication Center",
+        description: "Western Rwanda's largest pharmacy network with international medication sourcing capabilities.",
+        locations: "Western Province",
+        specialties: "International medications, Specialty drugs",
+      },
+    },
+     pharmacy_how_it_works: {
+      heading: "How Our",
+      highlight: "Pharmacy Service",
+      description: "Getting your medications has never been easier. Follow these simple steps to order and receive your prescriptions.",
+      upload_prescription: { title: "Upload Prescription or Select Medications", description: "Take a photo of your prescription or browse our catalog to select over-the-counter medications." },
+      review_payment: { title: "Review Order and Payment", description: "Confirm your medication order, delivery address, and complete payment through our secure system." },
+      pharmacist_verification: { title: "Pharmacist Verification", description: "A licensed pharmacist reviews your order and prescription to ensure accuracy and safety." },
+      delivery: { title: "Delivery to Your Location", description: "Your medications are packaged securely and delivered directly to your doorstep by our trusted couriers." },
+      order_now: "Order Now",
+      need_help: "Need help with your medication order? Our support team is available 24/7.",
+      contact_support: "Contact Support",
+    },
+    pharmacy_features: {
+      heading: "Why Choose Our",
+      highlight: "Pharmacy Service",
+      description: "ONE HEALTHLINE CONNECT offers a comprehensive medication service designed to make healthcare more accessible and convenient for all Rwandans.",
+      "24_7_ordering": { title: "24/7 Ordering", description: "Order medications anytime, day or night, through our online platform or mobile app." },
+      fast_delivery: { title: "Fast Delivery", description: "Get medications delivered to your doorstep within 3 hours in urban areas and same-day in rural areas." },
+      verified_medications: { title: "Verified Medications", description: "All medications are sourced from licensed pharmacies and verified for authenticity." },
+      secure_payments: { title: "Secure Payments", description: "Multiple payment options including mobile money, credit cards, and insurance coverage." },
+      medication_reminders: { title: "Medication Reminders", description: "Set up reminders to take your medications on time and never miss a dose." },
+      pharmacist_consultation: { title: "Pharmacist Consultation", description: "Chat with licensed pharmacists for advice on medications and potential side effects." },
+      easy_refills: { title: "Easy Refills", description: "Quickly reorder your prescriptions with one-click refills and automatic renewals." },
+      digital_prescriptions: { title: "Digital Prescriptions", description: "Upload your prescription digitally or have your doctor send it directly to our platform." },
+    },
+     pharmacy_hero: {
+      tagline: "Pharmacy Services",
+      title_part1: "Medications",
+      title_part2: "Delivered",
+      title_part3: "To Your Doorstep",
+      description:
+        "Order prescription and over-the-counter medications from partner pharmacies across Rwanda. Upload your prescription, compare prices, and have your medications delivered to your home.",
+      search_placeholder: "Search for medications...",
+      search_button: "Search",
+      order_button: "Order Medications",
+      upload_button: "Upload Prescription",
+      image_alt: "Pharmacy and medication delivery services",
+      free_delivery: "Free Delivery",
+      stats: [
+        { value: "50+", label: "Pharmacies" },
+        { value: "3 hrs", label: "Delivery Time" },
+        { value: "1000+", label: "Medications" }
+      ]
+    },
+     emergency_cta: {
+      heading: "Emergency Medical Care When You Need It Most",
+      subheading: "ONE HEALTHLINE CONNECT's emergency services are available 24/7 across the country. Save our emergency number for immediate assistance.",
+      hotline_title: "Emergency Hotline",
+      hotline_number: "912",
+      hotline_subtext: "Available 24 hours a day, 7 days a week, 365 days a year",
+      save_number: "Save Emergency Number",
+      learn_services: "Learn About Our Services",
+      features: [
+        { title: "Download Our App", description: "Get one-touch emergency calling and share your location automatically" },
+        { title: "Emergency Training", description: "Learn basic first aid and CPR through our community training programs" },
+        { title: "Emergency Preparedness", description: "Create an emergency plan for your family with our free resources" },
+      ],
+      reminder: "Remember: In case of emergency, call 912 immediately. Every second counts."
+    },
+     emergency_faq: {
+      heading: "Frequently Asked Questions",
+      subheading: "Find answers to common questions about our emergency medical services.",
+      faqs: [
+        {
+          question: "What number do I call for emergency services?",
+          answer: "For emergency medical services, call our dedicated emergency number: 912. This number is available 24/7 and will connect you directly to our emergency dispatch center. In case you cannot reach this number, you can also call our alternative emergency line at 0788-HEALTH (0788-432584)."
+        },
+        {
+          question: "How quickly will an ambulance arrive?",
+          answer: "Our target response times are 5-15 minutes in urban areas and 15-30 minutes in rural areas. Actual response times may vary based on traffic conditions, weather, and the specific location. Our dispatch system sends the closest available emergency unit to minimize wait times."
+        },
+        // ... add remaining FAQs similarly
+      ],
+      contact_heading: "Have more questions about our emergency services?",
+      contact_text: "Contact our customer service team at info@healthlinerwanda.com or call +250 788 123 456"
+    },
+    emergency_testimonials: {
+      heading: "Lives Saved Through Our Emergency Services",
+      subheading:
+        "Read about real experiences from patients who received emergency care from ONE HEALTHLINE CONNECT.",
+      testimonials: [
+        {
+          name: "Jean-Paul Mugisha",
+          location: "Kigali, Rwanda",
+          testimonial:
+            "I was having severe chest pain at home when my wife called ONE HEALTHLINE CONNECT. The ambulance arrived within 10 minutes, and the paramedics immediately began treatment. They saved my life - I was having a major heart attack. The speed and professionalism of the team was incredible."
+        },
+        {
+          name: "Marie Uwimana",
+          location: "Huye, Rwanda",
+          testimonial:
+            "My son had a severe allergic reaction while we were at a family gathering in a rural area. I didn't think help would reach us in time, but ONE HEALTHLINE CONNECT's emergency team arrived quickly and administered life-saving treatment. Their calm expertise during such a frightening situation was remarkable."
+        },
+        {
+          name: "Emmanuel Hakizimana",
+          location: "Musanze, Rwanda",
+          testimonial:
+            "I was in a serious car accident on the highway. The ONE HEALTHLINE CONNECT emergency team arrived quickly, stabilized me at the scene, and coordinated with the hospital so everything was ready when I arrived. Their quick action prevented permanent damage. I'm forever grateful for their expertise."
+        }
+      ],
+      stats_heading: "Emergency Response Statistics",
+      stats: [
+        "Average response time: <strong>12 minutes</strong>",
+        "Emergencies responded to last year: <strong>4,500+</strong>",
+        "Lives saved: <strong>98% survival rate</strong> for critical emergencies",
+        "Patient satisfaction: <strong>4.9/5</strong> average rating"
+      ],
+      commitment_heading: "Our Commitment",
+      commitment_p1:
+        "At ONE HEALTHLINE CONNECT, we're committed to providing the fastest, most professional emergency medical care possible. Our teams undergo rigorous training and use the latest medical equipment to ensure the best outcomes for patients in emergency situations.",
+      commitment_p2:
+        "We continuously work to improve our response times and coverage areas to serve all Rwandans, no matter where they are located."
+    },
+    emergency_locations: {
+      title: "Our Emergency Coverage Areas",
+      description:
+        "ONE HEALTHLINE CONNECT provides emergency medical services across the country, with strategic locations to ensure rapid response times.",
+      map_placeholder: {
+        title: "Interactive Map Coming Soon",
+        subtitle: "View our emergency response units across Rwanda",
+      },
+      coverage_label: "Coverage Area:",
+      response_time_label: "Response Time:",
+      units_label: "Emergency Units:",
+      footer_note_1: "Our emergency services cover all 30 districts of Rwanda, with strategic locations to minimize response times.",
+      footer_note_2: "In remote areas, we utilize helicopter medical evacuation when necessary to ensure timely care.",
+      kigali: {
+        name: "Kigali Central",
+        address: "KN 5 Ave, Kigali, Rwanda",
+        coverage: "Nyarugenge, Kicukiro, Gasabo",
+        responseTime: "5-10 minutes",
+        units: "8 Ambulances, 4 Rapid Response Vehicles",
+      },
+      butare: {
+        name: "Butare Station",
+        address: "Huye District, Southern Province",
+        coverage: "Huye, Gisagara, Nyanza",
+        responseTime: "10-15 minutes",
+        units: "5 Ambulances, 2 Rapid Response Vehicles",
+      },
+      musanze: {
+        name: "Musanze Center",
+        address: "Musanze District, Northern Province",
+        coverage: "Musanze, Burera, Gakenke",
+        responseTime: "10-20 minutes",
+        units: "4 Ambulances, 2 Rapid Response Vehicles",
+      },
+      rubavu: {
+        name: "Rubavu Station",
+        address: "Rubavu District, Western Province",
+        coverage: "Rubavu, Nyabihu, Rutsiro",
+        responseTime: "10-20 minutes",
+        units: "4 Ambulances, 2 Rapid Response Vehicles",
+      },
+      rwamagana: {
+        name: "Rwamagana Center",
+        address: "Rwamagana District, Eastern Province",
+        coverage: "Rwamagana, Kayonza, Ngoma",
+        responseTime: "15-25 minutes",
+        units: "3 Ambulances, 2 Rapid Response Vehicles",
+      },
+      nyagatare: {
+        name: "Nyagatare Station",
+        address: "Nyagatare District, Eastern Province",
+        coverage: "Nyagatare, Gatsibo",
+        responseTime: "15-30 minutes",
+        units: "3 Ambulances, 1 Rapid Response Vehicle",
+      },
+    },
+     emergency_types: {
+      heading: "Emergency Situations We Handle",
+      subheading: "Our emergency teams are trained and equipped to respond to a wide range of medical emergencies across Rwanda.",
+      cardiac: {
+        title: "Cardiac Emergencies",
+        desc: "Heart attacks, chest pain, cardiac arrest, and other heart-related emergencies requiring immediate attention."
+      },
+      neurological: {
+        title: "Neurological Emergencies",
+        desc: "Strokes, seizures, severe headaches, and other neurological conditions requiring rapid response."
+      },
+      trauma: {
+        title: "Trauma & Injuries",
+        desc: "Serious injuries from accidents, falls, or violence requiring immediate medical intervention."
+      },
+      respiratory: {
+        title: "Respiratory Distress",
+        desc: "Severe asthma attacks, difficulty breathing, choking, and other respiratory emergencies."
+      },
+      bleeding: {
+        title: "Severe Bleeding",
+        desc: "Uncontrolled bleeding from injuries, wounds, or medical conditions requiring immediate treatment."
+      },
+      poisoning: {
+        title: "Poisoning & Overdose",
+        desc: "Accidental or intentional poisoning, drug overdoses, and adverse reactions requiring urgent care."
+      },
+      burns: {
+        title: "Burns & Scalds",
+        desc: "Serious burns from fire, chemicals, electricity, or hot liquids requiring specialized treatment."
+      },
+      other: {
+        title: "Other Emergencies",
+        desc: "Allergic reactions, diabetic emergencies, pregnancy complications, and other urgent medical situations."
+      },
+      cta_title: "When to Call Emergency Services",
+      cta_desc: "Call our emergency number (912) immediately if you or someone around you experiences:",
+      urgent_signs: [
+        "Chest pain or pressure",
+        "Difficulty breathing",
+        "Sudden weakness or numbness",
+        "Severe bleeding",
+        "Severe burns",
+        "Poisoning or overdose",
+        "Serious injuries",
+        "Seizures",
+        "Unconsciousness"
+      ]
+    },
+     emergency_how_it_works: {
+      heading: "How Our Emergency Service Works",
+      subheading:
+        "When every second counts, our streamlined emergency response process ensures you get the care you need as quickly as possible.",
+      call_emergency: {
+        title: "Call Emergency Number",
+        description:
+          "Dial our emergency number (912) to reach our 24/7 dispatch center. Our trained operators will ask key questions to assess the situation.",
+      },
+      rapid_dispatch: {
+        title: "Rapid Dispatch",
+        description:
+          "Based on your location and emergency type, we dispatch the nearest appropriate emergency response unit to your location.",
+      },
+      on_site_treatment: {
+        title: "On-Site Treatment",
+        description:
+          "Our emergency medical team arrives and provides immediate on-site assessment and treatment to stabilize the patient.",
+      },
+      hospital_transport: {
+        title: "Hospital Transport",
+        description:
+          "If needed, we transport the patient to the most appropriate medical facility, communicating with the hospital to ensure seamless care.",
+      },
+      cta_text:
+        "In life-threatening situations, every minute matters. Don't hesitate to call our emergency number:",
+    },
+     emergency_features: {
+      heading: "Our Emergency Service Features",
+      subheading:
+        "ONE HEALTHLINE CONNECT provides comprehensive emergency medical services designed to deliver rapid, professional care when you need it most.",
+      rapid_response: {
+        title: "Rapid Response",
+        description:
+          "Our emergency teams aim to reach you within 5-15 minutes in urban areas and 15-30 minutes in rural locations.",
+      },
+      nationwide_coverage: {
+        title: "Nationwide Coverage",
+        description:
+          "With emergency response units strategically located across Rwanda, we ensure help is always nearby.",
+      },
+      advanced_life_support: {
+        title: "Advanced Life Support",
+        description:
+          "Our ambulances are equipped with advanced life support equipment and staffed by trained paramedics.",
+      },
+      medical_professionals: {
+        title: "Medical Professionals",
+        description:
+          "Our emergency teams include doctors, nurses, and paramedics trained in emergency medicine.",
+      },
+      ambulance_fleet: {
+        title: "Modern Ambulance Fleet",
+        description:
+          "Our fleet of modern ambulances is equipped with the latest medical technology for on-site treatment.",
+      },
+      dispatch_center: {
+        title: "24/7 Dispatch Center",
+        description:
+          "Our emergency dispatch center is staffed around the clock to coordinate rapid response to emergencies.",
+      },
+      hospital_network: {
+        title: "Hospital Network",
+        description:
+          "Direct coordination with hospitals ensures seamless transfer and immediate care upon arrival.",
+      },
+      insurance_coordination: {
+        title: "Insurance Coordination",
+        description:
+          "We work with all major insurance providers to ensure your emergency care is covered.",
+      },
+    },
+     emergency_hero: {
+      label: "24/7 EMERGENCY SERVICES",
+      title: "Immediate Medical Response When Every Second Counts",
+      description:
+        "Our emergency medical team is available 24/7 across Rwanda to provide rapid response and life-saving care during critical situations.",
+      call_button: "Call Emergency",
+      learn_more: "Learn More",
+      stats: {
+        response_time: { value: "5-15", label: "Minute Response Time" },
+        availability: { value: "24/7", label: "Service Availability" },
+        vehicles: { value: "30+", label: "Emergency Vehicles" },
+        responders: { value: "100%", label: "Trained Responders" },
+      },},
+     appointments_cta: {
+      title: "Ready to Book Your Healthcare Appointment?",
+      subtitle: "Take control of your health journey today. Book an appointment with top healthcare providers in Rwanda in just a few clicks.",
+      features: {
+        easy_booking: {
+          title: "Easy Booking",
+          description: "Book appointments anytime, anywhere in just a few minutes."
+        },
+        instant_confirmation: {
+          title: "Instant Confirmation",
+          description: "Receive immediate confirmation and reminders via SMS and email."
+        },
+        support: {
+          title: "24/7 Support",
+          description: "Our support team is always available to assist with your booking."
+        }
+      },
+      buttons: {
+        book: "Book an Appointment",
+        view_specialists: "View Specialists"
+      },
+      need_assistance: "Need assistance? Call us at"
+    },
+    appointments_faq: {
+      title: "Frequently Asked",
+      title_highlight: "Questions",
+      subtitle: "Find answers to common questions about our appointment booking service.",
+      q1: {
+        question: "How do I book an appointment?",
+        answer:
+          "You can book an appointment through our website or mobile app. Simply create an account, search for a doctor or specialty, select your preferred date and time, and confirm your booking. You'll receive an immediate confirmation via email and SMS.",
+      },
+      q2: {
+        question: "Can I book an appointment for someone else?",
+        answer:
+          "Yes, you can book appointments for family members or others. During the booking process, you'll have the option to specify who the appointment is for. You'll need to provide their basic information to complete the booking.",
+      },
+      q3: {
+        question: "How far in advance can I book an appointment?",
+        answer:
+          "Most specialists allow bookings up to 3 months in advance. Some high-demand specialists may have shorter booking windows. Emergency appointments can often be booked for the same day or next day depending on availability.",
+      },
+      q4: {
+        question: "What if I need to cancel or reschedule my appointment?",
+        answer:
+          "You can cancel or reschedule your appointment through your account up to 24 hours before the scheduled time without any penalty. For cancellations less than 24 hours in advance, a small fee may apply depending on the specialist's policy.",
+      },
+      q5: {
+        question: "Do I need to pay when booking an appointment?",
+        answer:
+          "Some specialists require a deposit or full payment at the time of booking, while others allow payment at the time of the appointment. The payment requirements will be clearly indicated during the booking process.",
+      },
+      q6: {
+        question: "What insurance providers do you accept?",
+        answer:
+          "We work with most major insurance providers in Rwanda. During the booking process, you can enter your insurance information to see which specialists accept your specific insurance plan.",
+      },
+      q7: {
+        question: "How long before my appointment will I receive a reminder?",
+        answer:
+          "We send appointment reminders 48 hours and 2 hours before your scheduled appointment via SMS and email. You can adjust your reminder preferences in your account settings.",
+      },
+      q8: {
+        question: "What should I bring to my appointment?",
+        answer:
+          "Please bring your ID, insurance card (if applicable), any relevant medical records or test results, a list of current medications, and any referral documents if required. For first-time visits, please arrive 15 minutes early to complete registration.",
+      },
+      need_more_help: "Still have questions about our appointment booking service?",
+      contact_us_text: "Contact our support team at",
+    },
+    appointments_locations: {
+      title: "Our",
+      title_highlight: "Locations",
+      subtitle: "Book appointments at any of our state-of-the-art facilities across Rwanda.",
+      featured: "Featured",
+      book_button: "Book at this Location",
+      find_nearby: {
+        title: "Find a Location Near You",
+        subtitle: "We have partner facilities throughout Rwanda to serve you better."
+      },
+      view_all: "View All Locations",
+      kigali: {
+        name: "HEALTHLINE Kigali Center",
+        address: "KN 5 Rd, Kigali, Rwanda",
+        hours: "Mon-Sat: 8am-8pm, Sun: 9am-5pm"
+      },
+      butare: {
+        name: "HEALTHLINE Butare Clinic",
+        address: "Huye District, Southern Province, Rwanda",
+        hours: "Mon-Fri: 8am-6pm, Sat: 9am-3pm"
+      },
+      musanze: {
+        name: "HEALTHLINE Musanze Hospital",
+        address: "Musanze District, Northern Province, Rwanda",
+        hours: "24/7 Emergency Services"
+      },
+      rubavu: {
+        name: "HEALTHLINE Rubavu Center",
+        address: "Rubavu District, Western Province, Rwanda",
+        hours: "Mon-Sat: 8am-7pm, Sun: 10am-4pm"
+      }
+    },
+    appointments_testimonials: {
+  title: "What Our",
+  highlight: "Patients Say",
+  subtitle: "Hear from people who have used our appointment booking service.",
+  average_rating: "Average Rating",
+  stars: "Stars",
+  jean: {
+    text: "The appointment booking process was incredibly simple. I was able to find a specialist, book a time that worked for me, and receive confirmation all within minutes. The reminders were helpful too!",
+  },
+  emmanuel: {
+    text: "As someone living in a rural area, being able to book appointments online has been life-changing. I no longer have to travel just to schedule a visit. The system is easy to use and very reliable.",
+  },
+  marie: {
+    text: "I appreciate how easy it is to reschedule when needed. Life happens, and ONE HEALTHLINE CONNECT understands that. The booking system is flexible and user-friendly.",
+  }
+},
+     appointments_types: {
+      title: "Appointment",
+      title_highlight: "Types",
+      subtitle: "We offer a wide range of appointment types to address all your healthcare needs.",
+      popular: "Popular",
+      book_now: "Book Now",
+      more_specialties: "Don't see the appointment type you need? We offer many more specialized services.",
+      view_all: "View All Specialties",
+      general_consultation: {
+        title: "General Consultation",
+        description: "Regular check-ups and general health concerns with primary care physicians."
+      },
+      specialist_consultation: {
+        title: "Specialist Consultation",
+        description: "Focused care from specialists in various medical fields."
+      },
+      cardiology: {
+        title: "Cardiology",
+        description: "Heart health assessments and treatments with cardiologists."
+      },
+      ophthalmology: {
+        title: "Ophthalmology",
+        description: "Eye examinations and treatments with eye specialists."
+      },
+      orthopedics: {
+        title: "Orthopedics",
+        description: "Bone and joint care with orthopedic specialists."
+      },
+      pediatrics: {
+        title: "Pediatrics",
+        description: "Healthcare for infants, children, and adolescents."
+      },
+      pharmacy: {
+        title: "Pharmacy Consultation",
+        description: "Medication reviews and advice from pharmacists."
+      },
+      laboratory: {
+        title: "Laboratory Tests",
+        description: "Schedule laboratory tests and diagnostics."
+      }
+    },
+    appointments_how: {
+      title: "How to Book Your",
+      title_highlight: "Appointment",
+      subtitle: "Our simple 4-step process makes booking healthcare appointments quick and hassle-free.",
+      steps: {
+        create_account: {
+          title: "Create an Account",
+          description: "Sign up with your basic information to get started. It only takes a minute."
+        },
+        find_specialist: {
+          title: "Find a Specialist",
+          description: "Search for specialists by name, specialty, location, or availability."
+        },
+        select_date_time: {
+          title: "Select Date & Time",
+          description: "Choose from available time slots that work with your schedule."
+        },
+        confirm_pay: {
+          title: "Confirm & Pay",
+          description: "Review your appointment details, add any notes, and complete payment if required."
+        }
+      },
+      book_now: "Book Now",
+      need_help: "Need help booking your appointment? Our support team is available to assist you.",
+      contact_support: "Contact Support"
+    },
+     appointments_features: {
+      heading: "Why Choose Our",
+      heading_highlight: "Appointment Service",
+      subheading:
+        "Our appointment booking system is designed to make healthcare access simple, efficient, and convenient for all Rwandans.",
+      feature_24_7: {
+        title: "24/7 Booking",
+        description: "Schedule appointments any time of day or night, weekends and holidays included."
+      },
+      feature_instant: {
+        title: "Instant Confirmation",
+        description: "Receive immediate confirmation of your appointment with all details."
+      },
+      feature_specialist: {
+        title: "Specialist Selection",
+        description: "Choose from over 200 healthcare specialists across multiple disciplines."
+      },
+      feature_locations: {
+        title: "Multiple Locations",
+        description: "Book at any of our partner hospitals and clinics throughout Rwanda."
+      },
+      feature_payment: {
+        title: "Secure Payment",
+        description: "Pay for your appointment securely online with multiple payment options."
+      },
+      feature_sms: {
+        title: "SMS Reminders",
+        description: "Receive timely SMS reminders before your scheduled appointment."
+      },
+      feature_virtual: {
+        title: "Virtual Options",
+        description: "Choose between in-person or virtual consultations based on your needs."
+      },
+      feature_reschedule: {
+        title: "Easy Rescheduling",
+        description: "Reschedule or cancel appointments with just a few clicks when needed."
+      },
+      cta_title: "Ready to experience the difference?",
+      cta_subtitle: "Join thousands of satisfied patients who have simplified their healthcare journey.",
+      cta_stat_appointments: "Appointments Booked",
+      cta_stat_satisfaction: "Satisfaction Rate"
+    },
+     appointments_hero: {
+      badge: "Appointment Booking",
+      title: "Schedule Care On",
+      title_highlight: "Your Terms",
+      subtitle:
+        "Book appointments with healthcare providers at your convenience. Find and schedule visits with the right specialists, choose between in-person or virtual consultations.",
+      search_placeholder: "Search for doctors, specialties, or hospitals...",
+      search_button: "Search",
+      book_button: "Book Appointment",
+      view_specialties: "View Specialties",
+      image_alt: "Doctor appointment booking",
+      stats: {
+        specialists: "Specialists",
+        hospitals: "Hospitals",
+        booking_time: "Booking Time",
+      },
+      easy_rescheduling: "Easy Rescheduling"
+    },
+     teleconsultation_cta: {
+      title: "Ready to Experience Healthcare from Home?",
+      subtitle:
+        "Join thousands of Rwandans who are accessing quality healthcare through our teleconsultation service. Your first consultation is just a few clicks away.",
+      start_button: "Start Consultation",
+      learn_more: "Learn More"
+    },
+       faq4: {
+      title: "Frequently Asked Questions",
+      subtitle: "Find answers to common questions about our teleconsultation services. If you don't see your question here, please contact our support team.",
+      q1: "What equipment do I need for a teleconsultation?",
+      a1: "You'll need a device with a camera and microphone (smartphone, tablet, or computer), a stable internet connection, and the ONE HEALTHLINE CONNECT app installed. For the best experience, we recommend using headphones and finding a quiet, well-lit space for your consultation.",
+      q2: "How long does a typical teleconsultation last?",
+      a2: "A standard teleconsultation typically lasts 15-30 minutes, depending on the complexity of your health concern. Specialist consultations may last longer. You can see the expected duration when booking your appointment.",
+      q3: "Can doctors prescribe medication through teleconsultation?",
+      a3: "Yes, doctors can prescribe medications during teleconsultations when appropriate. The prescription will be digital and can be sent directly to our partner pharmacies for delivery or pickup. However, certain controlled medications may require an in-person visit.",
+      q4: "What if I need lab tests or imaging?",
+      a4: "If your doctor determines you need laboratory tests or imaging, they can provide a digital referral. You can visit any of our partner facilities to have these tests done. The results will be uploaded to your ONE HEALTHLINE CONNECT account and shared with your doctor for follow-up.",
+      q5: "Is teleconsultation covered by insurance?",
+      a5: "Many insurance providers in Rwanda now cover teleconsultation services. We work with major insurance companies including RSSB, MMI, SORAS, and others. You can verify coverage by entering your insurance details in your profile or contacting your insurance provider directly.",
+      q6: "What if I need to see a doctor in person after my teleconsultation?",
+      a6: "If your doctor determines that an in-person examination is necessary, they can refer you to an appropriate healthcare facility or specialist. Your teleconsultation records will be shared with the referred provider to ensure continuity of care."
+    },
+    testimonials2: {
+      section_title: "What Our Patients Say",
+      section_subtitle: "Hear from patients who have experienced our teleconsultation services firsthand.",
+      read_more: "Read more patient testimonials",
+      jean: {
+        testimonial: "The teleconsultation service saved me so much time. I was able to speak with a doctor within 15 minutes for my child's fever, and received a prescription that was delivered to my home. Excellent service!",
+        service: "Pediatric Consultation"
+      },
+      emmanuel: {
+        testimonial: "Living in a rural area, it's difficult to access specialist care. Through ONE HEALTHLINE CONNECT, I was able to consult with a cardiologist without traveling to Kigali. The video quality was excellent and the doctor was very thorough.",
+        service: "Cardiology Consultation"
+      },
+      marie: {
+        testimonial: "I've been using the monthly plan for my chronic condition management. Being able to speak with my doctor regularly without visiting the hospital has made managing my health so much easier. Highly recommended!",
+        service: "Chronic Disease Management"
+      }
+    },
+    "pricing1": {
+    "title": "Transparent Pricing Plans",
+    "subtitle": "Choose the teleconsultation plan that best fits your healthcare needs and budget.",
+    "plans": {
+      "single": {
+        "name": "Single Consultation",
+        "price": "5,000 RWF",
+        "description": "One-time consultation with a general practitioner",
+        "features": [
+          "30-minute video consultation",
+          "Digital prescription if needed",
+          "Follow-up messages for 24 hours",
+          "Medical record of consultation"
+        ]
+      },
+      "monthly": {
+        "name": "Monthly Plan",
+        "price": "15,000 RWF",
+        "period": "per month",
+        "description": "Unlimited consultations with general practitioners",
+        "features": [
+          "Unlimited consultations with GPs",
+          "2 specialist consultations per month",
+          "Digital prescriptions",
+          "Priority scheduling",
+          "24/7 access to medical chat",
+          "Comprehensive medical records"
+        ]
+      },
+      "family": {
+        "name": "Family Plan",
+        "price": "25,000 RWF",
+        "period": "per month",
+        "description": "Coverage for up to 4 family members",
+        "features": [
+          "Unlimited consultations with GPs",
+          "4 specialist consultations per month",
+          "Digital prescriptions",
+          "Priority scheduling",
+          "24/7 access to medical chat",
+          "Family health dashboard",
+          "Shared medical records management"
+        ]
+      }
+    },
+    "mostPopular": "Most Popular",
+    "choosePlan": "Choose Plan",
+    "footerNote": "All plans include access to our mobile app and web platform. Specialist consultations may have additional fees depending on the specialty. Prices are in Rwandan Francs (RWF)."
+  },
+    "teleconsultationSpecialties": {
+    "title": "Available Medical Specialties",
+    "description": "Our platform connects you with specialists across various medical fields to address your specific healthcare needs.",
+    "specialties": {
+      "generalMedicine": {
+        "name": "General Medicine",
+        "description": "Consultations for common illnesses, preventive care, and health assessments.",
+        "availability": "24/7"
+      },
+      "pediatrics": {
+        "name": "Pediatrics",
+        "description": "Child healthcare, from newborn care to adolescent health issues.",
+        "availability": "8AM - 8PM"
+      },
+      "dermatology": {
+        "name": "Dermatology",
+        "description": "Skin conditions, rashes, acne, and other dermatological concerns.",
+        "availability": "By appointment"
+      },
+      "psychiatry": {
+        "name": "Psychiatry",
+        "description": "Mental health support, including anxiety, depression, and stress management.",
+        "availability": "9AM - 5PM"
+      },
+      "cardiology": {
+        "name": "Cardiology",
+        "description": "Heart health consultations, including hypertension management.",
+        "availability": "By appointment"
+      },
+      "nutrition": {
+        "name": "Nutrition",
+        "description": "Dietary advice, weight management, and nutritional planning.",
+        "availability": "9AM - 6PM"
+      }
+    },
+    "button": {
+      "findSpecialists": "Find Specialists",
+      "viewAll": "View All Specialties"
+    }
+  },
+    "teleconsultationHowItWorks": {
+    "heading": "How Teleconsultation Works",
+    "description": "Our streamlined process makes it easy to connect with healthcare professionals in just a few steps.",
+    "steps": [
+      {
+        "title": "Create an Account",
+        "description": "Sign up and complete your health profile with relevant medical history and current medications."
+      },
+      {
+        "title": "Choose a Specialist",
+        "description": "Browse available doctors by specialty, ratings, and availability to find the right match."
+      },
+      {
+        "title": "Book a Time Slot",
+        "description": "Select a convenient time for your consultation from the doctor's available schedule."
+      },
+      {
+        "title": "Join the Consultation",
+        "description": "Connect via video call at the scheduled time and discuss your health concerns with the doctor."
+      },
+      {
+        "title": "Receive Treatment Plan",
+        "description": "Get a digital prescription, referrals, or follow-up appointment as recommended by the doctor."
+      }
+    ],
+    "demoHeading": "See Teleconsultation in Action",
+    "demoDescription": "Watch a short video demonstration of how our teleconsultation service works from start to finish.",
+    "watchDemo": "Watch the demo",
+    "videoAlt": "Teleconsultation demonstration video"
+  },
+    "teleconsultationFeatures": {
+    "heading": "Comprehensive Teleconsultation Features",
+    "description": "Our teleconsultation service offers a complete virtual healthcare experience with features designed to make remote healthcare accessible, convenient, and effective.",
+    "features": {
+      "video": {
+        "title": "High-Quality Video Consultations",
+        "description": "Connect with doctors through high-definition video calls that provide a clear and personal consultation experience."
+      },
+      "messaging": {
+        "title": "Secure Messaging",
+        "description": "Send and receive secure messages with your healthcare provider before and after your consultation."
+      },
+      "prescriptions": {
+        "title": "Digital Prescriptions",
+        "description": "Receive digital prescriptions that can be sent directly to our partner pharmacies for medication delivery."
+      },
+      "quickAccess": {
+        "title": "Quick Access",
+        "description": "Get medical attention quickly with an average wait time of just 15 minutes for urgent consultations."
+      },
+      "privacy": {
+        "title": "Private & Secure",
+        "description": "All consultations are conducted through encrypted connections to ensure your medical information remains private."
+      },
+      "multiDevice": {
+        "title": "Multi-Device Access",
+        "description": "Access teleconsultation services from any device - smartphone, tablet, or computer."
+      }
+    }
+  },
+    "teleconsultation3": {
+    "serviceTag": "Teleconsultation Service",
+    "title": "Virtual Healthcare At Your Fingertips",
+    "description": "Connect with qualified healthcare professionals from the comfort of your home. Get medical advice, prescriptions, and follow-up care without the travel.",
+    "startConsultation": "Start Consultation",
+    "bookAppointment": "Book Appointment",
+    "stats": {
+      "doctors": "Doctors",
+      "availability": "Availability",
+      "avgWaitTime": "Avg. Wait Time"
+    },
+    "securePrivate": "Secure & Private"
+  },
+     "doctor1": {
+    "menu": {
+      "dashboard": "Dashboard",
+      "appointments": "Appointments",
+      "patients": "Patients",
+      "teleconsultations": "Teleconsultations",
+      "prescriptions": "Prescriptions",
+      "settings": "Settings"
+    },
+    "header": {
+      "panel": "Doctor's Panel"
+    },
+    "user": {
+      "role": "Doctor"
+    }
+  },
+  "nav": {
+    "logout": "Log Out"
+  },
+    "settings": {
+    "title": "Settings",
+    "subtitle": "Manage your profile and preferences",
+    "profileInformation": "Profile Information",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phoneNumber": "Phone Number",
+    "specialty": "Specialty",
+    "hospitalClinic": "Hospital/Clinic",
+    "licenseNumber": "License Number",
+    "bio": "Bio",
+    "workingHours": "Working Hours",
+    "to": "to",
+    "notificationPreferences": "Notification Preferences",
+    "newAppointmentRequests": {
+      "title": "New Appointment Requests",
+      "description": "Get notified when patients book appointments"
+    },
+    "teleconsultationReminders": {
+      "title": "Teleconsultation Reminders",
+      "description": "Reminders 10 minutes before virtual appointments"
+    },
+    "emergencyAlerts": {
+      "title": "Emergency Alerts",
+      "description": "Critical alerts for emergency consultations"
+    },
+    "patientMessages": {
+      "title": "Patient Messages",
+      "description": "Messages from patients through the platform"
+    },
+    "languageRegion": "Language & Region",
+    "language": "Language",
+    "timeZone": "Time Zone",
+    "security": "Security",
+    "currentPassword": "Current Password",
+    "currentPasswordPlaceholder": "Enter current password",
+    "newPassword": "New Password",
+    "newPasswordPlaceholder": "Enter new password",
+    "confirmNewPassword": "Confirm New Password",
+    "confirmNewPasswordPlaceholder": "Confirm new password",
+    "enableTwoFactorAuth": "Enable two-factor authentication",
+    "saveChanges": "Save Changes"
+  },
+  "days": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  },
+    "prescriptions1": {
+    "title": "Prescriptions",
+    "subtitle": "Manage patient prescriptions and medications",
+    "newPrescription": "New Prescription",
+    "searchPlaceholder": "Search by patient name or medication...",
+    "allStatus": "All Status",
+    "active": "Active",
+    "completed": "Completed",
+    "expired": "Expired",
+    "date": "Date",
+    "diagnosis": "Diagnosis",
+    "medications": "Medications",
+    "doctorsNotes": "Doctor's Notes",
+    "duration": "Duration",
+    "viewFull": "View Full Prescription",
+    "exportPdf": "Export as PDF",
+    "sendPharmacy": "Send to Pharmacy",
+    "duplicate": "Duplicate Prescription",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "pageInfo": "Page 1 of 1"
+    }
+  },
+     "teleconsultations1": {
+    "title": "Teleconsultations",
+    "subtitle": "Manage virtual consultations and video calls",
+    "virtualConsultations": "Virtual Consultations",
+    "startCall": "Start Call",
+    "scheduled": "Scheduled"
+  },
+     "patients": {
+    "title": "My Patients",
+    "subtitle": "Manage and track your assigned patients",
+    "searchPlaceholder": "Search patients by name or condition...",
+    "filters": {
+      "conditions": {
+        "all": "All Conditions",
+        "hypertension": "Hypertension",
+        "diabetes": "Diabetes",
+        "heartDisease": "Heart Disease",
+        "mentalHealth": "Mental Health"
+      },
+      "statuses": {
+        "all": "All Status",
+        "activeTreatment": "Active Treatment",
+        "followUpRequired": "Follow-up Required",
+        "stable": "Stable",
+        "critical": "Critical"
+      }
+    },
+    "primaryCondition": "Primary Condition",
+    "status": "Status",
+    "lastVisit": "Last Visit",
+    "nextAppointment": "Next Appointment",
+    "actions": {
+      "viewFile": "View File",
+      "call": "Call",
+      "video": "Video"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "pageInfo": "Page {{current}} of {{total}}"
+    }
+  },
+    "appointments1": {
+    "title": "Appointments",
+    "subtitle": "Manage your patient appointments and consultations",
+    "status": {
+      "confirmed": "confirmed",
+      "pending": "pending"
+    },
+    "reason": "Reason",
+    "joinCall": "Join Call",
+    "viewDetails": "View Details"
+  },
+    "doctorDashboard": {
+    "title": "Doctor Dashboard",
+    "subtitle": "Manage your patients and consultations",
+    "stats": {
+      "appointmentsToday": "Today's Appointments",
+      "totalPatients": "Total Patients",
+      "teleconsultations": "Teleconsultations",
+      "prescriptions": "Prescriptions"
+    },
+    "todaysSchedule": "Today's Schedule",
+    "status": {
+      "confirmed": "Confirmed",
+      "pending": "Pending"
+    },
+    "quickActions": {
+      "patientRecords": {
+        "title": "Patient Records",
+        "desc": "View and manage patient medical records"
+      },
+      "prescriptions": {
+        "title": "Prescriptions",
+        "desc": "Create and manage digital prescriptions"
+      },
+      "analytics": {
+        "title": "Analytics",
+        "desc": "View consultation statistics and insights"
+      }
+    },
+    "appointments": {
+      "generalConsultation": "General Consultation",
+      "teleconsultation": "Teleconsultation",
+      "followUpConsultation": "Follow-up Consultation"
+    }
+  },
+     "userDropdown": {
+    "dashboard": "Dashboard",
+    "signOut": "Sign out",
+    "defaultUser": "User",
+    "defaultEmail": "user@example.com"
+  },
+     "adminSettings": {
+    "title": "System Settings",
+    "description": "Configure system-wide settings and preferences",
+    "generalSettings": "General Settings",
+    "siteName": "Site Name",
+    "siteDescription": "Site Description",
+    "primaryColor": "Primary Color",
+    "language": "Language",
+    "timezone": "Timezone",
+    "notificationSettings": "Notification Settings",
+    "emailNotifications": "Email Notifications",
+    "emailNotificationsDesc": "Send notifications via email",
+    "smsNotifications": "SMS Notifications",
+    "smsNotificationsDesc": "Send notifications via SMS",
+    "pushNotifications": "Push Notifications",
+    "pushNotificationsDesc": "Send browser push notifications",
+    "appointmentReminders": "Appointment Reminders",
+    "appointmentRemindersDesc": "Automatic appointment reminders",
+    "contactInformation": "Contact Information",
+    "hospitalName": "Hospital Name",
+    "hospitalAddress": "Hospital Address",
+    "phoneNumber": "Phone Number",
+    "emailAddress": "Email Address",
+    "emergencyNumber": "Emergency Number",
+    "appointmentSettings": "Appointment Settings",
+    "appointmentSlotDuration": "Appointment Slot Duration (minutes)",
+    "minutes": "{{count}} minutes",
+    "maxAdvanceBooking": "Maximum Advance Booking (days)",
+    "cancellationDeadline": "Cancellation Deadline (hours)",
+    "acceptInsurance": "Accept Insurance",
+    "acceptInsuranceDesc": "Allow insurance payments",
+    "acceptMobileMoney": "Accept Mobile Money",
+    "acceptMobileMoneyDesc": "Allow mobile money payments",
+    "saveButton": "Save All Settings",
+    "saveSuccess": "Settings saved successfully!",
+    "acceptCash": "Accept Cash",
+    "acceptCashDesc": "Allow cash payments"
+  },
+  "languages": {
+    "english": "English",
+    "kinyarwanda": "Kinyarwanda",
+    "french": "French"
+  },
+  "timezones": {
+    "caf": "Central Africa Time (UTC+2)",
+    "cet": "Central European Time (UTC+1)"
+  },
+    "security": {
+    "pageTitle": "Security Management",
+    "pageDescription": "Monitor and configure system security settings",
+    "status": {
+      "secure": "Secure",
+      "systemStatus": "System Status",
+      "activeSessions": "Active Sessions",
+      "securityAlerts": "Security Alerts",
+      "uptime": "Uptime"
+    },
+    "settings": {
+      "title": "Security Settings",
+      "mfa": "Multi-Factor Authentication",
+      "mfaDesc": "Require MFA for all users",
+      "autoLogout": "Auto Logout",
+      "autoLogoutDesc": "Automatically log out inactive users",
+      "encryption": "Data Encryption",
+      "encryptionDesc": "Encrypt sensitive data at rest",
+      "sessionTimeout": "Session Timeout (minutes)",
+      "passwordMinLength": "Minimum Password Length",
+      "lockoutAttempts": "Account Lockout After Failed Attempts",
+      "saveButton": "Save Security Settings"
+    },
+    "logs": {
+      "title": "Security Logs",
+      "status": {
+        "success": "Success",
+        "blocked": "Blocked"
+      },
+      "action": {
+        "login": "Successful login",
+        "failed_login": "Failed login attempt",
+        "permission": "Accessed patient records"
+      },
+      "user": "User",
+      "ip": "IP Address",
+      "viewAll": "View All Logs"
+    },
+    "tools": {
+      "title": "Security Tools",
+      "systemBackup": {
+        "title": "System Backup",
+        "desc": "Create secure system backup"
+      },
+      "securityScan": {
+        "title": "Security Scan",
+        "desc": "Run vulnerability assessment"
+      },
+      "incidentResponse": {
+        "title": "Incident Response",
+        "desc": "View security incidents"
+      }
+    }
+  },
+    "reports": {
+    "title": "Reports & Analytics",
+    "description": "Comprehensive insights into system performance and health metrics",
+    "exporting": "Exporting report in {{format}} format...",
+    "export": {
+      "pdf": "Export PDF",
+      "excel": "Export Excel"
+    },
+    "period": {
+      "week": "This Week",
+      "month": "This Month",
+      "quarter": "This Quarter",
+      "year": "This Year"
+    },
+    "type": {
+      "overview": "Overview",
+      "appointments": "Appointments",
+      "financial": "Financial",
+      "patients": "Patients"
+    },
+    "metrics": {
+      "totalPatients": "Total Patients",
+      "appointments": "Appointments",
+      "revenue": "Revenue (RWF)",
+      "satisfactionRate": "Satisfaction Rate",
+      "increase": "+{{percent}}% from last month"
+    },
+    "sections": {
+      "departmentPerformance": "Department Performance",
+      "appointmentStatus": "Appointment Status",
+      "insuranceClaimsSummary": "Insurance Claims Summary",
+      "reportTemplates": "Report Templates"
+    },
+    "labels": {
+      "patients": "patients"
+    },
+    "appointmentStatus": {
+      "completed": "Completed",
+      "cancelled": "Cancelled",
+      "noShow": "No Show",
+      "rescheduled": "Rescheduled"
+    },
+    "insurance": {
+      "provider": "Insurance Provider",
+      "claimsCount": "Claims Count",
+      "totalAmount": "Total Amount (RWF)",
+      "avgClaim": "Avg. Claim"
+    },
+    "templates": {
+      "monthlySummary": {
+        "title": "Monthly Summary",
+        "desc": "Comprehensive monthly report"
+      },
+      "patientAnalytics": {
+        "title": "Patient Analytics",
+        "desc": "Patient demographics and trends"
+      },
+      "financialReport": {
+        "title": "Financial Report",
+        "desc": "Revenue and expense analysis"
+      }
+    }
+  },
+    "appointments": {
+    "management": "Appointments Management",
+    "description": "Manage and monitor all appointments in the system",
+    "stats": {
+      "total": "Total Appointments",
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "teleconsultations": "Teleconsultations"
+    },
+    "filters": {
+      "all": "All Appointments",
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "searchPlaceholder": "Search appointments...",
+    "table": {
+      "patient": "Patient",
+      "doctor": "Doctor",
+      "dateTime": "Date & Time",
+      "type": "Type",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "schedule": {
+        "title": "Schedule Appointment",
+        "desc": "Create new appointment"
+      },
+      "viewSchedule": {
+        "title": "View Schedule",
+        "desc": "See today's appointments"
+      },
+      "filters": {
+        "title": "Advanced Filters",
+        "desc": "Filter by date, doctor, etc."
+      }
+    },
+    "statusOptions": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    }
+  },
+    "notifications": {
+    "button_aria_label": "Toggle notifications dropdown",
+    "title": "Notification",
+    "close": "Close notifications",
+    "requested_teleconsultation": "requested teleconsultation at",
+    "uploaded_lab_results": "uploaded lab results to",
+    "requested_pharmacy_delivery": "requested pharmacy delivery from",
+    "cancelled_appointment": "cancelled upcoming appointment at",
+    "appointment": "Appointment",
+    "medical_report": "Medical Report",
+    "prescription": "Prescription",
+    "just_now": "Just now",
+    "one_hour_ago": "1 hr ago",
+    "minutes_ago": "{{count}} min ago",
+    "view_all": "View All Notifications",
+    "user_alt": "{{name}}'s profile picture"
+  },
+  "medicalHistory": {
+    "title": "Medical History",
+    "subtitle": "Your complete medical records and consultation history",
+    "total_visits": "Total Visits",
+    "doctors_seen": "Doctors Seen",
+    "prescriptions": "Prescriptions",
+    "lab_reports": "Lab Reports",
+    "filter_title": "Filter History",
+    "all_doctors": "All Doctors",
+    "all_departments": "All Departments",
+    "all_types": "All Types",
+    "in_person": "In-Person",
+    "teleconsultation": "Teleconsultation",
+    "diagnosis": "Diagnosis",
+    "medications": "Medications",
+    "notes": "Doctor's Notes",
+    "view_full_report": "View Full Report",
+    "download_pdf": "Download PDF",
+    "share_with_doctor": "Share with Doctor",
+    "load_more": "Load More Records",
+    "export_title": "Export Medical History",
+    "export_description": "Download your complete medical history for personal records or sharing with healthcare providers.",
+    "email_summary": "Email Summary"
+  },
+  "departments": {
+    "cardiology": "Cardiology",
+    "gynecology": "Gynecology",
+    "mental_health": "Mental Health",
+    "general_medicine": "General Medicine"
+  },
+  "departments": {
+    "cardiology": "Cardiology",
+    "gynecology": "Gynecology",
+    "mental_health": "Mental Health",
+    "general_medicine": "General Medicine"
+  },
+    "emergency1": {
+    "title": "Emergency Request",
+    "call_now": "Call emergency services immediately if the situation is critical",
+    "hotlines": "Emergency Hotlines",
+    "emergency": "Emergency",
+    "police": "Police",
+    "fire_rescue": "Fire & Rescue",
+    "select_emergency_type": "Select the type of emergency",
+    "continue": "Continue",
+    "choose_help_type": "Choose the type of help you need",
+    "back": "Back",
+    "share_location": "Share Your Location",
+    "use_gps": "Use GPS Location",
+    "gps_description": "Automatically detect your current location using GPS",
+    "manual_location": "Enter your location manually",
+    "manual_location_placeholder": "Type your current address or nearby landmark",
+    "describe_emergency": "Describe the Emergency",
+    "description_label": "Emergency Description",
+    "description_placeholder": "Provide details about what happened",
+    "take_photo": "Take Photo",
+    "record_voice_note": "Record Voice Note",
+    "severity_level": "Select Severity Level",
+    "submit_request": "Submit Request",
+    "request_submitted": "Request Submitted",
+    "request_confirmed": "Your request has been confirmed",
+    "help_on_way": "Help is on the way",
+    "response_status": "Response Status",
+    "request_received": "Request received",
+    "dispatching_help": "Dispatching help",
+    "help_arrival": "Help arriving soon",
+    "nearest_facility": "Nearest Medical Facility",
+    "call_hotline": "Call Hotline",
+    "track_response": "Track Response"
+  },
+  "emergencyTypes": {
+    "accident": "Road Accident",
+    "maternal": "Maternal Emergency",
+    "mental": "Mental Health Crisis",
+    "respiratory": "Respiratory Emergency",
+    "covid": "COVID-19 Emergency",
+    "cardiac": "Cardiac Emergency"
+  },
+  "helpTypes": {
+    "ambulance": "Ambulance",
+    "doctor": "Doctor",
+    "medicine": "Medicine Delivery"
+  },
+  "severityLevels": {
+    "mild": "Mild",
+    "mild_desc": "Requires attention but not life-threatening",
+    "intense": "Intense",
+    "intense_desc": "Urgent but manageable",
+    "severe": "Severe",
+    "severe_desc": "Life-threatening situation"
+  },
      aiAssistant: {
       title: "AI Health Assistant",
       subtitle: "Get personalized health guidance and support",
@@ -245,10 +1662,6 @@ const translations = {
       "notes": "Notes"
     }
   },
-  "common": {
-    "continue": "Continue",
-    "back": "Back"
-  },
     "bookAppointments": {
     "title": "Book Appointment",
     "subtitle": "Schedule your medical consultation",
@@ -294,10 +1707,6 @@ const translations = {
       "ussd": "USSD"
     },
     "confirmPay": "Confirm & Pay"
-  },
-  "common": {
-    "continue": "Continue",
-    "back": "Back"
   },
   "departments": {
     "generalmedicine": "General Medicine",
@@ -1239,7 +2648,7 @@ const translations = {
     'doctor.dashboard.pendingConsultations': 'Pending Consultations',
 
     // Admin Dashboard
-    'admin.menu.dashboard': 'Dashboard',
+    "admin.menu.dashboard": "Dashboard",
     'admin.menu.userManagement': 'User Management',
     'admin.menu.patients': 'Patients',
     'admin.menu.doctors': 'Doctors',
@@ -1444,7 +2853,7 @@ const translations = {
       user: "User",
       patient: "Patient",
     },
-    hero: {
+    hero1: {
       badge: "24/7 Healthcare Services",
       title: "Healthcare <span class='text-green-600'>Reimagined</span> for Rwanda",
       description:
@@ -1577,7 +2986,7 @@ const translations = {
       next: "Next testimonial",
       goto: "Go to testimonial {{index}}",
     },
-    cta: {
+    cta2: {
       title: "Download the ONE HEALTHLINE CONNECT App Now",
       description: "Take control of your health journey with our unified digital app. Access all services anytime, anywhere.",
       features: {
@@ -2191,6 +3600,1400 @@ const translations = {
     }   
 },
   rw: {
+    pharmacy_cta: {
+      heading: "Bohereza Imiti Yawe Uyu Munsi",
+      description: "Ntuzigire ikibazo cyo kubura imiti ikenewe. Tegura itegeko ryawe none maze wungukire uburyo bwo kohereza prescription yawe ku rugo rwawe.",
+      features: {
+        easy_ordering: {
+          title: "Gutunganya Byoroshye",
+          description: "Shyira prescription yawe cyangwa hitamo mu mitI iri ku isoko ryo hasi.",
+        },
+        fast_delivery: {
+          title: "Gutwara Byihuse",
+          description: "Bona imiti yawe mu masaha make mu mijyi no ku munsi umwe mu turere twinshi.",
+        },
+        expert_support: {
+          title: "Inkunga y'Abahanga",
+          description: "Habona inama z'abaforomate bemewe ku miti yawe n'ingaruka zishoboka.",
+        },
+      },
+      buttons: {
+        order: "Tegura Imiti",
+        upload: "Shyira Prescription",
+        call: "Hamagara Umuforomate",
+      },
+    },
+    pharmacy_faq: {
+      heading: "Ibibazo",
+      highlight: "Bikunze Kubazwa",
+      description: "Shakisha ibisubizo by'ibibazo bisanzwe ku ivuriro ryacu n'uburyo bwo gutanga imiti.",
+      questions: {
+        upload_prescription: {
+          question: "Nigute nshyira prescription yanjye?",
+          answer: "Ushobora gushyira prescription yawe ufotora neza ukoresheje application cyangwa urubuga rwacu. Jya mu gice cya 'Upload Prescription', ufotore cyangwa uhitemo ishusho muri gallery, hanyuma uyohereze. Abaforomate bacu bazayisuzuma kandi bakore gahunda y'itegeko ryawe.",
+        },
+        medication_types: {
+          question: "Ni ubuhe bwoko bw'imiti nshobora gutumiza?",
+          answer: "Ushobora gutumiza imiti yanditswe na prescription ndetse n'iyo ku isoko ryo hasi. Dutanga imiti y'indwara zikomeje, antibiotique, imiti y'ububabare, vitamini, supplements, n'ibikoresho by'ubuvuzi. Imiti yose iva mu mavuriro yemewe.",
+        },
+        delivery_time: {
+          question: "Gutwara imiti bimara igihe kingana iki?",
+          answer: "Igihe cyo gutwara imiti gitandukana hashingiwe ku karere uriho. Mu mujyi wa Kigali, gutwara bimara amasaha 1-3. Imijyi yo mu ntara igenerwa gutangwa ku munsi umwe, naho mu byaro bikaba bishobora gufata kugeza amasaha 24. Serivisi yihuse irahari mu turere twinshi ku miti yihutirwa.",
+        },
+        minimum_order: {
+          question: "Hariho umubare muto w'itegeko?",
+          answer: "Nta mubare muto w'itegeko ku itegeko ry'imiti. Ariko, amategeko ari munsi ya RWF 10,000 ashobora gusaba amafaranga yo gutwara hashingiwe ku karere. Amategeko arengeje RWF 10,000 akunze guhabwa gutangwa ku buntu mu mijyi.",
+        },
+        payment_methods: {
+          question: "Nigute nishyura imiti yanjye?",
+          answer: "Dutanga uburyo bwinshi bwo kwishyura harimo mobile money (MTN MoMo, Airtel Money), amakarita ya credit/debit, ndetse n'amafaranga ku buryo bwo gutanga. Ku birebana n'ubwishingizi, ushobora gushyira ikarita y'ubwishingizi hamwe na prescription, kandi tuzakurikirana ikirego n'umukoresha wawe.",
+        },
+        medication_authenticity: {
+          question: "Ese imiti ni nyayo kandi ifite umutekano?",
+          answer: "Yego, imiti yose iva mu mavuriro yemewe no mu bacuruzi bemerewe mu Rwanda. Dukurikiza amategeko y'ubuziranenge kandi dufite uburyo bwiza bwo kubika. Buri muti ufite ibimenyetso byo kwemeza n'imibare ya batch ishobora kugenzurwa.",
+        },
+        refund_policy: {
+          question: "Ese nshobora gusubizwa amafaranga niba nahawe imiti itari yo?",
+          answer: "Yego, niba uhabwa imiti itari yo cyangwa hari ikibazo cy'ubuziranenge, dutanga amafaranga yose cyangwa gusimbuza. Nyamuneka menyesha ikibazo mu masaha 24 uhereye igihe wakiriye itegeko ryawe uhamagara service y'abakiriya.",
+        },
+        temperature_sensitive: {
+          question: "Ese mutanga imiti ikenera ubushyuhe bwihariye?",
+          answer: "Yego, dutanga imiti ikenera ubushyuhe bwihariye nka insulin dukoresheje gupfunyika bikonjesha. Abakozi bacu bashinzwe gutwara imiti bahawe amahugurwa yo gukoresha neza iyi miti, kugira ngo ikomeze gukora neza mu gihe cyose cyo gutwara.",
+        },
+      },
+      contact: {
+        prompt: "Haracyari ibibazo ku bijyanye na serivisi zacu?",
+        message: "Hamagara itsinda ry'abaforomate kuri {{email}} cyangwa uhamagare kuri {{phone}}",
+      },
+    },
+     pharmacy_testimonials: {
+      heading_part1: "Ibyo Abakiriya Bacu",
+      heading_part2: "Bavuga",
+      description: "Abanyarwanda benshi bifashisha serivisi yacu ya farumasi mu kubona imiti yabo. Dore ibyo bavuga.",
+      quotes: {
+        jean: "Serivisi yo gutanga imiti yahinduye ubuzima bwa nyina ufite diyabete. Ntitukibabara ku kubura insulin kuko itangwa ku rugo buri kwezi.",
+        emmanuel: "Nari mfite impungenge mu ntangiriro, ariko nyuma yo gukoresha serivisi ku miti y'amaraso, nishimiye umutekano n'ubwihutire. Konsultasiyo n'umuforomokazi yarafashije cyane.",
+        marie: "N'ubwo ntuye mu cyaro, ONE HEALTHLINE CONNECT itanga imiti y'umuryango wanjye buri gihe. Ipaki ni iyizewe kandi umukozi utanga imiti ni inyangamugayo.",
+      },
+      stats_heading: "Serivisi yacu ya Farumasi mu mibare",
+      stats_description: "Twiyemeje gutanga serivisi y'imiti yizewe mu Rwanda hose",
+      stats: {
+        on_time: "Gutanga ku gihe",
+        monthly_deliveries: "Ibipaki bya buri kwezi",
+        customer_satisfaction: "Ibyishimo by'abakiriya",
+        medication_authenticity: "Ukuri kw'Imiti",
+      },
+    },
+     pharmacy_delivery: {
+      heading: "Gutwara Imiti Byihuse kandi Bizira Impungenge",
+      highlight: "Gutanga Imiti",
+      description: "Dutanga imiti mu buryo bwizewe kandi vuba ku rugo rwawe, kugirango udahomba ku miti y'ingenzi.",
+      image_alt: "Serivisi yo gutwara imiti",
+      features: {
+        nationwide: { title: "Gutanga mu Ntara Zose", description: "Dutanga mu turere twose twa Rwanda, harimo n'ahantu hakikijwe, kugirango buri wese abone imiti y'ingenzi." },
+        express: { title: "Gutanga Byihuse", description: "Ukeneye imiti byihutirwa? Serivisi yacu yo gutanga byihuse ituma uhabwa imiti y'ingenzi mu masaha 1-3 mu mijyi." },
+        secure: { title: "Gupfunyika Neza", description: "Imiti yose ipfunyikijwe neza kugirango irinde ubuziranenge, ubuzima bwite, kandi igere ku mutekano." },
+        temp: { title: "Kugenzura Ubushyuhe", description: "Imiti ikeneye ubushyuhe igumishwa mu bikoresho bikonjesha kugirango ikomeze gukora neza." },
+      },
+      zones_heading: "Aho Dutanga & Igihe",
+      table: { zone: "Akarere", standard: "Gutanga Bisanzwe", fee: "Amafaranga", express: "Uburyo Bwihuse" },
+      zones: { kigali_urban: "Umujyi wa Kigali", kigali_suburbs: "Akarere ka Kigali", provincial_cities: "Imijyi yo mu Ntara", rural_areas: "Aho hatari mu mijyi" },
+      same_day: "Kuwa Munsi Uwo Munsi",
+      next_day: "Kuwa Munsi Ukurikira",
+      map_alt: "Ikarita y'aho dutanga imiti mu Rwanda",
+      map_title: "Gutanga mu Ntara Zose",
+      map_description: "Urwego rwacu rw'itumanaho rutanga imiti mu turere twose 30 twa Rwanda, kugirango buri wese abone imiti.",
+    },
+     pharmacy_products: {
+      heading: "Reba",
+      highlight: "Amoko y'Ibicuruzwa",
+      description: "Uhereye ku miti isaba prescription kugeza ku bikoresho by'ubuzima, dutanga ibicuruzwa byose ku buzima bwawe.",
+      categories: {
+        prescription: "Imiti isaba prescription",
+        otc: "Imiti idasaba prescription",
+        chronic: "Indwara zidakira",
+        vitamins: "Vitamini & Ibikoresho by'inyongera",
+        personal_care: "Kwita ku buzima bwite",
+        devices: "Ibikoresho by'ubuvuzi",
+        first_aid: "Agasanduku k'ubutabazi",
+        baby_maternal: "Abana & Ababyeyi",
+      },
+      featured_heading: "Ibicuruzwa byihariye",
+      reviews: "isesengura",
+      add_to_cart: "Ongeramo",
+      view_all: "Reba Ibicuruzwa Byose",
+      featured: {
+        bp_monitor: { name: "Blood Pressure Monitor", category: "Ibikoresho by'ubuvuzi" },
+        multivitamin: { name: "Multivitamin Complex", category: "Vitamini & Ibikoresho by'inyongera" },
+        diabetes_strips: { name: "Diabetes Test Strips", category: "Indwara zidakira" },
+        first_aid_kit: { name: "First Aid Kit", category: "Agasanduku k'ubutabazi" },
+      },
+    },
+     pharmacy_partners: {
+      heading: "Abafatanyabikorwa bacu",
+      highlight: "Ba Farumasi Bizewe",
+      description: "Twafatanyije na za farumasi zizewe mu Rwanda kugira ngo ubone imiti y'ukuri n'uburyo bw'umwuga.",
+      labels: { locations: "Aho bakorera", specialties: "Ubuhanga bwihariye" },
+      footer_note: "Za farumasi zose zifatanyije nacu zifite uruhushya rwa Rwanda Pharmacy Council kandi zikurikiza amabwiriza y'ubuziranenge.",
+      kigali: {
+        name: "Kigali Pharmacy Network",
+        description: "Umuyoboro wa farumasi 20+ muri Kigali utanga imiti n'ibikoresho by'ubuvuzi bitandukanye.",
+        locations: "Umujyi wa Kigali",
+        specialties: "Imiti isaba prescription, gucunga indwara zidakira",
+      },
+      butare: {
+        name: "Butare Medical Supplies",
+        description: "Bihariye mu miti ya hospitali n'ibikoresho byihariye hamwe n'ububiko bw'imiti idasanzwe.",
+        locations: "Intara y'Amajyepfo",
+        specialties: "Imiti yihariye, Ibikoresho bya hospitali",
+      },
+      musanze: {
+        name: "Musanze Health Pharmacy",
+        description: "Bafasha Intara y'Amajyaruguru bafite intego yo gufasha abaturage bo mu byaro no gutanga imiti iboneka ku giciro gito.",
+        locations: "Intara y'Amajyaruguru",
+        specialties: "Ubuvuzi bw’icyaro, Imiti igiciro gito",
+      },
+      rubavu: {
+        name: "Rubavu Medication Center",
+        description: "Umuyoboro munini w'amafuramasiyo mu Ntara y'Uburengerazuba ushobora gutumiza imiti mpuzamahanga.",
+        locations: "Intara y'Uburengerazuba",
+        specialties: "Imiti mpuzamahanga, Imiti yihariye",
+      },
+    },
+    pharmacy_how_it_works: {
+      heading: "Uko",
+      highlight: "Serivisi za Farumasi",
+      description: "Kugura imiti yawe biroroshye cyane. Kurikira izi ntambwe zoroshye kugira ngo ubone imiti yawe.",
+      upload_prescription: { title: "Ohereza Prescription cyangwa Hitamo Imiti", description: "Fata ifoto ya prescription yawe cyangwa urebe catalog yacu uhitemo imiti idasaba prescription." },
+      review_payment: { title: "Sobanukirwa n'Itegeko ry'Imiti na Kwishyura", description: "Emeza itegeko ry'imiti, aderesi yo gutumiza, hanyuma wishyure ukoresheje uburyo bwizewe." },
+      pharmacist_verification: { title: "Kwemezwa n’Umuforomokazi", description: "Umuforomokazi wemewe asuzuma itegeko ryawe kugira ngo ryuzuze umutekano n’ubunyamwuga." },
+      delivery: { title: "Gutwarwa ku Aderesi Yawe", description: "Imiti yawe itunganywa neza hanyuma itwarwa ku rugo rwawe n’abagenzi bacu bizewe." },
+      order_now: "Tanga Itegeko",
+      need_help: "Ukeneye ubufasha ku itegeko ryawe ry’imiti? Itsinda ryacu rihora rihari 24/7.",
+      contact_support: "Vugana n'Ubufasha",
+    },
+    pharmacy_features: {
+      heading: "Impamvu wahitamo",
+      highlight: "Serivisi za Farumasi",
+      description: "ONE HEALTHLINE CONNECT itanga serivisi y’imiti igamije korohereza Abanyarwanda kubona no gukoresha imiti byoroshye.",
+      "24_7_ordering": { title: "Gutangira Igihe Cyose", description: "Tanga ibitegeko by’imiti igihe icyo ari cyo cyose ukoresheje urubuga rwacu cyangwa application." },
+      fast_delivery: { title: "Gutanga Vuba", description: "Imiti igerwa ku rugo mu masaha 3 mu mijyi no ku munsi umwe mu byaro." },
+      verified_medications: { title: "Icyemezo cy’Imiti", description: "Iyi miti yose iva muri farumasi zemewe kandi yemejwe." },
+      secure_payments: { title: "Kwishyura Bizingiye ku Mutekano", description: "Uburyo bwinshi bwo kwishyura burimo Mobile Money, Credit Card, n’ubwishingizi." },
+      medication_reminders: { title: "Ibibutsa Imiti", description: "Shiraho ibibutsa gufata imiti ku gihe ntuzigere ubyibagirwa." },
+      pharmacist_consultation: { title: "Kugisha Inama Umuforomokazi", description: "Vugana n’abaforomokazi bemewe ku bijyanye n’imiti n’ingaruka zishoboka." },
+      easy_refills: { title: "Kongera Imiti Byoroshye", description: "Ongera itegeko ry’imiti yawe mu buryo bwihuse n’ibyemererwa byikora." },
+      digital_prescriptions: { title: "Prescription Digitali", description: "Ohereza prescription yawe cyangwa uyohereze kuri platform yacu." },
+    },
+     pharmacy_hero: {
+      tagline: "Serivisi za Farumasi",
+      title_part1: "Imiti",
+      title_part2: "Igezwa",
+      title_part3: "Kuri Urugo Rwawe",
+      description:
+        "Tanga itegeko ry’imiti yanditse n’iyo ku isoko muri farumasi zacu zifatanyije mu Rwanda. Ohereza prescription yawe, ugereranye ibiciro, kandi imiti iguhere mu rugo.",
+      search_placeholder: "Shaka imiti...",
+      search_button: "Shakisha",
+      order_button: "Tanga Itegeko ry’Imiti",
+      upload_button: "Ohereza Prescription",
+      image_alt: "Farumasi n'ibikorwa byo kugeza imiti",
+      free_delivery: "Kohereza Buntu",
+      stats: [
+        { value: "50+", label: "Farumasi" },
+        { value: "3 hrs", label: "Igihe cyo Gutanga" },
+        { value: "1000+", label: "Imiti" }
+      ]
+    },
+      emergency_cta: {
+      heading: "Ubuvuzi bw'Ibiza mu gihe Ukeneye Benshi",
+      subheading: "Serivisi z’ubutabazi za ONE HEALTHLINE CONNECT ziboneka amasaha 24/24 n’iminsi 7/7 mu gihugu hose. Bika numero y’ubutabazi mu gihe ukeneye ubufasha bwihuse.",
+      hotline_title: "Umurongo w'Ubuzima bw'Ibiza",
+      hotline_number: "912",
+      hotline_subtext: "Iboneka amasaha 24 ku munsi, iminsi 7 mu cyumweru, iminsi 365 mu mwaka",
+      save_number: "Bika Numero y'Ubutabazi",
+      learn_services: "Menya Serivisi Zacu",
+      features: [
+        { title: "Shyira App Ku Muryango", description: "Hamagarira ubutabazi rimwe gusa kandi usangire aho uri" },
+        { title: "Amahugurwa y'Ubutabazi", description: "Menya ubutabazi bw’ibanze na CPR binyuze mu mahugurwa y’aho utuye" },
+        { title: "Kwitegura Ibiza", description: "Tegura umugambi w’ubutabazi ku muryango wawe ukoresheje ibikoresho byacu by’ubuntu" },
+      ],
+      reminder: "Ibuka: Mu gihe cy'ubutabazi, hamagara 912 ako kanya. Sekonde yose irakenewe."
+    },
+    emergency_faq: {
+      heading: "Ibibazo Bikunze Kubazwa",
+      subheading: "Shakisha ibisubizo ku bibazo bisanzwe bijyanye na serivisi zacu z’ubuvuzi bw’ibyihutirwa.",
+      faqs: [
+        {
+          question: "Nihamagara hehe mu gihe cy’akazi k’ubutabazi?",
+          answer: "Mu gihe cy'ubuvuzi bw’ibyihutirwa, hamagara numero yacu yihariye ya 912. Iyi numero iboneka amasaha 24/24 n’iminsi 7/7 kandi izahuza nawe n’ikigo cyacu cy’ubutabazi. Niba utabashije guhamagara iyi numero, ushobora no guhamagara umurongo wacu w’ubutabazi: 0788-HEALTH (0788-432584)."
+        },
+        {
+          question: "Ambulance izagera mu gihe kingana iki?",
+          answer: "Igihe cyacu cyo gusubiza ni iminota 5-15 mu mijyi n’iminota 15-30 mu cyaro. Igihe nyacyo gishobora guhinduka bitewe n’urusobe rw’imodoka, ikirere, n’aho uherereye. Sisitemu yacu yohereza unit hafi yaho kugira ngo itegereze gito."
+        },
+        // ... add remaining FAQs similarly
+      ],
+      contact_heading: "Ufite ibindi bibazo ku bijyanye na serivisi zacu z’ubutabazi?",
+      contact_text: "Hamagarira itsinda ryacu ry’abakiriya kuri info@healthlinerwanda.com cyangwa +250 788 123 456"
+    },
+     emergency_testimonials: {
+      heading: "Ubuzima Bwokowe Binyuze mu Buvuzi bw’Ibyihutirwa",
+      subheading:
+        "Soma ku buryo abarwayi bakiriye ubuvuzi bw’ibyihutirwa muri ONE HEALTHLINE CONNECT babonye ubufasha.",
+      testimonials: [
+        {
+          name: "Jean-Paul Mugisha",
+          location: "Kigali, Rwanda",
+          testimonial:
+            "Nari mfite ububabare bukabije mu gituza ndimo ndi mu rugo ubwo umugore wanjye yahamagaye ONE HEALTHLINE CONNECT. Ambulance yaje mu minota 10, abaparemekeri batangira guha ubufasha ako kanya. Barokoye ubuzima bwanjye - nari mfite umutima uhagaze nabi. Umuvuduko n’umwuga w’ikipe byari byiza cyane."
+        },
+        {
+          name: "Marie Uwimana",
+          location: "Huye, Rwanda",
+          testimonial:
+            "Umwana wanjye yagize allergie ikomeye ubwo twari mu birori by’umuryango mu cyaro. Sinari nzi ko ubufasha buzagera ku gihe, ariko itsinda ryihutirwa rya ONE HEALTHLINE CONNECT ryaje vuba kandi ritanze ubufasha bwokora ubuzima. Ubuhanga bwabo mu gihe kibi nk’icyo bwari bwiza cyane."
+        },
+        {
+          name: "Emmanuel Hakizimana",
+          location: "Musanze, Rwanda",
+          testimonial:
+            "Nari mu mpanuka ikomeye ku muhanda. Itsinda ryihutirwa rya ONE HEALTHLINE CONNECT ryaje vuba, ryarokoye ahabaye impanuka, kandi ryateguye byose ku bitaro mbere y’uko mbera aho. Umuvuduko wabo wihuse warokoye ubuzima bwanjye. Ndashimira ubuhanga bwabo."
+        }
+      ],
+      stats_heading: "Imibare y’Ubuvuzi bw’Ibyihutirwa",
+      stats: [
+        "Igihe cyo gusubiza: <strong>iminota 12</strong>",
+        "Ibibazo byitabwaho umwaka ushize: <strong>4,500+</strong>",
+        "Ubuzima bwokowe: <strong>98% y’abarokowe</strong> mu byihutirwa bikomeye",
+        "Ibyishimo by’abarwayi: <strong>4.9/5</strong> ku gipimo cy’inyungu rusange"
+      ],
+      commitment_heading: "Icyo Twiyemeje",
+      commitment_p1:
+        "Muri ONE HEALTHLINE CONNECT, twiyemeje gutanga ubuvuzi bwihuse kandi bw’umwuga mu bihe by’ibyihutirwa. Amakipe yacu akora imyitozo ikomeye kandi akoresha ibikoresho by’ubuvuzi bya vuba kugirango abarwayi babone ibyiza.",
+      commitment_p2:
+        "Turakomeza gukora kugira ngo tugabanye igihe cyo gusubiza no gutambutsa serivisi mu bice byose by’u Rwanda, aho abarwayi bari hose."
+    },
+     "emergency_locations": {
+    "title": "Aho Dutanga Serivisi z'Ubuvuzi bw'Igihe Cyose",
+    "description": "ONE HEALTHLINE CONNECT itanga serivisi z'ubuvuzi bw'ihutirwa mu gihugu hose, ifite ahantu hateguwe neza kugirango igihe cyo gusubiza kibashe kuba gito.",
+    "map_placeholder": {
+      "title": "Ikarita Yuzuye Igihe Kizaza",
+      "subtitle": "Reba uburyo bwo gusubiza ibibazo by'ubuzima mu Rwanda"
+    },
+    "coverage_label": "Agace Dukorera:",
+    "response_time_label": "Igihe cyo Gusubiza:",
+    "units_label": "Ibinyabiziga by'Iserivisi y'Ubuvuzi bw'Igihe Cyose:",
+    "footer_note_1": "Serivisi zacu z'ubuvuzi bw'ihutirwa zikora mu turere twose 30 tw'u Rwanda, dufite ahantu hateguwe neza kugirango igihe cyo gusubiza kibe gito.",
+    "footer_note_2": "Mu bice by'icyaro, dukoresha indege yo gutabara igihe bibaye ngombwa kugirango ubuvuzi bugere ku gihe.",
+    "kigali": {
+      "name": "Kigali Central",
+      "address": "KN 5 Ave, Kigali, Rwanda",
+      "coverage": "Nyarugenge, Kicukiro, Gasabo",
+      "responseTime": "iminota 5-10",
+      "units": "Ambulansi 8, Ibinyabiziga byihutirwa 4"
+    },
+    "butare": {
+      "name": "Butare Station",
+      "address": "Akarere ka Huye, Intara y'Amajyepfo",
+      "coverage": "Huye, Gisagara, Nyanza",
+      "responseTime": "iminota 10-15",
+      "units": "Ambulansi 5, Ibinyabiziga byihutirwa 2"
+    },
+    "musanze": {
+      "name": "Musanze Center",
+      "address": "Akarere ka Musanze, Intara y'Amajyaruguru",
+      "coverage": "Musanze, Burera, Gakenke",
+      "responseTime": "iminota 10-20",
+      "units": "Ambulansi 4, Ibinyabiziga byihutirwa 2"
+    },
+    "rubavu": {
+      "name": "Rubavu Station",
+      "address": "Akarere ka Rubavu, Intara y'Uburengerazuba",
+      "coverage": "Rubavu, Nyabihu, Rutsiro",
+      "responseTime": "iminota 10-20",
+      "units": "Ambulansi 4, Ibinyabiziga byihutirwa 2"
+    },
+    "rwamagana": {
+      "name": "Rwamagana Center",
+      "address": "Akarere ka Rwamagana, Intara y'Iburasirazuba",
+      "coverage": "Rwamagana, Kayonza, Ngoma",
+      "responseTime": "iminota 15-25",
+      "units": "Ambulansi 3, Ibinyabiziga byihutirwa 2"
+    },
+    "nyagatare": {
+      "name": "Nyagatare Station",
+      "address": "Akarere ka Nyagatare, Intara y'Iburasirazuba",
+      "coverage": "Nyagatare, Gatsibo",
+      "responseTime": "iminota 15-30",
+      "units": "Ambulansi 3, Ikinyabiziga cyihutirwa 1"
+    }
+  },
+    "emergency_types": {
+    "heading": "Ibibazo by'Ubuzima Bikomeye Dukemura",
+    "subheading": "Amatsinda yacu yihutirwa yateguwe kandi afite ibikoresho byo gusubiza vuba mu bihe by'uburwayi bwihutirwa hirya no hino mu Rwanda.",
+    "cardiac": {
+      "title": "Ibibazo by'umutima",
+      "desc": "Indwara z’umutima, uburibwe mu gituza, guhagarara kw’umutima, n’ibindi bibazo by’umutima bisaba kwitabwaho ako kanya."
+    },
+    "neurological": {
+      "title": "Ibibazo by’ubwonko",
+      "desc": "Stroke, kugorwa n'inkorora, uburibwe bukabije bw’umutwe, n’izindi ndwara z’ubwonko zisaba kwitabwaho byihuse."
+    },
+    "trauma": {
+      "title": "Ibikomere n’Ibikomere bikomeye",
+      "desc": "Ibikomere bikomeye biterwa n’impanuka, kugwa, cyangwa urugomo bisaba kwitabwaho n’abaganga ako kanya."
+    },
+    "respiratory": {
+      "title": "Ibibazo byo guhumeka",
+      "desc": "Ibibazo bikomeye byo guhumeka, asthma ikaze, guhumeka bigoranye, cyangwa kuribwa mu muhogo bisaba kwitabwaho byihuse."
+    },
+    "bleeding": {
+      "title": "Gukomereka bikabije",
+      "desc": "Kuvurwa k’umuvuduko w’amaraso bidashobora guhagarara biturutse ku bikomere, ibisebe, cyangwa indwara bisaba kwitabwaho byihuse."
+    },
+    "poisoning": {
+      "title": "Kwiyahura n’Ibiyobyabwenge",
+      "desc": "Kwiyahura cyangwa gukoresha ibiyobyabwenge birengeje urugero, cyangwa ibindi byateza ikibazo cyihutirwa bisaba kwitabwaho ako kanya."
+    },
+    "burns": {
+      "title": "Gukomeretsa",
+      "desc": "Gukomeretsa bikomeye bitewe n’umuriro, imiti, amashanyarazi, cyangwa amazi ashyushye bisaba ubuvuzi bwihariye."
+    },
+    "other": {
+      "title": "Ibindi bibazo byihutirwa",
+      "desc": "Allergies, indwara z’isukari, ibibazo by’ubuzima bw’umugore utwite, n’ibindi bibazo byihutirwa."
+    },
+    "cta_title": "Igihe cyo guhamagara serivisi yihutirwa",
+    "cta_desc": "Hamagara nimero yacu yihutirwa (912) ako kanya niba wowe cyangwa umuntu uri hafi yawe agize:",
+    "urgent_signs": [
+      "Uburibwe cyangwa umuvuduko mu gituza",
+      "Guhumeka bigoranye",
+      "Intege nke cyangwa kubura ubushobozi mu gice cy’umubiri",
+      "Gukomereka bikomeye",
+      "Gukomereka bikabije",
+      "Kwiyahura cyangwa gukoresha ibiyobyabwenge birengeje urugero",
+      "Ibikomere bikomeye",
+      "Kurwara kidasanzwe",
+      "Kutagira ubwenge cyangwa gucika intege"
+    ]
+  },
+     emergency_how_it_works: {
+      heading: "Uko Serivisi y'Ubutabazi Ikora",
+      subheading:
+        "Buri segonda ifite agaciro, kandi uburyo bwacu bwihuse bw’ubutabazi butuma ubona ubufasha vuba bishoboka.",
+      call_emergency: {
+        title: "Hamagarira Ubutabazi",
+        description:
+          "Hamagarira nimero y'ubutabazi (912) kugirango ugerweho na dispatch center yacu ikora amasaha 24/7. Abakozi batojwe bazabaza ibibazo by'ingenzi.",
+      },
+      rapid_dispatch: {
+        title: "Ubutabazi Bwihuse",
+        description:
+          "Dushingiye ku mwanya wawe n'ubwoko bw'ubutabazi, twohereza ikigo cyegereye gikwiye vuba bishoboka.",
+      },
+      on_site_treatment: {
+        title: "Ubufasha ku Kavuriro",
+        description:
+          "Itsinda ryacu ry’ubutabazi rigera aho uri rikagufasha ako kanya kugira ngo umurwayi agumane ubuzima.",
+      },
+      hospital_transport: {
+        title: "Gutwara Kujya ku Bitaro",
+        description:
+          "Niba bikenewe, twohereza umurwayi ku bitaro bikwiye, tugahuza n’itsinda ry’itaro kugira ngo ubufasha butazuyaza.",
+      },
+      cta_text:
+        "Mu bihe by'ubuzima butekanye, buri munota ni ingenzi. Ntutinye guhamagara nimero y'ubutabazi:",
+    },
+    emergency_features: {
+      heading: "Ibikorwa byacu by’Ubufasha bw’Ibihutirwa",
+      subheading:
+        "ONE HEALTHLINE CONNECT itanga serivisi z’ubuvuzi bwihuse kandi zinoze kugirango igufashe igihe cyose bikenewe.",
+      rapid_response: {
+        title: "Ubufasha Bwihuse",
+        description:
+          "Amatsinda yacu y’ubutabazi agerageza kugera aho uri mu minota 5-15 mu mijyi no mu minota 15-30 mu byaro.",
+      },
+      nationwide_coverage: {
+        title: "Serivisi ku Gihugu Hose",
+        description:
+          "Dufite ibice by’ubutabazi bihari mu gihugu hose kugirango tugufashe vuba igihe cyose.",
+      },
+      advanced_life_support: {
+        title: "Ubufasha buhanitse mu buzima",
+        description:
+          "Ambulansi zacu zifite ibikoresho by’ubuvuzi buhanitse kandi zifite abakozi batojwe neza.",
+      },
+      medical_professionals: {
+        title: "Abakozi b’Ubuvuzi",
+        description:
+          "Amatsinda yacu y’ubutabazi arimo abaganga, abaforomo, n’abakozi batojwe mu buvuzi bw’ibyihutirwa.",
+      },
+      ambulance_fleet: {
+        title: "Ambulansi zigezweho",
+        description:
+          "Ambulansi zacu zigezweho zifite ikoranabuhanga rigezweho ry’ubuvuzi ku ivuriro aho uri.",
+      },
+      dispatch_center: {
+        title: "Ikigo gishinzwe ubutabazi 24/7",
+        description:
+          "Ikigo cyacu gishinzwe ubutabazi kirimo abakozi amasaha 24 kugirango gishyire mu bikorwa ubutabazi bwihuse.",
+      },
+      hospital_network: {
+        title: "Urutonde rw’Amavuriro",
+        description:
+          "Guhuza n’amavuriro bituma guhererekanya umurwayi biba byoroshye kandi bitanga ubufasha ako kanya.",
+      },
+      insurance_coordination: {
+        title: "Guhuza n’Ubwishingizi",
+        description:
+          "Dukorana n’ibigo by’ubwishingizi by’ingenzi byose kugirango ubuvuzi bwawe bwihutirwa bube bwishyuwe.",
+      },
+    },
+      emergency_hero: {
+      label: "SERIVISI Z’IBYIHUTI 24/7",
+      title: "Ubufasha bw’Ubuvuzi Ako kanya Mu Sekondi Zose Zifatika",
+      description:
+        "Itsinda ryacu ry’ubuvuzi bwihuse rihari 24/7 mu Rwanda ryatanga ubufasha bwihuse n’ubuzima bwo kurokora mu bihe by’ibyago.",
+      call_button: "Hamagarira Ubufasha",
+      learn_more: "Menya byinshi",
+      stats: {
+        response_time: { value: "5-15", label: "Igihe cyo Guhabwa Ubufasha" },
+        availability: { value: "24/7", label: "Serivisi Ihari" },
+        vehicles: { value: "30+", label: "Imodoka z’Ubufasha" },
+        responders: { value: "100%", label: "Abatanga Ubufasha Batojwe" },
+      },
+    },
+    appointments_faq: {
+      title: "Ibibazo",
+      title_highlight: "Bikunze Kubazwa",
+      subtitle: "Shaka ibisubizo ku bibazo bikunze kubazwa ku buryo bwo gufata gahunda yo kubonana n’abaganga.",
+      q1: {
+        question: "Ntegereza gute gufata gahunda?",
+        answer:
+          "Urashobora gufata gahunda ukoresheje urubuga rwacu cyangwa application. Iyandikishe, shaka umuganga cyangwa ubuhanga, hitamo itariki n’igihe, hanyuma wemeze gahunda. Uzahabwa confirmation ako kanya kuri email na SMS.",
+      },
+      q2: {
+        question: "Nshobora gufata gahunda ku wundi muntu?",
+        answer:
+          "Yego, ushobora gufata gahunda ku muryango cyangwa abandi bantu. Muri gahunda yo gufata rendez-vous, uzashobora kuvuga uwo gahunda iri kumwe na we. Ugomba gutanga amakuru ye y’ibanze.",
+      },
+      q3: {
+        question: "Nshobora gufata gahunda hakiri kare cyane?",
+        answer:
+          "Abenshi mu baganga batanga gahunda kugeza amezi 3 mbere. Bamwe bafite byinshi basaba, bashobora gutanga gahunda mu gihe gito. Gahunda z’ubutabazi zishobora gufatwa ku munsi cyangwa ku munsi ukurikiyeho bitewe n’ubushobozi.",
+      },
+      q4: {
+        question: "Ni iki niba nshaka guhindura cyangwa gusubika gahunda?",
+        answer:
+          "Urashobora gusubika cyangwa guhindura gahunda ukoresheje konti yawe kugeza amasaha 24 mbere y’igihe nta gihano. Ku gusubika munsi y’amasaha 24, amafaranga make ashobora gukenerwa bitewe n’amabwiriza y’umuganga.",
+      },
+      q5: {
+        question: "Nkeneye kwishyura igihe mfata gahunda?",
+        answer:
+          "Bamwe mu baganga basaba deposit cyangwa kwishyura byose igihe ufata gahunda, abandi bakemera kwishyura igihe cyo kubonana. Ibisabwa byose bizagaragara igihe cyo gufata gahunda.",
+      },
+      q6: {
+        question: "Ni izihe insurance mwakira?",
+        answer:
+          "Dukorana n’ibigo byinshi by’ubwishingizi mu Rwanda. Muri gahunda yo gufata rendez-vous, ushobora kwinjiza amakuru ya insurance yawe kugirango urebe abaganga bemera ubwishingizi bwawe.",
+      },
+      q7: {
+        question: "Nzahabwa impuruza igihe kingana iki mbere y’igihe?",
+        answer:
+          "Twohereza impuruza amasaha 48 na 2 mbere y’igihe cya rendez-vous binyuze kuri SMS na email. Ushobora guhindura ibyo wifuza mu myanya ya konti yawe.",
+      },
+      q8: {
+        question: "Ni ibihe nzizana igihe nza ku muganga?",
+        answer:
+          "Zizana indangamuntu, ikarita ya insurance (niba bihari), inyandiko z’ubuvuzi zikenewe, urutonde rw’imiti ukoresha, n’ibindi byangombwa byoherejwe. Ku bashya, gerayo iminota 15 mbere kugirango wuzuze registration.",
+      },
+      need_more_help: "Urikomeza kugira ibibazo ku buryo bwo gufata gahunda?",
+      contact_us_text: "Hamagara itsinda ryacu ry’ubufasha kuri",
+    },
+    appointments_locations: {
+      title: "Ahacu",
+      title_highlight: "Hagezweho",
+      subtitle: "Fata gahunda yo kubonana n’abaganga mu bigo byacu byose hirya no hino mu Rwanda.",
+      featured: "Byihariye",
+      book_button: "Fata gahunda hano",
+      find_nearby: {
+        title: "Shaka Ikigo Kiri Hafi Yawe",
+        subtitle: "Dufite ibigo bifatanyije hirya no hino mu Rwanda kugirango tugufashe neza."
+      },
+      view_all: "Reba Ibigo Byose",
+      kigali: {
+        name: "HEALTHLINE Kigali Center",
+        address: "KN 5 Rd, Kigali, Rwanda",
+        hours: "Mbere-kuwa Gatandatu: 8am-8pm, Ku Cyumweru: 9am-5pm"
+      },
+      butare: {
+        name: "HEALTHLINE Butare Clinic",
+        address: "Akarere ka Huye, Intara y’Amajyepfo, Rwanda",
+        hours: "Mbere-kuwa Gatanu: 8am-6pm, Ku wa Gatandatu: 9am-3pm"
+      },
+      musanze: {
+        name: "HEALTHLINE Musanze Hospital",
+        address: "Akarere ka Musanze, Intara y’Amajyaruguru, Rwanda",
+        hours: "Serivisi 24/7 z’ibyihutirwa"
+      },
+      rubavu: {
+        name: "HEALTHLINE Rubavu Center",
+        address: "Akarere ka Rubavu, Intara y’Iburengerazuba, Rwanda",
+        hours: "Mbere-kuwa Gatandatu: 8am-7pm, Ku Cyumweru: 10am-4pm"
+      }
+    },
+    "appointments_testimonials": {
+    "title": "Ibyo Abantu Bacu",
+    "highlight": "Bavuga",
+    "subtitle": "Wumve ibyo abantu bakoze gahunda zo kwakira abaganga kuri murandasi bavuga.",
+    "average_rating": "Impuzandengo y'amanota",
+    "stars": "Inyenyeri",
+    "jean": {
+      "text": "Gahunda yo gufata igihe cyo gusura umuganga yari yoroshye cyane. Nashoboye kubona umuganga, gufata igihe cyanyuze, kandi mbona ibyemezo mu minota micye. Inyibutsa zaba zifasha cyane!"
+    },
+    "emmanuel": {
+      "text": "Nk'umuntu uba mu cyaro, gushobora gufata gahunda yo gusura umuganga kuri murandasi byarahinduye ubuzima. Simbisabwa gutembera ngo nshakishe igihe cyo gusura. Sisitemu iroroshye kandi yizewe cyane."
+    },
+    "marie": {
+      "text": "Nshimira uburyo byoroshye guhindura igihe iyo bikenewe. Ubuzima burakomeza, kandi ONE HEALTHLINE CONNECT irabyumva. Sisitemu yo gufata gahunda iroroshye kandi ikoreshwa neza."
+    }
+  },
+    appointments_types: {
+      title: "Amoko ya",
+      title_highlight: "Gahunda",
+      subtitle: "Dutanga amoko menshi ya gahunda yo kwivuza kugirango duhangane n'ibikenewe byose by'ubuzima bwawe.",
+      popular: "Izikunzwe",
+      book_now: "Fata Gahunda",
+      more_specialties: "Nta cyo wabonye mu moko ya gahunda ukeneye? Dutanga serivisi nyinshi z’umwihariko.",
+      view_all: "Reba Serivisi Zose",
+      general_consultation: {
+        title: "Inama Rusange",
+        description: "Isuzuma risanzwe n’ibibazo by’ubuzima rusange hamwe n’abaganga b’ibanze."
+      },
+      specialist_consultation: {
+        title: "Inama y’Inzobere",
+        description: "Kwita ku buzima by’umwihariko n’inzobere mu by’ubuvuzi bitandukanye."
+      },
+      cardiology: {
+        title: "Umutima",
+        description: "Isuzuma n’ubuvuzi bw’umutima hamwe n’inzobere mu mutima."
+      },
+      ophthalmology: {
+        title: "Amat eyes",
+        description: "Isuzuma n’ubuvuzi bw’amaso hamwe n’inzobere mu maso."
+      },
+      orthopedics: {
+        title: "Imikaya n’Imikandara",
+        description: "Kwita ku misokoro n’amagufa hamwe n’inzobere mu mikaya."
+      },
+      pediatrics: {
+        title: "Abana",
+        description: "Kwita ku buzima bw’abana bato, abakiri bato n’abangavu."
+      },
+      pharmacy: {
+        title: "Inama ya Farumasi",
+        description: "Isuzuma ry’imiti n’inama itangwa n’abaforomokazi."
+      },
+      laboratory: {
+        title: "Ibizamini bya Laboratwari",
+        description: "Gahunda y’ibizamini bya laboratwari n’isesengura."
+      }
+    },
+    appointments_how: {
+      title: "Uko Wafata",
+      title_highlight: "Rendez-vous",
+      subtitle: "Uburyo bwacu bworoshye mu byiciro 4 butuma gufata gahunda yo kubonana n’abaganga biba byihuse kandi bitagoranye.",
+      steps: {
+        create_account: {
+          title: "Fungura Konti",
+          description: "Iyandikishe ukoresheje amakuru yawe y’ibanze. Bifata umunota gusa."
+        },
+        find_specialist: {
+          title: "Shaka Inzobere",
+          description: "Shakisha inzobere ukoresheje izina, ubuhanga, aho ari cyangwa igihe aboneka."
+        },
+        select_date_time: {
+          title: "Hitamo Itariki n’Igihe",
+          description: "Hitamo mu masaha aboneka kandi akubereye."
+        },
+        confirm_pay: {
+          title: "Emeza & Wishure",
+          description: "Soma amakuru yose yerekeye gahunda yawe, wongereho ibisobanuro niba bikenewe, hanyuma urangize kwishyura niba bikenewe."
+        }
+      },
+      book_now: "Fata Rendez-vous",
+      need_help: "Ukeneye ubufasha mu gufata gahunda yawe? Itsinda ryacu ry’ubufasha rirahari ngo rigufashe.",
+      contact_support: "Hamagara Ubufasha"
+    },
+    appointments_features: {
+      heading: "Impamvu Guhitamo",
+      heading_highlight: "Serivisi yo Gufata Rendez-vous",
+      subheading:
+        "Uburyo bwacu bwo gufata gahunda bugamije korohereza Abanyarwanda kubona serivisi z’ubuvuzi mu buryo bworoshye kandi bwihuse.",
+      feature_24_7: {
+        title: "Gufata Gahunda 24/7",
+        description: "Fata gahunda igihe icyo ari cyo cyose, ku manywa cyangwa nijoro, ndetse no mu minsi mikuru."
+      },
+      feature_instant: {
+        title: "Kwemezwa Ako kanya",
+        description: "Bona kwemezwa kwa gahunda yawe ako kanya hamwe n’amakuru yose."
+      },
+      feature_specialist: {
+        title: "Guhitamo Inzobere",
+        description: "Hitamo mu nzobere z’ubuvuzi zirenga 200 mu byiciro bitandukanye."
+      },
+      feature_locations: {
+        title: "Ahantu Hatandukanye",
+        description: "Fata gahunda mu bitaro cyangwa amavuriro by’abafatanyabikorwa hirya no hino mu Rwanda."
+      },
+      feature_payment: {
+        title: "Kwishyura Neza",
+        description: "Ishyura gahunda yawe ukoresheje uburyo bwizewe kandi bwihuse."
+      },
+      feature_sms: {
+        title: "Ubutumwa bwa SMS",
+        description: "Bona ubutumwa buburira mbere y’igihe cyagenewe gahunda yawe."
+      },
+      feature_virtual: {
+        title: "Amahitamo ya Videwo",
+        description: "Hitamo hagati yo kubonana mu buryo bwa videwo cyangwa imbonankubone."
+      },
+      feature_reschedule: {
+        title: "Guhindura Gahunda Byoroshye",
+        description: "Hindura cyangwa usibe gahunda yawe mu buryo bworoshye iyo bikenewe."
+      },
+      cta_title: "Witeguye kubona itandukaniro?",
+      cta_subtitle: "Injira mu bihumbi by’abanyuzwe bamaze koroherezwa urugendo rwabo rw’ubuvuzi.",
+      cta_stat_appointments: "Gahunda Zafashwe",
+      cta_stat_satisfaction: "Igipimo cyo Kunyurwa"
+    },
+     appointments_hero: {
+      badge: "Gufata Rendez-vous",
+      title: "Teganya Kwitabwaho",
+      title_highlight: "Ku Buryo Bwawe",
+      subtitle:
+        "Fata gahunda yo kubonana n'abatanga serivisi z’ubuvuzi igihe ubishakiye. Shakisha kandi uteganye n’inzobere ziboneye, uhitamo hagati yo kubonana mu buryo bwa videwo cyangwa imbonankubone.",
+      search_placeholder: "Shakisha abaganga, inzobere, cyangwa ibitaro...",
+      search_button: "Shakisha",
+      book_button: "Fata Rendez-vous",
+      view_specialties: "Reba Inzobere",
+      image_alt: "Gufata gahunda yo kubonana n’umuganga",
+      stats: {
+        specialists: "Inzobere",
+        hospitals: "Ibitaro",
+        booking_time: "Igihe cyo Gufata Gahunda",
+      },
+      easy_rescheduling: "Guhindura Gahunda Byoroshye"
+    },
+    teleconsultation_cta: {
+      title: "Witeguye Guhabwa Serivisi z’Ubuvuzi Utavuye Mu Rugo?",
+      subtitle:
+        "Injira mu bihumbi by’Abanyarwanda bari kubona serivisi z’ubuvuzi zinoze binyuze muri telekonsitomasiyo. Inama ya mbere n’umuganga iri hafi gato n’udukanda duke gusa.",
+      start_button: "Tangira Kugisha Inama",
+      learn_more: "Menya Ibindi"
+    },
+    faq4: {
+      title: "Ibibazo Bikunze Kubazwa",
+      subtitle: "Reba ibisubizo by'ibibazo bikunze kubazwa ku bijyanye na serivisi zacu za telekonsitomasiyo. Niba ikibazo cyawe kitagaragara hano, nyamuneka hamagara itsinda ryacu ry'ubufasha.",
+      q1: "Ni ibikoresho ki nkeneye kugira ngo nkore telekonsitomasiyo?",
+      a1: "Ukeneye igikoresho gifite kamera na mikorofoni (telefone igendanwa, tablette, cyangwa mudasobwa), interineti yihuta kandi ikora neza, ndetse na porogaramu ya ONE HEALTHLINE CONNECT ishyizweho. Kugira ngo ugire ubunararibonye bwiza, turasaba gukoresha ecouteurs no gushaka ahantu hatuje kandi hasobanutse umucyo.",
+      q2: "Telekonsitomasiyo isanzwe imara igihe kingana iki?",
+      a2: "Telekonsitomasiyo isanzwe imara hagati y’iminota 15-30, bitewe n’uburemere bw’ikibazo cyawe cy’ubuzima. Kugisha inama ku baganga b’inzobere bishobora gufata igihe kinini. Ushobora kubona igihe bitezwe izamara igihe uri kwiyandikisha.",
+      q3: "Ese abaganga bashobora gutanga imiti binyuze muri telekonsitomasiyo?",
+      a3: "Yego, abaganga bashobora gutanga imiti mu gihe bikenewe mu gihe cya telekonsitomasiyo. Itegeko rizaba ari irya mudasobwa kandi rishobora koherezwa muri farumasi dukorana na zo kugira ngo iguhe cyangwa uyitware. Ariko, imiti yihariye ishobora gusaba kujya ku ivuriro mu buryo bw'umubiri.",
+      q4: "Bite se niba nkeneye ibizamini by’amaraso cyangwa amashusho?",
+      a4: "Niba umuganga asanze ukeneye ibizamini by’amaraso cyangwa amashusho, ashobora kuguha itegeko rya mudasobwa. Ushobora kujya ku bigo dukorana kugira ngo ukore ibyo bizamini. Ibisubizo bizashyirwa kuri konti yawe ya ONE HEALTHLINE CONNECT kandi bisangizwe n’umuganga wawe kugira ngo akomeze kugukurikirana.",
+      q5: "Ese telekonsitomasiyo yishyurwa n’ubwishingizi?",
+      a5: "Abatanga ubwishingizi benshi mu Rwanda ubu bishyura serivisi za telekonsitomasiyo. Dukorana n’ibigo by’ubwishingizi bikomeye birimo RSSB, MMI, SORAS, n’ibindi. Ushobora kwemeza niba bishyurwa winjiza amakuru yawe y’ubwishingizi kuri porofayili yawe cyangwa uhamagaye umushinzwe ubwishingizi bwawe.",
+      q6: "Bite se niba nkeneye kubona umuganga mu buryo bw'umubiri nyuma ya telekonsitomasiyo?",
+      a6: "Niba umuganga asanze hakenewe kugenzurwa mu buryo bw'umubiri, ashobora kugusaba kujya ku kigo cy’ubuvuzi kiboneye cyangwa umuganga w’inzobere. Amakuru yose yavuye muri telekonsitomasiyo azasangizwa uwo muganga kugira ngo ubuvuzi bukomeze neza."
+    },
+    testimonials2: {
+      section_title: "Icyo Abaturage Bavuga",
+      section_subtitle: "Umva ubuhamya bw'abakoresheje serivisi zacu za telekonsitomasiyo.",
+      read_more: "Soma ubundi buhamya bw'abaturage",
+      jean: {
+        testimonial: "Serivisi ya telekonsitomasiyo yantabaye cyane mu gihe gito. Nabashije kuvugana n’umuganga mu minota 15 gusa ku burwayi bw’umwana wanjye kandi mpabwa umuti wangejejwe mu rugo. Serivisi nziza cyane!",
+        service: "Kugisha Inama ku Buvuzi bw’Abana"
+      },
+      emmanuel: {
+        testimonial: "Kuba ntuye mu cyaro bituma bigorana kubona abaganga b’inzobere. Binjiye muri ONE HEALTHLINE CONNECT, nabashije kuganira n’umuganga w’umutima ntarinze kujya i Kigali. Ubwiza bwa videwo bwari buhebuje kandi umuganga yari asobanura cyane.",
+        service: "Kugisha Inama ku Buvuzi bw’Umuvuduko w’Amaraso"
+      },
+      marie: {
+        testimonial: "Maze igihe nkoresha gahunda y’ukwezi yo gukurikirana indwara yanjye y’igihe kirekire. Kubasha kuganira n’umuganga wanjye kenshi ntagiye ku bitaro byorohereje cyane uburyo bwo kwita ku buzima bwanjye. Ndabigira inama!",
+        service: "Kugisha Inama ku Buvuzi bw’Indwara z’Igihe Kirekire"
+      }
+    },
+    "pricing1": {
+    "title": "Ibyiciro by'ibiciro byumvikana neza",
+    "subtitle": "Hitamo gahunda yo kuganira n'umuganga iboneye ubuzima bwawe n'ingengo y'imari yawe.",
+    "plans": {
+      "single": {
+        "name": "Gahunda imwe yo kuganira",
+        "price": "5,000 RWF",
+        "description": "Kuganira rimwe n'umuganga rusange",
+        "features": [
+          "Iminota 30 yo kuganira kuri video",
+          "Ibaruwa y'ubuvuzi mu buryo bw'ikoranabuhanga niba bikenewe",
+          "Ubutumwa bwo gukurikirana amasaha 24",
+          "Ibyanditswe by'ubuvuzi"
+        ]
+      },
+      "monthly": {
+        "name": "Gahunda y'ukwezi",
+        "price": "15,000 RWF",
+        "period": "buri kwezi",
+        "description": "Kuganira kudashira n'abaganga rusange",
+        "features": [
+          "Kuganira kudafite umubare hamwe na GPs",
+          "Kuganira n'abaganga babiri b'inzobere buri kwezi",
+          "Ibaruwa z'ubuvuzi mu buryo bw'ikoranabuhanga",
+          "Gahunda yihariye y'ibikorwa",
+          "Uburenganzira bwo kugera ku butumwa bw'ubuvuzi 24/7",
+          "Ibyanditswe byuzuye by'ubuvuzi"
+        ]
+      },
+      "family": {
+        "name": "Gahunda y'umuryango",
+        "price": "25,000 RWF",
+        "period": "buri kwezi",
+        "description": "Ubwishingizi bw'abagize umuryango 4",
+        "features": [
+          "Kuganira kudafite umubare hamwe na GPs",
+          "Kuganira n'abaganga bane b'inzobere buri kwezi",
+          "Ibaruwa z'ubuvuzi mu buryo bw'ikoranabuhanga",
+          "Gahunda yihariye y'ibikorwa",
+          "Uburenganzira bwo kugera ku butumwa bw'ubuvuzi 24/7",
+          "Dashboard y'ubuzima bw'umuryango",
+          "Gucunga ibyanditswe by'ubuvuzi bihuriweho"
+        ]
+      }
+    },
+    "mostPopular": "Ikwirakwiriye cyane",
+    "choosePlan": "Hitamo Gahunda",
+    "footerNote": "Ibyiciro byose birimo kugera ku rubuga rwacu rwa mobile na web. Kuganira n'abaganga b'inzobere bishobora gusaba andi mafaranga bitewe n'ubwoko bw'inzobere. Ibiciro biri mu mafaranga y'u Rwanda (RWF)."
+  },
+    "teleconsultationSpecialties": {
+    "title": "Ibyiciro by'Ubuvuzi bihari",
+    "description": "Urubuga rwacu rukugeza ku baganga b'inzobere mu byiciro bitandukanye by'ubuvuzi kugira ngo uhabwe ubufasha bukwiye.",
+    "specialties": {
+      "generalMedicine": {
+        "name": "Ubuvuzi Rusange",
+        "description": "Inama ku ndwara zisanzwe, kwirinda indwara, no gusuzuma ubuzima.",
+        "availability": "Igihe cyose 24/7"
+      },
+      "pediatrics": {
+        "name": "Ubuvuzi bw'Abana",
+        "description": "Kwita ku buzima bw'abana kuva bavuka kugeza bakuze.",
+        "availability": "8AM - 8PM"
+      },
+      "dermatology": {
+        "name": "Ubuvuzi bw'Uruhu",
+        "description": "Indwara z'uruhu, ibisate, ibibazo bya acne, n'ibindi bibazo by'uruhu.",
+        "availability": "Biteganyijwe"
+      },
+      "psychiatry": {
+        "name": "Ubuvuzi bw'Ubuzima bwo Mu Mutwe",
+        "description": "Ubufasha ku buzima bwo mu mutwe, harimo ubwoba, kwiheba, no guhangana n'umunaniro.",
+        "availability": "9AM - 5PM"
+      },
+      "cardiology": {
+        "name": "Ubuvuzi bw'umutima",
+        "description": "Inama ku buzima bw'umutima, harimo no kugenzura umuvuduko w'amaraso.",
+        "availability": "Biteganyijwe"
+      },
+      "nutrition": {
+        "name": "Imirire",
+        "description": "Inama ku mirire, kugabanya ibiro, no gutegura indyo iboneye.",
+        "availability": "9AM - 6PM"
+      }
+    },
+    "button": {
+      "findSpecialists": "Shaka inzobere",
+      "viewAll": "Reba ibyiciro byose"
+    }
+  },
+    "teleconsultationHowItWorks": {
+    "heading": "Uko Teleconsultation Ikora",
+    "description": "Uburyo bworoshye bwo guhuza n’abaganga mu byiciro bike gusa.",
+    "steps": [
+      {
+        "title": "Fungura Konti",
+        "description": "Iyandikishe kandi wuzuze umwirondoro wawe w’ubuzima n’amakuru ajyanye n’imiti ukoresha."
+      },
+      {
+        "title": "Hitamo Umuganga",
+        "description": "Shakisha abaganga bakurikije ibyo bakora, amanota bahawe n’igihe bahari."
+      },
+      {
+        "title": "Tegura Igihe cyo Kugisha Inama",
+        "description": "Hitamo igihe kigukwiriye cyo kuganira n’umuganga."
+      },
+      {
+        "title": "Jya mu Kiganiro",
+        "description": "Hamagara umuganga ukoresheje video ku gihe mwumvikanyeho, muganire ku bibazo by’ubuzima bwawe."
+      },
+      {
+        "title": "Habona Uburyo bwo Kuvurwa",
+        "description": "Habona imiti, impapuro z’abajyanama, cyangwa gahunda yo gukurikirana nk’uko umuganga abigutegetse."
+      }
+    ],
+    "demoHeading": "Reba Teleconsultation mu Bikorwa",
+    "demoDescription": "Reba video igufi igaragaza uburyo teleconsultation ikora kuva itangira kugeza irangira.",
+    "watchDemo": "Reba Video",
+    "videoAlt": "Video igaragaza teleconsultation"
+  },
+    "teleconsultationFeatures": {
+    "heading": "Ibikubiye muri Serivisi ya Teleconsultation",
+    "description": "Serivisi yacu ya teleconsultation itanga ubuvuzi bwa mudasobwa bwuzuye bufite ibiranga bigamije korohereza, kugera byoroshye, no kugira akamaro mu buvuzi bw'ahantu hatandukanye.",
+    "features": {
+      "video": {
+        "title": "Amashusho meza yo kuganira na Muganga",
+        "description": "Vugana n'abaganga ukoresheje videwo ifite ireme rihanitse itanga ubunararibonye bwo kuganira bwihariye kandi busobanutse."
+      },
+      "messaging": {
+        "title": "Ubutumwa Bwo Kwizerwa",
+        "description": "Ohereza kandi wakire ubutumwa bwizewe n'umuganga wawe mbere na nyuma yo kuganira."
+      },
+      "prescriptions": {
+        "title": "Imiti yanditse kuri mudasobwa",
+        "description": "Bona imiti yanditse kuri mudasobwa ishobora koherezwa ku bubiko bwacu bufatanyije bwo kugeza imiti aho uri."
+      },
+      "quickAccess": {
+        "title": "Kwihutisha Serivisi",
+        "description": "Bona ubuvuzi vuba na bwangu hamwe n'igihe cyo gutegereza kingana n'iminota 15 ku bw'ibibazo byihutirwa."
+      },
+      "privacy": {
+        "title": "Ibanga kandi Bifite Umutekano",
+        "description": "Ibiganiro byose bikorwa hifashishijwe uburyo bw'ikoranabuhanga bwizewe kugira ngo amakuru yawe y'ubuvuzi agume ibanga."
+      },
+      "multiDevice": {
+        "title": "Kwinjira kuri Mudasobwa nyinshi",
+        "description": "Injira muri serivisi za teleconsultation ukoresheje mudasobwa, telefone, cyangwa tablet."
+      }
+    }
+  },
+     "teleconsultation3": {
+    "serviceTag": "Serivisi ya Teleconsultation",
+    "title": "Ubuvuzi bwa Mudasobwa Bukugezeho",
+    "description": "Vugana n'abaganga babifitiye uburenganzira utavuye mu rugo. Fata inama z'ubuvuzi, imiti, n'uburyo bwo gukurikirana ubuzima utavuye aho uri.",
+    "startConsultation": "Tangira Ikiganiro",
+    "bookAppointment": "Tegura Gahunda",
+    "stats": {
+      "doctors": "Abaganga",
+      "availability": "Igihe cyose",
+      "avgWaitTime": "Igihe cyo gutegereza"
+    },
+    "securePrivate": "Bifite umutekano kandi by'ibanga"
+  },
+    "doctor1": {
+    "menu": {
+      "dashboard": "Urupapuro rw’ibanze",
+      "appointments": "Inama",
+      "patients": "Abarwayi",
+      "teleconsultations": "Kuvugana kure",
+      "prescriptions": "Imiti yanditswe",
+      "settings": "Ibyahindurwa"
+    },
+    "header": {
+      "panel": "Urubuga rw’Doctor"
+    },
+    "user": {
+      "role": "Doctor"
+    }
+  },
+  "nav": {
+    "logout": "Sohoka"
+  },
+    "settings": {
+    "title": "Imyanya",
+    "subtitle": "Igenzura umwirondoro wawe n'ibyo ukunda",
+    "profileInformation": "Amakuru y'umwirondoro",
+    "fullName": "Amazina Yuzuye",
+    "email": "Imeri",
+    "phoneNumber": "Nomero ya Telefoni",
+    "specialty": "Ubumenyi",
+    "hospitalClinic": "Ibitaro/Ikigo nderabuzima",
+    "licenseNumber": "Nomero y'Uruhushya",
+    "bio": "Ibyerekeyewe",
+    "workingHours": "Amasaha yo Gukora",
+    "to": "kugera",
+    "notificationPreferences": "Ibyerekeye Amatangazo",
+    "newAppointmentRequests": {
+      "title": "Ibisabwa bishya byo gukoresha",
+      "description": "Umenyeshwa igihe abarwayi bateganyiriza igihe"
+    },
+    "teleconsultationReminders": {
+      "title": "Ibibutsa bya Teleconsultation",
+      "description": "Ibibutsa iminota 10 mbere y'inama za kure"
+    },
+    "emergencyAlerts": {
+      "title": "Amatangazo y'Ibibazo Bikomeye",
+      "description": "Amatangazo yihutirwa ku biganiro byihutirwa"
+    },
+    "patientMessages": {
+      "title": "Ubutumwa bw'abarwayi",
+      "description": "Ubutumwa buturutse ku barwayi binyuze ku rubuga"
+    },
+    "languageRegion": "Ururimi & Akarere",
+    "language": "Ururimi",
+    "timeZone": "Isaha y'Akarere",
+    "security": "Umuryango w'Umutekano",
+    "currentPassword": "Ijambo ry'ibanga ry'ubu",
+    "currentPasswordPlaceholder": "Injiza ijambo ry'ibanga ry'ubu",
+    "newPassword": "Ijambo ry'ibanga rishya",
+    "newPasswordPlaceholder": "Injiza ijambo ry'ibanga rishya",
+    "confirmNewPassword": "Emeza ijambo ry'ibanga rishya",
+    "confirmNewPasswordPlaceholder": "Emeza ijambo ry'ibanga rishya",
+    "enableTwoFactorAuth": "Shyiraho uburyo bwo kwemeza kabiri",
+    "saveChanges": "Bika Impinduka"
+  },
+  "days": {
+    "monday": "Kuwa Mbere",
+    "tuesday": "Kuwa Kabiri",
+    "wednesday": "Kuwa Gatatu",
+    "thursday": "Kuwa Kane",
+    "friday": "Kuwa Gatanu",
+    "saturday": "Kuwa Gatandatu",
+    "sunday": "Kuwa Mungu"
+  },
+    "prescriptions1": {
+    "title": "Imiti yanditswe",
+    "subtitle": "Tunganya imiti yandikiwe abarwayi",
+    "newPrescription": "Andika umuti mushya",
+    "searchPlaceholder": "Shakisha ku izina ry'umurwayi cyangwa umuti...",
+    "allStatus": "Imiterere yose",
+    "active": "Iriho",
+    "completed": "Yarangiye",
+    "expired": "Yarengeje igihe",
+    "date": "Itariki",
+    "diagnosis": "Indwara",
+    "medications": "Imiti",
+    "doctorsNotes": "Inama z'umuganga",
+    "duration": "Igihe imiti izakoreshwa",
+    "viewFull": "Reba umuti wuzuye",
+    "exportPdf": "Ohereza nka PDF",
+    "sendPharmacy": "Ohereza muri farumasi",
+    "duplicate": "Kora kopi y'umutwe w'igikoresho",
+    "pagination": {
+      "previous": "Ibyabanje",
+      "next": "Ibikurikira",
+      "pageInfo": "Urupapuro rwa 1 muri 1"
+    }
+  },
+     "teleconsultations1": {
+    "title": "Ibiganiro by'ubuvuzi hifashishijwe ikoranabuhanga",
+    "subtitle": "Tunganya ibiganiro by'ubuvuzi hifashishijwe videwo",
+    "virtualConsultations": "Ibiganiro by'ubuvuzi hifashishijwe ikoranabuhanga",
+    "startCall": "Tangira ikiganiro",
+    "scheduled": "Biteganyijwe"
+  },
+    "patients": {
+    "title": "Abakiriya Banjye",
+    "subtitle": "Tunganya kandi ukurikirane abakiriya bawe",
+    "searchPlaceholder": "Shakisha abakiriya ukoresheje amazina cyangwa indwara...",
+    "filters": {
+      "conditions": {
+        "all": "Indwara Zose",
+        "hypertension": "Umuvuduko w’amaraso",
+        "diabetes": "Diabete",
+        "heartDisease": "Indwara y’umutima",
+        "mentalHealth": "Ubuzima bwo mu mutwe"
+      },
+      "statuses": {
+        "all": "Imiterere Yose",
+        "activeTreatment": "Gutanga Ubuvuzi",
+        "followUpRequired": "Gukeneye Gukurikirana",
+        "stable": "Imeze Neza",
+        "critical": "Ibikomeye"
+      }
+    },
+    "primaryCondition": "Indwara Nyamukuru",
+    "status": "Imiterere",
+    "lastVisit": "Urugendo rwa Nyuma",
+    "nextAppointment": "Gahunda Ikurikira",
+    "actions": {
+      "viewFile": "Reba dosiye",
+      "call": "Hamagarira",
+      "video": "Video"
+    },
+    "pagination": {
+      "previous": "Icyabanjirije",
+      "next": "Ikurikira",
+      "pageInfo": "Urupapuro {{current}} rwa {{total}}"
+    }
+  },
+    "appointments1": {
+    "title": "Amatariki y'ibiganiro",
+    "subtitle": "Tunganya gahunda y'abakiriya bawe n'ibiganiro",
+    "status": {
+      "confirmed": "byemejwe",
+      "pending": "bikiri gutegurwa"
+    },
+    "reason": "Impamvu",
+    "joinCall": "Jya mu kiganiro",
+    "viewDetails": "Reba ibisobanuro"
+  },
+    "doctorDashboard": {
+    "title": "Dashibodi y'Umuganga",
+    "subtitle": "Tunganya abarwayi n'ibiganiro by’ubuvuzi",
+    "stats": {
+      "appointmentsToday": "Inama za none",
+      "totalPatients": "Ababwayi bose",
+      "teleconsultations": "Inama z’ubuvuzi hifashishijwe ikoranabuhanga",
+      "prescriptions": "Imiti yanditswe"
+    },
+    "todaysSchedule": "Igenamigambi rya none",
+    "status": {
+      "confirmed": "Yemejwe",
+      "pending": "Itegereje"
+    },
+    "quickActions": {
+      "patientRecords": {
+        "title": "Amakuru y'abarwayi",
+        "desc": "Reba kandi utegure amakuru y’ubuvuzi y’abarwayi"
+      },
+      "prescriptions": {
+        "title": "Imiti yanditswe",
+        "desc": "Andika kandi utegure imiti yanditswe mu buryo bwa digital"
+      },
+      "analytics": {
+        "title": "Isesengura",
+        "desc": "Reba imibare n’isesengura ry’ibiganiro by’ubuvuzi"
+      }
+    },
+    "appointments": {
+      "generalConsultation": "Ikiganiro rusange cy’ubuvuzi",
+      "teleconsultation": "Ikiganiro cy’ubuvuzi hifashishijwe ikoranabuhanga",
+      "followUpConsultation": "Ikiganiro cyo gukurikirana"
+    }
+  },
+    "userDropdown": {
+    "dashboard": "Dashibodi",
+    "signOut": "Sohoka",
+    "defaultUser": "Umukoresha",
+    "defaultEmail": "umukoresha@example.com"
+  },
+    "adminSettings": {
+    "title": "Igenamiterere rya Sisitemu",
+    "description": "Shyiraho imiterere n'ibyo wifuza muri sisitemu",
+    "generalSettings": "Igenamiterere Rusange",
+    "siteName": "Izina ry'urubuga",
+    "siteDescription": "Ibisobanuro by'urubuga",
+    "primaryColor": "Ibara ry'ingenzi",
+    "language": "Ururimi",
+    "timezone": "Isaha y'akarere",
+    "notificationSettings": "Igenamiterere rya Notifikesiyo",
+    "emailNotifications": "Notifikesiyo za Email",
+    "emailNotificationsDesc": "Ohereza notifikesiyo ukoresheje email",
+    "smsNotifications": "Notifikesiyo za SMS",
+    "smsNotificationsDesc": "Ohereza notifikesiyo ukoresheje SMS",
+    "pushNotifications": "Notifikesiyo zishyirwa kuri Browser",
+    "pushNotificationsDesc": "Ohereza notifikesiyo za browser",
+    "appointmentReminders": "Kwitwaza Amasezerano",
+    "appointmentRemindersDesc": "Kwitwaza amasezerano mu buryo bwikora",
+    "contactInformation": "Amakuru y'Itumanaho",
+    "hospitalName": "Izina ry'Ibitaro",
+    "hospitalAddress": "Aderesi y'Ibitaro",
+    "phoneNumber": "Numero ya Telefone",
+    "emailAddress": "Aderesi ya Email",
+    "emergencyNumber": "Numero y'Ubutabazi",
+    "appointmentSettings": "Igenamiterere ry'Amasezerano",
+    "appointmentSlotDuration": "Igihe cy'Igice cy'Amasezerano (amasegonda)",
+    "minutes": "iminota {{count}}",
+    "maxAdvanceBooking": "Iminsi ntarengwa yo kwitegura",
+    "cancellationDeadline": "Igihe ntarengwa cyo guhindura amasezerano (mu masaha)",
+    "acceptInsurance": "Emeza Ubwishingizi",
+    "acceptInsuranceDesc": "Emerera kwishyura ukoresheje ubwishingizi",
+    "acceptMobileMoney": "Emeza Mobile Money",
+    "acceptMobileMoneyDesc": "Emerera kwishyura ukoresheje Mobile Money",
+    "saveButton": "Bika Igenamiterere Ryose",
+    "saveSuccess": "Igenamiterere ryabitswe neza!",
+    "acceptCash": "Emeza Ifaranga",
+    "acceptCashDesc": "Emerera kwishyura mu mafaranga"
+  },
+  "languages": {
+    "english": "Icyongereza",
+    "kinyarwanda": "Ikinyarwanda",
+    "french": "Igifaransa"
+  },
+  "timezones": {
+    "caf": "Isaha y' Afurika yo Hagati (UTC+2)",
+    "cet": "Isaha y'Uburayi bwo Hagati (UTC+1)"
+  },
+    "security": {
+    "pageTitle": "Imicungire y'Umutekano",
+    "pageDescription": "Kurikirana no guhindura imyirondoro y'umutekano wa sisitemu",
+    "status": {
+      "secure": "Bifite Umutekano",
+      "systemStatus": "Imiterere ya Sisitemu",
+      "activeSessions": "Ibyiciro Bikora",
+      "securityAlerts": "Ibyitonderwa by'Umutekano",
+      "uptime": "Igihe Sisitemu Ikora"
+    },
+    "settings": {
+      "title": "Imyirondoro y'Umutekano",
+      "mfa": "Kwemeza inshuro nyinshi (MFA)",
+      "mfaDesc": "Gusaba MFA ku bakoresha bose",
+      "autoLogout": "Gusohoka Kuva Muri Sisitemu",
+      "autoLogoutDesc": "Gusohora abakoresha batari gukora",
+      "encryption": "Guhisha Amakuru",
+      "encryptionDesc": "Guhisha amakuru y'ingenzi ari ku murongo",
+      "sessionTimeout": "Igihe cya Session (iminota)",
+      "passwordMinLength": "Uburebure bw'Ijambo ry'Ibanga",
+      "lockoutAttempts": "Gufunga Konti Nyuma y'Ibigeragezo Bidashobotse",
+      "saveButton": "Bika Imyirondoro y'Umutekano"
+    },
+    "logs": {
+      "title": "Amadosiye y'Umutekano",
+      "status": {
+        "success": "Byagenze Neza",
+        "blocked": "Byahagaritswe"
+      },
+      "action": {
+        "login": "Injira Neza",
+        "failed_login": "Kugerageza Kwinjira Kudakunze",
+        "permission": "Kwinjira mu Madosiye y'Abakiriya"
+      },
+      "user": "Ukoresha",
+      "ip": "Aderesi ya IP",
+      "viewAll": "Reba Amadosiye Yose"
+    },
+    "tools": {
+      "title": "Ibikoresho by'Umutekano",
+      "systemBackup": {
+        "title": "Gusubiza Sisitemu",
+        "desc": "Kora kopi y'umutekano wa sisitemu"
+      },
+      "securityScan": {
+        "title": "Isuzuma ry'Umutekano",
+        "desc": "Kora isuzuma ry'uburyo sisitemu yatezuka"
+      },
+      "incidentResponse": {
+        "title": "Igikorwa cyo Gucunga Ibibazo",
+        "desc": "Reba ibibazo by'umutekano"
+      }
+    }
+  },
+    "reports": {
+    "title": "Raporo & Isesengura",
+    "description": "Ubusobanuro burambuye ku mikorere y'ikoranabuhanga n'ibipimo by'ubuzima",
+    "exporting": "Kohereza raporo mu buryo bwa {{format}}...",
+    "export": {
+      "pdf": "Ohereza PDF",
+      "excel": "Ohereza Excel"
+    },
+    "period": {
+      "week": "Icyumweru Iki",
+      "month": "Ukwezi Kw'uyu Munsi",
+      "quarter": "Igihembwe",
+      "year": "Umwaka"
+    },
+    "type": {
+      "overview": "Isesengura rusange",
+      "appointments": "Imishyikirano",
+      "financial": "Imari",
+      "patients": "Abarwayi"
+    },
+    "metrics": {
+      "totalPatients": "Abarwayi bose",
+      "appointments": "Imishyikirano",
+      "revenue": "Inyungu (RWF)",
+      "satisfactionRate": "Igipimo cy'ibyishimo",
+      "increase": "+{{percent}}% ugereranije n'ukwezi gushize"
+    },
+    "sections": {
+      "departmentPerformance": "Imikorere y’Ibice",
+      "appointmentStatus": "Imiterere y’Imishyikirano",
+      "insuranceClaimsSummary": "Isesengura ry’Ubwishingizi",
+      "reportTemplates": "Ibyitegererezo bya Raporo"
+    },
+    "labels": {
+      "patients": "abarwayi"
+    },
+    "appointmentStatus": {
+      "completed": "Byarangiye",
+      "cancelled": "Byahagaritswe",
+      "noShow": "Ntabwo yaje",
+      "rescheduled": "Yahinduwe igihe"
+    },
+    "insurance": {
+      "provider": "Umutanga ubwishingizi",
+      "claimsCount": "Umubare w’ibirego",
+      "totalAmount": "Umubare w’amafaranga (RWF)",
+      "avgClaim": "Igirekezo cy’ibirego"
+    },
+    "templates": {
+      "monthlySummary": {
+        "title": "Raporo y’ukwezi",
+        "desc": "Raporo yuzuye y’ukwezi"
+      },
+      "patientAnalytics": {
+        "title": "Isesengura ry’abarwayi",
+        "desc": "Imibare n’imigendekere y’abarwayi"
+      },
+      "financialReport": {
+        "title": "Raporo y’Imari",
+        "desc": "Isesengura ry’inyungu n’imbogamizi"
+      }
+    }
+  },
+    "appointments": {
+    "management": "Gucunga Amagena",
+    "description": "Gucunga no gukurikirana amagena yose muri sisitemu",
+    "stats": {
+      "total": "Amagena yose",
+      "confirmed": "Yemejwe",
+      "pending": "Ategereje",
+      "teleconsultations": "Amagana y'Ikoranabuhanga"
+    },
+    "filters": {
+      "all": "Amagena yose",
+      "confirmed": "Yemejwe",
+      "pending": "Ategereje",
+      "completed": "Yarangije",
+      "cancelled": "Yahagaritswe"
+    },
+    "searchPlaceholder": "Shakisha amagena...",
+    "table": {
+      "patient": "Umurwayi",
+      "doctor": "Umuganga",
+      "dateTime": "Italiki n'Isaha",
+      "type": "Ubwoko",
+      "status": "Imiterere",
+      "actions": "Ibikorwa"
+    },
+    "quickActions": {
+      "title": "Ibikorwa Byihuse",
+      "schedule": {
+        "title": "Tegura Agena",
+        "desc": "Ongeraho agena gashya"
+      },
+      "viewSchedule": {
+        "title": "Reba Agena",
+        "desc": "Reba amagana y'uyu munsi"
+      },
+      "filters": {
+        "title": "Amasezerano Asobanutse",
+        "desc": "Shakisha ukurikije italiki, umuganga, n'ibindi"
+      }
+    },
+    "statusOptions": {
+      "pending": "Ategereje",
+      "confirmed": "Yemejwe",
+      "completed": "Yarangije",
+      "cancelled": "Yahagaritswe"
+    }
+  },
+    "notifications": {
+    "button_aria_label": "Fungura urutonde rw’amenyeshwa",
+    "title": "Amenyeshwa",
+    "close": "Funga amenyeshwa",
+    "requested_teleconsultation": "yasabye kuvugana na muganga kuri telefoni kuri",
+    "uploaded_lab_results": "yohereje ibisubizo by'ibizamini bya laboratoire kuri",
+    "requested_pharmacy_delivery": "yasabye ko imiti imugezwa kuri",
+    "cancelled_appointment": "yahagaritse gahunda y’inama kuri",
+    "appointment": "Gahunda",
+    "medical_report": "Raporo y’ubuvuzi",
+    "prescription": "Itegeko ry’imiti",
+    "just_now": "Ubu hashize akanya gato",
+    "one_hour_ago": "Isaha imwe ishize",
+    "minutes_ago": "Hashize iminota {{count}}",
+    "view_all": "Reba Amenyeshwa Yose",
+    "user_alt": "Ifoto ya {{name}}"
+  },
+ "medicalHistory": {
+    "title": "Amateka y'Ubuvuzi",
+    "subtitle": "Amakuru yawe yose y'ubuvuzi n'amateka y'ubujyanama",
+    "total_visits": "Inzoga Zose",
+    "doctors_seen": "Abaganga Wabonye",
+    "prescriptions": "Imiti yanditswe",
+    "lab_reports": "Raporo z'Igerageza",
+    "filter_title": "Saba Amateka",
+    "all_doctors": "Abaganga Bose",
+    "all_departments": "Ibyiciro Byose",
+    "all_types": "Ubwoko Bwose",
+    "in_person": "Imbonankubone",
+    "teleconsultation": "Inama hifashishijwe ikoranabuhanga",
+    "diagnosis": "Icyorezo",
+    "medications": "Imiti",
+    "notes": "Ibyanditswe n'Umuganga",
+    "view_full_report": "Reba Raporo Yuzuye",
+    "download_pdf": "Kuramo PDF",
+    "share_with_doctor": "Sangira n’Umuganga",
+    "load_more": "Soma Amateka Menshi",
+    "export_title": "Sohora Amateka y’Ubuvuzi",
+    "export_description": "Kuramo amateka yawe yose y'ubuvuzi kugira ngo uyabike cyangwa uyasangize abaganga.",
+    "email_summary": "Ohereza Inyandiko kuri Email"
+  },
+  "departments": {
+    "cardiology": "Ubuganga bw’imitima",
+    "gynecology": "Ubuganga bw’abagore",
+    "mental_health": "Ubuzima bwo mu mutwe",
+    "general_medicine": "Ubuganga rusange"
+  },
+  "departments": {
+    "cardiology": "Ubuganga bw’imitima",
+    "gynecology": "Ubuganga bw’abagore",
+    "mental_health": "Ubuzima bwo mu mutwe",
+    "general_medicine": "Ubuganga rusange"
+  },
+    "emergency1": {
+    "title": "Gutanga Icyo Ukeneye mu By'Ubuzima Byihutirwa",
+    "call_now": "Hamagara serivisi z’ubutabazi ako kanya niba ikibazo gikomeye",
+    "hotlines": "Numero z’Ubutabazi",
+    "emergency": "Ubutabazi",
+    "police": "Polisi",
+    "fire_rescue": "Kuzimya no Gutabara",
+    "select_emergency_type": "Hitamo ubwoko bw'ikibazo cyihutirwa",
+    "continue": "Komeza",
+    "choose_help_type": "Hitamo ubufasha ukeneye",
+    "back": "Subira Inyuma",
+    "share_location": "Sangira Aho Uri",
+    "use_gps": "Koresha GPS",
+    "gps_description": "Menya aho uri hifashishijwe GPS",
+    "manual_location": "Injiza aho uri intoki",
+    "manual_location_placeholder": "Andika aho uri cyangwa ahantu hegereye hazwi",
+    "describe_emergency": "Sobanura Icyabaye",
+    "description_label": "Ibisobanuro ku kibazo cyihutirwa",
+    "description_placeholder": "Tanga ibisobanuro ku byabaye",
+    "take_photo": "Fata Ifoto",
+    "record_voice_note": "Fata Ubutumwa Bw'ijwi",
+    "severity_level": "Hitamo Urwego rw'Ubukana",
+    "submit_request": "Ohereza Icyo Ukeneye",
+    "request_submitted": "Icyo usabye cyoherejwe",
+    "request_confirmed": "Icyo usabye cyemejwe",
+    "help_on_way": "Ubufasha buri mu nzira",
+    "response_status": "Imiterere y'Ubutabazi",
+    "request_received": "Icyo usabye cyakiriwe",
+    "dispatching_help": "Kohereza ubufasha",
+    "help_arrival": "Ubufasha bugiye kugera",
+    "nearest_facility": "Ikigo cy’Ubuvuzi cyegereye",
+    "call_hotline": "Hamagara Numero y'Ubutabazi",
+    "track_response": "Kurikirana Ubutabazi"
+  },
+  "emergencyTypes": {
+    "accident": "Impanuka y’Umuhanda",
+    "maternal": "Ubutabazi ku Mubyeyi",
+    "mental": "Ibibazo by’Ubuzima bwo mu Mutwe",
+    "respiratory": "Ibibazo byo Guhumeka",
+    "covid": "Ubutabazi bwa COVID-19",
+    "cardiac": "Ibibazo by’Umutima"
+  },
+  "helpTypes": {
+    "ambulance": "Ambulansi",
+    "doctor": "Dogiteri",
+    "medicine": "Kugeza Imiti"
+  },
+  "severityLevels": {
+    "mild": "Bucye",
+    "mild_desc": "Bukeneye kwitabwaho ariko si ubuzima buri mu kaga",
+    "intense": "Bukabije",
+    "intense_desc": "Buteje ikibazo gikomeye ariko gishobora gucungurwa",
+    "severe": "Bukomeye",
+    "severe_desc": "Ubuzima buri mu kaga"
+  },
      aiAssistant: {
       title: "Umufasha w’Ubuzima AI",
       subtitle: "Fata inama z’ubuzima zihariye kandi zifasha",
@@ -2902,7 +5705,7 @@ const translations = {
       "currentTeamAlt": "Itsinda ririho ubu"
     }
   },
-    "cta1": {
+    "cta2": {
     "title": "Ukeneye Ubuvuzi Bwihariye?",
     "subtitle": "Hura n’inzobere zacu mu mashami atandukanye kugira ngo ugirwe inama no kuvurwa hakurikijwe ibyo ukeneye.",
     "book": "Teganya Gahunda n’Inzobere",
@@ -3462,10 +6265,14 @@ const translations = {
   "partners": {
     "title": "Ibitaro n’Abafatanyabikorwa Bacu"
   },
-  "cta": {
+  "cta1": {
     "title": "Witeguye Gutangira Inama?",
     "subtitle": "Ujye mu mubare w’Abanyarwanda ibihumbi bakoresha ubuvuzi bwo mu rugo",
-    "button": "Bukisha Inama Ubu"
+    "button": "Bukisha Inama Ubu",
+    "book":"gushyiraho",
+    "emergency": "Ibyihutirwa",
+    "notSure":"ntago witeguye",
+    "symptomChecker":"kureba ibimenyetso"
   },
     'nav.home': 'Ahabanza',
     'nav.services': 'Serivisi',
@@ -3576,23 +6383,90 @@ const translations = {
     'doctor.dashboard.pendingConsultations': 'Amagena ategereje',
 
     // Admin Dashboard
-    'admin.menu.dashboard': 'Ibikubiyemo',
-    'admin.menu.userManagement': 'Gucunga Abakoresha',
-    'admin.menu.patients': 'Abarwayi',
-    'admin.menu.doctors': 'Abaganga',
-    'admin.menu.appointments': 'Amagena',
-    'admin.menu.reports': 'Raporo',
-    'admin.menu.security': 'Umutekano',
-    'admin.menu.settings': 'Amagenamiterere',
-    'admin.menu.analytics': 'Isesengura',
-    'admin.menu.messages': 'Ubutumwa',
-    'admin.header.panel': 'Ikiyega cy\'Umuyobozi',
-    'admin.user.admin': 'Umuyobozi',
-    'admin.dashboard.title': 'Ikiyega cy\'Umuyobozi',
-    'admin.dashboard.totalUsers': 'Abakoresha bose',
-    'admin.dashboard.activePatients': 'Abarwayi bakora',
-    'admin.dashboard.activeDoctors': 'Abaganga bakora',
-    'admin.dashboard.todayAppointments': 'Amagena y\'uyu munsi',
+   "admin": {
+      "users": {
+      "title": "Gucunga Abakoresha",
+      "subtitle": "Gucunga abakoresha bose muri sisitemu",
+      "stats": {
+        "totalUsers": "Abakoresha bose",
+        "doctors": "Abaganga",
+        "patients": "Abarwayi",
+        "admins": "Abayobozi"
+      },
+      "filters": {
+        "all": "Abakoresha bose",
+        "doctor": "Abaganga",
+        "patient": "Abarwayi",
+        "admin": "Abayobozi"
+      },
+      "buttons": {
+        "addNewUser": "Ongeraho Umukoresha Mushya"
+      },
+      "table": {
+        "user": "Umukoresha",
+        "role": "Inshingano",
+        "status": "Imiterere",
+        "created": "Igihe yanditsweho",
+        "actions": "Ibikorwa"
+      },
+      "roles": {
+        "doctor": "Umuganga",
+        "patient": "Umurwayi",
+        "admin": "Umuyobozi"
+      },
+      "statuses": {
+        "active": "Akora",
+        "inactive": "Ntakora"
+      }
+    },
+ 
+    "menu": {
+      "dashboard": "Ibikubiyemo",
+      "userManagement": "Gucunga Abakoresha",
+      "patients": "Abarwayi",
+      "doctors": "Abaganga",
+      "appointments": "Amagena",
+      "reports": "Raporo",
+      "security": "Umutekano",
+      "settings": "Amagenamiterere",
+      "analytics": "Isesengura",
+      "messages": "Ubutumwa"
+    },
+    "header": {
+      "panel": "Ikiyega cy'Umuyobozi"
+    },
+    "user": {
+      "admin": "Umuyobozi"
+    },
+    "dashboard": {
+      "title": "Ikiyega cy'Umuyobozi",
+      "welcome": "Murakaza neza ku kiyega cy'ubuyobozi",
+      "totalUsers": "Abakoresha bose",
+      "activePatients": "Abarwayi bakora",
+      "activeDoctors": "Abaganga bakora",
+      "todayAppointments": "Amagena y'uyu munsi",
+      "cards": {
+        "users": {
+          "title": "Isuzuma ry’Abakoresha",
+          "desc": "Incamake y’abakoresha bose",
+          "action": "Gucunga Abakoresha"
+        },
+        "settings": {
+          "title": "Isuzuma ry’Amagenamiterere",
+          "desc": "Hindura uburyo bwa sisitemu",
+          "action": "Jya ku Magenamiterere"
+        },
+        "reports": {
+          "title": "Isuzuma rya Raporo",
+          "desc": "Reba raporo za sisitemu",
+          "action": "Reba Raporo"
+        }
+      }
+    },
+  "nav": {
+    "logout": "Sohoka"
+  },
+   },
 
     // Appointments
     'appointments.title': 'Amagena',
@@ -3807,7 +6681,7 @@ const translations = {
       user: "Umukoresha",
       patient: "Umurwayi",
     },
-    hero: {
+    hero1: {
         label: "Ubuvuzi Bushya mu Rwanda",
     subtitle: "Urubuga rw'ubuvuzi bugezweho kandi buboneka kuri bose",
               badge: "Serivisi z'ubuvuzi amasaha 24/7",
@@ -3946,7 +6820,7 @@ const translations = {
       next: "Ibikurikira",
       goto: "Jya kuri testimonial {{index}}",
     },
-    cta: {
+    cta2: {
       title: "Kuramo Porogaramu ya ONE HEALTHLINE CONNECT Ubu",
       description:
         "Fata ubuzima bwawe mu biganza byawe hamwe na porogaramu yacu imwe ikubiyemo serivisi zose. Gerwaho serivisi igihe cyose, aho uri hose.",

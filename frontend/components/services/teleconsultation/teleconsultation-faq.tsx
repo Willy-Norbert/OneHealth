@@ -1,56 +1,54 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function TeleconsultationFaq() {
+  const { t } = useLanguage();
+
   const faqs = [
     {
-      question: "What equipment do I need for a teleconsultation?",
-      answer:
-        "You'll need a device with a camera and microphone (smartphone, tablet, or computer), a stable internet connection, and the ONE HEALTHLINE CONNECT app installed. For the best experience, we recommend using headphones and finding a quiet, well-lit space for your consultation.",
+      question: t("faq4.q1"),
+      answer: t("faq4.a1"),
     },
     {
-      question: "How long does a typical teleconsultation last?",
-      answer:
-        "A standard teleconsultation typically lasts 15-30 minutes, depending on the complexity of your health concern. Specialist consultations may last longer. You can see the expected duration when booking your appointment.",
+      question: t("faq4.q2"),
+      answer: t("faq4.a2"),
     },
     {
-      question: "Can doctors prescribe medication through teleconsultation?",
-      answer:
-        "Yes, doctors can prescribe medications during teleconsultations when appropriate. The prescription will be digital and can be sent directly to our partner pharmacies for delivery or pickup. However, certain controlled medications may require an in-person visit.",
+      question: t("faq4.q3"),
+      answer: t("faq4.a3"),
     },
     {
-      question: "What if I need lab tests or imaging?",
-      answer:
-        "If your doctor determines you need laboratory tests or imaging, they can provide a digital referral. You can visit any of our partner facilities to have these tests done. The results will be uploaded to your ONE HEALTHLINE CONNECT account and shared with your doctor for follow-up.",
+      question: t("faq4.q4"),
+      answer: t("faq4.a4"),
     },
     {
-      question: "Is teleconsultation covered by insurance?",
-      answer:
-        "Many insurance providers in Rwanda now cover teleconsultation services. We work with major insurance companies including RSSB, MMI, SORAS, and others. You can verify coverage by entering your insurance details in your profile or contacting your insurance provider directly.",
+      question: t("faq4.q5"),
+      answer: t("faq4.a5"),
     },
     {
-      question: "What if I need to see a doctor in person after my teleconsultation?",
-      answer:
-        "If your doctor determines that an in-person examination is necessary, they can refer you to an appropriate healthcare facility or specialist. Your teleconsultation records will be shared with the referred provider to ensure continuity of care.",
+      question: t("faq4.q6"),
+      answer: t("faq4.a6"),
     },
-  ]
+  ];
 
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            {t("faq4.title")}
+          </h2>
           <p className="text-gray-600">
-            Find answers to common questions about our teleconsultation services. If you don&apos;t see your question here,
-            please contact our support team.
+            {t("faq4.subtitle")}
           </p>
         </div>
 
@@ -67,7 +65,9 @@ export default function TeleconsultationFaq() {
                   className="w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none"
                   onClick={() => toggleFaq(index)}
                 >
-                  <span className="font-medium text-gray-900">{faq.question}</span>
+                  <span className="font-medium text-gray-900">
+                    {faq.question}
+                  </span>
                   {openIndex === index ? (
                     <ChevronUp className="h-5 w-5 text-gray-500" />
                   ) : (
@@ -87,5 +87,5 @@ export default function TeleconsultationFaq() {
         </div>
       </div>
     </section>
-  )
+  );
 }

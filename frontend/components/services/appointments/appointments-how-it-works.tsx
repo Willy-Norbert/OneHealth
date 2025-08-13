@@ -1,44 +1,49 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+"use client";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AppointmentsHowItWorks() {
+  const { t } = useLanguage();
+
   const steps = [
     {
       number: "01",
-      title: "Create an Account",
-      description: "Sign up with your basic information to get started. It only takes a minute.",
+      title: t("appointments_how.steps.create_account.title"),
+      description: t("appointments_how.steps.create_account.description"),
       image: "/placeholder.svg?height=300&width=400&text=Create+Account",
     },
     {
       number: "02",
-      title: "Find a Specialist",
-      description: "Search for specialists by name, specialty, location, or availability.",
+      title: t("appointments_how.steps.find_specialist.title"),
+      description: t("appointments_how.steps.find_specialist.description"),
       image: "/placeholder.svg?height=300&width=400&text=Find+Specialist",
     },
     {
       number: "03",
-      title: "Select Date & Time",
-      description: "Choose from available time slots that work with your schedule.",
+      title: t("appointments_how.steps.select_date_time.title"),
+      description: t("appointments_how.steps.select_date_time.description"),
       image: "/placeholder.svg?height=300&width=400&text=Select+Date+Time",
     },
     {
       number: "04",
-      title: "Confirm & Pay",
-      description: "Review your appointment details, add any notes, and complete payment if required.",
+      title: t("appointments_how.steps.confirm_pay.title"),
+      description: t("appointments_how.steps.confirm_pay.description"),
       image: "/placeholder.svg?height=300&width=400&text=Confirm+Pay",
     },
-  ]
+  ];
 
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            How to Book Your <span className="text-green-600">Appointment</span>
+            {t("appointments_how.title")}{" "}
+            <span className="text-green-600">{t("appointments_how.title_highlight")}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our simple 4-step process makes booking healthcare appointments quick and hassle-free.
+            {t("appointments_how.subtitle")}
           </p>
         </div>
 
@@ -46,7 +51,9 @@ export default function AppointmentsHowItWorks() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} items-center gap-8 lg:gap-16`}
+              className={`flex flex-col ${
+                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+              } items-center gap-8 lg:gap-16`}
             >
               <div className="w-full lg:w-1/2">
                 <div className="relative">
@@ -69,7 +76,7 @@ export default function AppointmentsHowItWorks() {
                 <p className="text-lg text-gray-600">{step.description}</p>
                 {index === steps.length - 1 && (
                   <Button className="mt-4 bg-green-600 hover:bg-green-700">
-                    Book Now <ArrowRight className="ml-2 h-4 w-4" />
+                    {t("appointments_how.book_now")} <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 )}
               </div>
@@ -78,14 +85,12 @@ export default function AppointmentsHowItWorks() {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-6">
-            Need help booking your appointment? Our support team is available to assist you.
-          </p>
+          <p className="text-gray-600 mb-6">{t("appointments_how.need_help")}</p>
           <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
-            Contact Support
+            {t("appointments_how.contact_support")}
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }

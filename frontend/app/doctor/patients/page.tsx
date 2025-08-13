@@ -1,5 +1,7 @@
+"use client";
 import { User, Search, FileText, Calendar, Phone, Video, ChevronDown } from "lucide-react";
 import HealthCard from "@/components/common/HealthCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const patients = [
   {
@@ -71,11 +73,13 @@ const patients = [
 ];
 
 export default function DoctorPatients() {
+  const { t } = useLanguage();
+
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-foreground mb-2">My Patients</h1>
-        <p className="text-muted-foreground">Manage and track your assigned patients</p>
+        <h1 className="text-3xl font-bold text-foreground mb-2">{t("patients.title")}</h1>
+        <p className="text-muted-foreground">{t("patients.subtitle")}</p>
       </div>
 
       {/* Search and Filter */}
@@ -85,24 +89,24 @@ export default function DoctorPatients() {
             <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search patients by name or condition..."
+              placeholder={t("patients.searchPlaceholder")}
               className="w-full pl-10 pr-4 py-2 border border-border rounded-lg focus:border-healthcare-primary focus:outline-none"
             />
           </div>
           <div className="flex gap-2">
             <select className="px-4 py-2 border border-border rounded-lg">
-              <option>All Conditions</option>
-              <option>Hypertension</option>
-              <option>Diabetes</option>
-              <option>Heart Disease</option>
-              <option>Mental Health</option>
+              <option>{t("patients.filters.conditions.all")}</option>
+              <option>{t("patients.filters.conditions.hypertension")}</option>
+              <option>{t("patients.filters.conditions.diabetes")}</option>
+              <option>{t("patients.filters.conditions.heartDisease")}</option>
+              <option>{t("patients.filters.conditions.mentalHealth")}</option>
             </select>
             <select className="px-4 py-2 border border-border rounded-lg">
-              <option>All Status</option>
-              <option>Active Treatment</option>
-              <option>Follow-up Required</option>
-              <option>Stable</option>
-              <option>Critical</option>
+              <option>{t("patients.filters.statuses.all")}</option>
+              <option>{t("patients.filters.statuses.activeTreatment")}</option>
+              <option>{t("patients.filters.statuses.followUpRequired")}</option>
+              <option>{t("patients.filters.statuses.stable")}</option>
+              <option>{t("patients.filters.statuses.critical")}</option>
             </select>
           </div>
         </div>
@@ -119,7 +123,9 @@ export default function DoctorPatients() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">{patient.name}</h3>
-                  <p className="text-sm text-muted-foreground">{patient.age} years, {patient.gender}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {patient.age} {t("years")}, {patient.gender}
+                  </p>
                 </div>
               </div>
               <div className="relative">
@@ -131,29 +137,34 @@ export default function DoctorPatients() {
 
             <div className="space-y-3">
               <div>
-                <p className="text-sm font-medium">Primary Condition</p>
+                <p className="text-sm font-medium">{t("patients.primaryCondition")}</p>
                 <p className="text-sm text-muted-foreground">{patient.condition}</p>
               </div>
 
               <div>
-                <p className="text-sm font-medium">Status</p>
-                <span className={`inline-block px-2 py-1 rounded text-xs ${
-                  patient.status === 'Active Treatment' ? 'bg-warning-100 text-warning-700' :
-                  patient.status === 'Follow-up Required' ? 'bg-blue-light-100 text-blue-light-700' :
-                  patient.status === 'Stable' ? 'bg-success-100 text-success-700' :
-                  'bg-error-100 text-error-700'
-                }`}>
+                <p className="text-sm font-medium">{t("patients.status")}</p>
+                <span
+                  className={`inline-block px-2 py-1 rounded text-xs ${
+                    patient.status === t("patients.filters.statuses.activeTreatment")
+                      ? "bg-warning-100 text-warning-700"
+                      : patient.status === t("patients.filters.statuses.followUpRequired")
+                      ? "bg-blue-light-100 text-blue-light-700"
+                      : patient.status === t("patients.filters.statuses.stable")
+                      ? "bg-success-100 text-success-700"
+                      : "bg-error-100 text-error-700"
+                  }`}
+                >
                   {patient.status}
                 </span>
               </div>
 
               <div>
-                <p className="text-sm font-medium">Last Visit</p>
+                <p className="text-sm font-medium">{t("patients.lastVisit")}</p>
                 <p className="text-sm text-muted-foreground">{patient.lastVisit}</p>
               </div>
 
               <div>
-                <p className="text-sm font-medium">Next Appointment</p>
+                <p className="text-sm font-medium">{t("patients.nextAppointment")}</p>
                 <p className="text-sm text-muted-foreground">{patient.nextAppointment}</p>
               </div>
             </div>
@@ -161,15 +172,15 @@ export default function DoctorPatients() {
             <div className="flex gap-2 mt-4 pt-4 border-t border-border">
               <button className="flex-1 flex items-center justify-center gap-1 px-3 py-2 bg-healthcare-primary text-white rounded-lg text-sm">
                 <FileText className="h-4 w-4" />
-                View File
+                {t("patients.actions.viewFile")}
               </button>
               <button className="flex items-center justify-center gap-1 px-3 py-2 border border-border rounded-lg text-sm hover:border-healthcare-primary">
                 <Phone className="h-4 w-4" />
-                Call
+                {t("patients.actions.call")}
               </button>
               <button className="flex items-center justify-center gap-1 px-3 py-2 border border-border rounded-lg text-sm hover:border-healthcare-primary">
                 <Video className="h-4 w-4" />
-                Video
+                {t("patients.actions.video")}
               </button>
             </div>
           </HealthCard>
@@ -179,9 +190,15 @@ export default function DoctorPatients() {
       {/* Pagination */}
       <div className="flex justify-center">
         <div className="flex items-center gap-2">
-          <button className="px-3 py-2 border border-border rounded-lg hover:border-healthcare-primary">Previous</button>
-          <span className="px-3 py-2">Page 1 of 1</span>
-          <button className="px-3 py-2 border border-border rounded-lg hover:border-healthcare-primary">Next</button>
+          <button className="px-3 py-2 border border-border rounded-lg hover:border-healthcare-primary">
+            {t("patients.pagination.previous")}
+          </button>
+          <span className="px-3 py-2">
+            {t("patients.pagination.pageInfo")}
+          </span>
+          <button className="px-3 py-2 border border-border rounded-lg hover:border-healthcare-primary">
+            {t("patients.pagination.next")}
+          </button>
         </div>
       </div>
     </div>

@@ -1,8 +1,14 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Pill, ArrowRight, Search } from "lucide-react"
+"use client";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Pill, ArrowRight, Search } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function PharmacyHero() {
+  const { t } = useLanguage();
+
+  const stats = t("pharmacy_hero.stats");
+
   return (
     <section className="relative pt-20 pb-24 overflow-hidden">
       {/* Background decorative elements */}
@@ -14,15 +20,13 @@ export default function PharmacyHero() {
           <div className="space-y-6">
             <div className="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-800 rounded-full mb-4">
               <Pill className="h-4 w-4 mr-2" />
-              <span className="text-sm font-medium">Pharmacy Services</span>
+              <span className="text-sm font-medium">{t("pharmacy_hero.tagline")}</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Medications <span className="text-purple-600">Delivered</span> To Your Doorstep
+              {t("pharmacy_hero.title_part1")} <span className="text-purple-600">{t("pharmacy_hero.title_part2")}</span>{" "}
+              {t("pharmacy_hero.title_part3")}
             </h1>
-            <p className="text-xl text-gray-600 max-w-xl">
-              Order prescription and over-the-counter medications from partner pharmacies across Rwanda. Upload your
-              prescription, compare prices, and have your medications delivered to your home.
-            </p>
+            <p className="text-xl text-gray-600 max-w-xl">{t("pharmacy_hero.description")}</p>
 
             {/* Search bar */}
             <div className="relative mt-8">
@@ -32,17 +36,19 @@ export default function PharmacyHero() {
               <input
                 type="text"
                 className="block w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
-                placeholder="Search for medications..."
+                placeholder={t("pharmacy_hero.search_placeholder")}
               />
-              <Button className="absolute right-1.5 top-1.5 bg-purple-600 hover:bg-purple-700">Search</Button>
+              <Button className="absolute right-1.5 top-1.5 bg-purple-600 hover:bg-purple-700">
+                {t("pharmacy_hero.search_button")}
+              </Button>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button className="bg-purple-600 hover:bg-purple-700">
-                Order Medications <Pill className="ml-2 h-4 w-4" />
+                {t("pharmacy_hero.order_button")} <Pill className="ml-2 h-4 w-4" />
               </Button>
               <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50">
-                Upload Prescription <ArrowRight className="ml-2 h-4 w-4" />
+                {t("pharmacy_hero.upload_button")} <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -56,7 +62,7 @@ export default function PharmacyHero() {
                 <div className="aspect-[4/3] relative">
                   <Image
                     src="/placeholder.svg?height=600&width=800&text=Pharmacy+Services"
-                    alt="Pharmacy and medication delivery services"
+                    alt={t("pharmacy_hero.image_alt")}
                     fill
                     className="object-cover"
                   />
@@ -65,18 +71,12 @@ export default function PharmacyHero() {
                 {/* Stats overlay */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
                   <div className="grid grid-cols-3 gap-4">
-                    <div className="text-center">
-                      <p className="text-white text-2xl font-bold">50+</p>
-                      <p className="text-white/80 text-sm">Pharmacies</p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-white text-2xl font-bold">3 hrs</p>
-                      <p className="text-white/80 text-sm">Delivery Time</p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-white text-2xl font-bold">1000+</p>
-                      <p className="text-white/80 text-sm">Medications</p>
-                    </div>
+                    {stats.map((stat: any, idx: number) => (
+                      <div key={idx} className="text-center">
+                        <p className="text-white text-2xl font-bold">{stat.value}</p>
+                        <p className="text-white/80 text-sm">{stat.label}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -84,11 +84,11 @@ export default function PharmacyHero() {
 
             {/* Floating badges */}
             <div className="absolute top-4 right-4 bg-purple-600 text-white px-4 py-2 rounded-full shadow-lg">
-              Free Delivery
+              {t("pharmacy_hero.free_delivery")}
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

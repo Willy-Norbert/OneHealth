@@ -1,53 +1,54 @@
-import Image from "next/image"
-import { Star, Quote } from "lucide-react"
+import Image from "next/image";
+import { Star, Quote } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function PharmacyTestimonials() {
+  const { t } = useLanguage();
+
   const testimonials = [
     {
       name: "Jean Mutesi",
       location: "Kigali",
       image: "/placeholder.svg?height=100&width=100&text=JM",
-      quote:
-        "The medication delivery service has been life-changing for my mother who has diabetes. We no longer worry about running out of insulin as it's delivered right to our doorstep every month.",
+      quote: t("pharmacy_testimonials.quotes.jean"),
       rating: 5,
     },
     {
       name: "Emmanuel Hakizimana",
       location: "Butare",
       image: "/placeholder.svg?height=100&width=100&text=EH",
-      quote:
-        "I was skeptical at first, but after using the service for my blood pressure medication, I'm impressed with the reliability and speed. The pharmacist consultation was also very helpful.",
+      quote: t("pharmacy_testimonials.quotes.emmanuel"),
       rating: 4,
     },
     {
       name: "Marie Claire Uwamahoro",
       location: "Musanze",
       image: "/placeholder.svg?height=100&width=100&text=MCU",
-      quote:
-        "Even though I live in a rural area, ONE HEALTHLINE CONNECT delivers my family's medications consistently. The packaging is secure and the delivery person is always professional.",
+      quote: t("pharmacy_testimonials.quotes.marie"),
       rating: 5,
     },
-  ]
+  ];
 
   const stats = [
-    { value: "98%", label: "On-time delivery" },
-    { value: "50,000+", label: "Monthly deliveries" },
-    { value: "4.8/5", label: "Customer satisfaction" },
-    { value: "100%", label: "Medication authenticity" },
-  ]
+    { value: "98%", label: t("pharmacy_testimonials.stats.on_time") },
+    { value: "50,000+", label: t("pharmacy_testimonials.stats.monthly_deliveries") },
+    { value: "4.8/5", label: t("pharmacy_testimonials.stats.customer_satisfaction") },
+    { value: "100%", label: t("pharmacy_testimonials.stats.medication_authenticity") },
+  ];
 
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
+        {/* Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            What Our <span className="text-purple-600">Customers Say</span>
+            {t("pharmacy_testimonials.heading_part1")}{" "}
+            <span className="text-purple-600">{t("pharmacy_testimonials.heading_part2")}</span>
           </h2>
-          <p className="text-xl text-gray-600">
-            Thousands of Rwandans rely on our pharmacy service for their medication needs. Here&apos;s what they have to say.
-          </p>
+          <p className="text-xl text-gray-600">{t("pharmacy_testimonials.description")}</p>
         </div>
 
+        {/* Testimonials */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
             <div
@@ -76,7 +77,9 @@ export default function PharmacyTestimonials() {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className={`h-5 w-5 ${i < testimonial.rating ? "text-yellow-400 fill-current" : "text-gray-300"}`}
+                    className={`h-5 w-5 ${
+                      i < testimonial.rating ? "text-yellow-400 fill-current" : "text-gray-300"
+                    }`}
                   />
                 ))}
               </div>
@@ -89,8 +92,8 @@ export default function PharmacyTestimonials() {
         {/* Stats */}
         <div className="bg-purple-600 rounded-xl p-10 text-white">
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold mb-2">Our Pharmacy Service in Numbers</h3>
-            <p className="text-purple-100">We&apos;re committed to providing reliable medication services across Rwanda</p>
+            <h3 className="text-2xl font-bold mb-2">{t("pharmacy_testimonials.stats_heading")}</h3>
+            <p className="text-purple-100">{t("pharmacy_testimonials.stats_description")}</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -104,5 +107,5 @@ export default function PharmacyTestimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,8 +1,12 @@
+"use client";
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Video, Calendar } from "lucide-react"
+import { useLanguage } from "@/contexts/LanguageContext" // or wherever your translation hook is
 
 export default function TeleconsultationHero() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative pt-20 pb-24 overflow-hidden">
       {/* Background decorative elements */}
@@ -14,21 +18,20 @@ export default function TeleconsultationHero() {
           <div className="space-y-6">
             <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full mb-4">
               <Video className="h-4 w-4 mr-2" />
-              <span className="text-sm font-medium">Teleconsultation Service</span>
+              <span className="text-sm font-medium">{t("teleconsultation3.serviceTag")}</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Virtual Healthcare <span className="text-blue-600">At Your Fingertips</span>
+              {t("teleconsultation3.title")}
             </h1>
             <p className="text-xl text-gray-600 max-w-xl">
-              Connect with qualified healthcare professionals from the comfort of your home. Get medical advice,
-              prescriptions, and follow-up care without the travel.
+              {t("teleconsultation3.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button className="bg-blue-600 hover:bg-blue-700">
-                Start Consultation <Video className="ml-2 h-4 w-4" />
+                {t("teleconsultation3.startConsultation")} <Video className="ml-2 h-4 w-4" />
               </Button>
               <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
-                Book Appointment <Calendar className="ml-2 h-4 w-4" />
+                {t("teleconsultation3.bookAppointment")} <Calendar className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -42,7 +45,7 @@ export default function TeleconsultationHero() {
                 <div className="aspect-[4/3] relative">
                   <Image
                     src="/placeholder.svg?height=600&width=800&text=Teleconsultation"
-                    alt="Doctor providing teleconsultation"
+                    alt={t("teleconsultation3.serviceTag")}
                     fill
                     className="object-cover"
                   />
@@ -53,15 +56,15 @@ export default function TeleconsultationHero() {
                   <div className="grid grid-cols-3 gap-4">
                     <div className="text-center">
                       <p className="text-white text-2xl font-bold">500+</p>
-                      <p className="text-white/80 text-sm">Doctors</p>
+                      <p className="text-white/80 text-sm">{t("teleconsultation3.stats.doctors")}</p>
                     </div>
                     <div className="text-center">
                       <p className="text-white text-2xl font-bold">24/7</p>
-                      <p className="text-white/80 text-sm">Availability</p>
+                      <p className="text-white/80 text-sm">{t("teleconsultation3.stats.availability")}</p>
                     </div>
                     <div className="text-center">
                       <p className="text-white text-2xl font-bold">15 min</p>
-                      <p className="text-white/80 text-sm">Avg. Wait Time</p>
+                      <p className="text-white/80 text-sm">{t("teleconsultation3.stats.avgWaitTime")}</p>
                     </div>
                   </div>
                 </div>
@@ -70,7 +73,7 @@ export default function TeleconsultationHero() {
 
             {/* Floating badges */}
             <div className="absolute top-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg">
-              Secure & Private
+              {t("teleconsultation3.securePrivate")}
             </div>
           </div>
         </div>

@@ -1,45 +1,46 @@
-import Image from "next/image"
-import { Star } from "lucide-react"
+"use client";
+import Image from "next/image";
+import { Star } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function TeleconsultationTestimonials() {
+  const { t } = useLanguage();
+
   const testimonials = [
     {
       name: "Jean Mutesi",
       location: "Kigali",
       image: "/placeholder.svg?height=100&width=100&text=JM",
       rating: 5,
-      testimonial:
-        "The teleconsultation service saved me so much time. I was able to speak with a doctor within 15 minutes for my child's fever, and received a prescription that was delivered to my home. Excellent service!",
-      service: "Pediatric Consultation",
+      testimonial: t("testimonials2.jean.testimonial"),
+      service: t("testimonials2.jean.service"),
     },
     {
       name: "Emmanuel Hakizimana",
       location: "Musanze",
       image: "/placeholder.svg?height=100&width=100&text=EH",
       rating: 5,
-      testimonial:
-        "Living in a rural area, it's difficult to access specialist care. Through ONE HEALTHLINE CONNECT, I was able to consult with a cardiologist without traveling to Kigali. The video quality was excellent and the doctor was very thorough.",
-      service: "Cardiology Consultation",
+      testimonial: t("testimonials2.emmanuel.testimonial"),
+      service: t("testimonials2.emmanuel.service"),
     },
     {
       name: "Marie Claire Uwamahoro",
       location: "Huye",
       image: "/placeholder.svg?height=100&width=100&text=MCU",
       rating: 4,
-      testimonial:
-        "I've been using the monthly plan for my chronic condition management. Being able to speak with my doctor regularly without visiting the hospital has made managing my health so much easier. Highly recommended!",
-      service: "Chronic Disease Management",
+      testimonial: t("testimonials2.marie.testimonial"),
+      service: t("testimonials2.marie.service"),
     },
-  ]
+  ];
 
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Patients Say</h2>
-          <p className="text-gray-600">
-            Hear from patients who have experienced our teleconsultation services firsthand.
-          </p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            {t("testimonials2.section_title")}
+          </h2>
+          <p className="text-gray-600">{t("testimonials2.section_subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -63,22 +64,33 @@ export default function TeleconsultationTestimonials() {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className={`h-4 w-4 ${i < testimonial.rating ? "text-yellow-500 fill-yellow-500" : "text-gray-300"}`}
+                    className={`h-4 w-4 ${
+                      i < testimonial.rating
+                        ? "text-yellow-500 fill-yellow-500"
+                        : "text-gray-300"
+                    }`}
                   />
                 ))}
               </div>
-              <p className="text-gray-600 mb-4 italic">&quot;{testimonial.testimonial}&quot;</p>
-              <div className="text-sm text-blue-600 font-medium">{testimonial.service}</div>
+              <p className="text-gray-600 mb-4 italic">
+                &quot;{testimonial.testimonial}&quot;
+              </p>
+              <div className="text-sm text-blue-600 font-medium">
+                {testimonial.service}
+              </div>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <a href="#" className="text-blue-600 font-medium hover:text-blue-700">
-            Read more patient testimonials →
+          <a
+            href="#"
+            className="text-blue-600 font-medium hover:text-blue-700"
+          >
+            {t("testimonials2.read_more")} →
           </a>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-// app\services\emergency\page.tsx
+"use client";
 import EmergencyHero from "@/components/services/emergency/emergency-hero"
 import EmergencyFeatures from "@/components/services/emergency/emergency-features"
 import EmergencyHowItWorks from "@/components/services/emergency/emergency-how-it-works"

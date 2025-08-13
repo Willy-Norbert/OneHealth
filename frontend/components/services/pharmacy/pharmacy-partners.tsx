@@ -1,51 +1,49 @@
-import Image from "next/image"
+import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function PharmacyPartners() {
+  const { t } = useLanguage();
+
   const partners = [
     {
-      name: "Kigali Pharmacy Network",
+      name: t("pharmacy_partners.kigali.name"),
       logo: "/placeholder.svg?height=100&width=200&text=Kigali+Pharmacy",
-      description:
-        "A network of 20+ pharmacies across Kigali providing a wide range of medications and healthcare products.",
-      locations: "Kigali City",
-      specialties: "Prescription medications, Chronic disease management",
+      description: t("pharmacy_partners.kigali.description"),
+      locations: t("pharmacy_partners.kigali.locations"),
+      specialties: t("pharmacy_partners.kigali.specialties"),
     },
     {
-      name: "Butare Medical Supplies",
+      name: t("pharmacy_partners.butare.name"),
       logo: "/placeholder.svg?height=100&width=200&text=Butare+Medical",
-      description:
-        "Specialized in hospital-grade medications and supplies with extensive inventory of rare medications.",
-      locations: "Southern Province",
-      specialties: "Specialized medications, Hospital supplies",
+      description: t("pharmacy_partners.butare.description"),
+      locations: t("pharmacy_partners.butare.locations"),
+      specialties: t("pharmacy_partners.butare.specialties"),
     },
     {
-      name: "Musanze Health Pharmacy",
+      name: t("pharmacy_partners.musanze.name"),
       logo: "/placeholder.svg?height=100&width=200&text=Musanze+Health",
-      description:
-        "Serving the Northern Province with focus on rural healthcare needs and affordable medication options.",
-      locations: "Northern Province",
-      specialties: "Rural healthcare, Affordable medications",
+      description: t("pharmacy_partners.musanze.description"),
+      locations: t("pharmacy_partners.musanze.locations"),
+      specialties: t("pharmacy_partners.musanze.specialties"),
     },
     {
-      name: "Rubavu Medication Center",
+      name: t("pharmacy_partners.rubavu.name"),
       logo: "/placeholder.svg?height=100&width=200&text=Rubavu+Center",
-      description: "Western Rwanda's largest pharmacy network with international medication sourcing capabilities.",
-      locations: "Western Province",
-      specialties: "International medications, Specialty drugs",
+      description: t("pharmacy_partners.rubavu.description"),
+      locations: t("pharmacy_partners.rubavu.locations"),
+      specialties: t("pharmacy_partners.rubavu.specialties"),
     },
-  ]
+  ];
 
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Trusted <span className="text-purple-600">Pharmacy Partners</span>
+            {t("pharmacy_partners.heading")}{" "}
+            <span className="text-purple-600">{t("pharmacy_partners.highlight")}</span>
           </h2>
-          <p className="text-xl text-gray-600">
-            We&apos;ve partnered with Rwanda&apos;s most reliable pharmacies to ensure you receive authentic medications with
-            professional service.
-          </p>
+          <p className="text-xl text-gray-600">{t("pharmacy_partners.description")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -73,11 +71,11 @@ export default function PharmacyPartners() {
 
                   <div className="pt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <p className="text-sm font-medium text-gray-500">Locations</p>
+                      <p className="text-sm font-medium text-gray-500">{t("pharmacy_partners.labels.locations")}</p>
                       <p className="text-purple-600 font-medium">{partner.locations}</p>
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-gray-500">Specialties</p>
+                      <p className="text-sm font-medium text-gray-500">{t("pharmacy_partners.labels.specialties")}</p>
                       <p className="text-purple-600 font-medium">{partner.specialties}</p>
                     </div>
                   </div>
@@ -89,12 +87,10 @@ export default function PharmacyPartners() {
 
         <div className="mt-16 text-center">
           <div className="inline-block bg-purple-50 px-6 py-3 rounded-full">
-            <p className="text-purple-800 font-medium">
-              All partner pharmacies are licensed by the Rwanda Pharmacy Council and follow strict quality standards.
-            </p>
+            <p className="text-purple-800 font-medium">{t("pharmacy_partners.footer_note")}</p>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

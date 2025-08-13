@@ -1,9 +1,11 @@
-import { Plus, Search, Download, Send, Edit, Trash2, FileText } from "lucide-react";
+"use client";
+import { Plus, Search, Download, Send, Edit, Trash2 } from "lucide-react";
 import HealthCard from "@/components/common/HealthCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const prescriptions = [
   {
-    id: 1,
+  id: 1,
     patient: "Alice Uwimana",
     date: "March 15, 2024",
     medications: [
@@ -75,16 +77,18 @@ const prescriptions = [
 ];
 
 export default function DoctorPrescriptions() {
+  const { t } = useLanguage();
+
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-3xl font-bold text-foreground mb-2">Prescriptions</h1>
-          <p className="text-muted-foreground">Manage patient prescriptions and medications</p>
+          <h1 className="text-3xl font-bold text-foreground mb-2">{t("prescriptions1.title")}</h1>
+          <p className="text-muted-foreground">{t("prescriptions1.subtitle")}</p>
         </div>
         <button className="bg-healthcare-primary text-white px-6 py-3 rounded-lg flex items-center gap-2">
           <Plus className="h-5 w-5" />
-          New Prescription
+          {t("prescriptions1.newPrescription")}
         </button>
       </div>
 
@@ -95,16 +99,16 @@ export default function DoctorPrescriptions() {
             <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Search by patient name or medication..."
+              placeholder={t("prescriptions1.searchPlaceholder")}
               className="w-full pl-10 pr-4 py-2 border border-border rounded-lg focus:border-healthcare-primary focus:outline-none"
             />
           </div>
           <div className="flex gap-2">
             <select className="px-4 py-2 border border-border rounded-lg">
-              <option>All Status</option>
-              <option>Active</option>
-              <option>Completed</option>
-              <option>Expired</option>
+              <option>{t("prescriptions1.allStatus")}</option>
+              <option>{t("prescriptions1.active")}</option>
+              <option>{t("prescriptions1.completed")}</option>
+              <option>{t("prescriptions1.expired")}</option>
             </select>
             <input type="date" className="px-4 py-2 border border-border rounded-lg" />
           </div>
@@ -120,13 +124,13 @@ export default function DoctorPrescriptions() {
                 <div className="flex items-center gap-3 mb-2">
                   <h3 className="text-lg font-semibold">{prescription.patient}</h3>
                   <span className={`px-2 py-1 rounded text-xs ${
-                    prescription.status === 'Active' ? 'bg-success-100 text-success-700' : 'bg-muted text-muted-foreground'
+                    prescription.status === t("prescriptions1.active") ? 'bg-success-100 text-success-700' : 'bg-muted text-muted-foreground'
                   }`}>
                     {prescription.status}
                   </span>
                 </div>
-                <p className="text-sm text-muted-foreground">Date: {prescription.date}</p>
-                <p className="text-sm text-muted-foreground">Diagnosis: {prescription.diagnosis}</p>
+                <p className="text-sm text-muted-foreground">{t("prescriptions1.date")}: {prescription.date}</p>
+                <p className="text-sm text-muted-foreground">{t("prescriptions1.diagnosis")}: {prescription.diagnosis}</p>
               </div>
               <div className="flex gap-2">
                 <button className="p-2 text-blue-light-500 hover:bg-blue-light-100 rounded">
@@ -146,35 +150,35 @@ export default function DoctorPrescriptions() {
 
             <div className="space-y-4">
               <div>
-                <h4 className="font-medium mb-2">Medications</h4>
+                <h4 className="font-medium mb-2">{t("prescriptions1.medications")}</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {prescription.medications.map((med, index) => (
                     <div key={index} className="p-3 bg-muted rounded-lg">
                       <p className="font-medium">{med.name} {med.dosage}</p>
                       <p className="text-sm text-muted-foreground">{med.frequency}</p>
-                      <p className="text-sm text-muted-foreground">Duration: {med.duration}</p>
+                      <p className="text-sm text-muted-foreground">{t("prescriptions1.duration")}: {med.duration}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div>
-                <h4 className="font-medium mb-2">Doctor's Notes</h4>
+                <h4 className="font-medium mb-2">{t("prescriptions1.doctorsNotes")}</h4>
                 <p className="text-sm text-muted-foreground p-3 bg-muted rounded-lg">{prescription.notes}</p>
               </div>
 
               <div className="flex gap-3 pt-3 border-t border-border">
                 <button className="text-sm text-healthcare-primary hover:underline">
-                  View Full Prescription
+                  {t("prescriptions1.viewFull")}
                 </button>
                 <button className="text-sm text-healthcare-primary hover:underline">
-                  Export as PDF
+                  {t("prescriptions1.exportPdf")}
                 </button>
                 <button className="text-sm text-healthcare-primary hover:underline">
-                  Send to Pharmacy
+                  {t("prescriptions1.sendPharmacy")}
                 </button>
                 <button className="text-sm text-healthcare-primary hover:underline">
-                  Duplicate Prescription
+                  {t("prescriptions1.duplicate")}
                 </button>
               </div>
             </div>
@@ -185,9 +189,13 @@ export default function DoctorPrescriptions() {
       {/* Pagination */}
       <div className="flex justify-center">
         <div className="flex items-center gap-2">
-          <button className="px-3 py-2 border border-border rounded-lg hover:border-healthcare-primary">Previous</button>
-          <span className="px-3 py-2">Page 1 of 1</span>
-          <button className="px-3 py-2 border border-border rounded-lg hover:border-healthcare-primary">Next</button>
+          <button className="px-3 py-2 border border-border rounded-lg hover:border-healthcare-primary">
+            {t("prescriptions1.pagination.previous")}
+          </button>
+          <span className="px-3 py-2">{t("prescriptions1.pagination.pageInfo")}</span>
+          <button className="px-3 py-2 border border-border rounded-lg hover:border-healthcare-primary">
+            {t("prescriptions1.pagination.next")}
+          </button>
         </div>
       </div>
     </div>

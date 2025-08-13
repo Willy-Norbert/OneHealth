@@ -1,67 +1,71 @@
-import { Button } from "@/components/ui/button"
-import { Stethoscope, Brain, Heart, Eye, Bone, Baby, Pill, Microscope, ArrowRight } from "lucide-react"
+"use client";
+import { Button } from "@/components/ui/button";
+import { Stethoscope, Brain, Heart, Eye, Bone, Baby, Pill, Microscope, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AppointmentsTypes() {
+  const { t } = useLanguage();
+
   const appointmentTypes = [
     {
       icon: <Stethoscope className="h-8 w-8 text-green-600" />,
-      title: "General Consultation",
-      description: "Regular check-ups and general health concerns with primary care physicians.",
+      title: t("appointments_types.general_consultation.title"),
+      description: t("appointments_types.general_consultation.description"),
       popular: true,
     },
     {
       icon: <Brain className="h-8 w-8 text-green-600" />,
-      title: "Specialist Consultation",
-      description: "Focused care from specialists in various medical fields.",
+      title: t("appointments_types.specialist_consultation.title"),
+      description: t("appointments_types.specialist_consultation.description"),
       popular: false,
     },
     {
       icon: <Heart className="h-8 w-8 text-green-600" />,
-      title: "Cardiology",
-      description: "Heart health assessments and treatments with cardiologists.",
+      title: t("appointments_types.cardiology.title"),
+      description: t("appointments_types.cardiology.description"),
       popular: true,
     },
     {
       icon: <Eye className="h-8 w-8 text-green-600" />,
-      title: "Ophthalmology",
-      description: "Eye examinations and treatments with eye specialists.",
+      title: t("appointments_types.ophthalmology.title"),
+      description: t("appointments_types.ophthalmology.description"),
       popular: false,
     },
     {
       icon: <Bone className="h-8 w-8 text-green-600" />,
-      title: "Orthopedics",
-      description: "Bone and joint care with orthopedic specialists.",
+      title: t("appointments_types.orthopedics.title"),
+      description: t("appointments_types.orthopedics.description"),
       popular: false,
     },
     {
       icon: <Baby className="h-8 w-8 text-green-600" />,
-      title: "Pediatrics",
-      description: "Healthcare for infants, children, and adolescents.",
+      title: t("appointments_types.pediatrics.title"),
+      description: t("appointments_types.pediatrics.description"),
       popular: true,
     },
     {
       icon: <Pill className="h-8 w-8 text-green-600" />,
-      title: "Pharmacy Consultation",
-      description: "Medication reviews and advice from pharmacists.",
+      title: t("appointments_types.pharmacy.title"),
+      description: t("appointments_types.pharmacy.description"),
       popular: false,
     },
     {
       icon: <Microscope className="h-8 w-8 text-green-600" />,
-      title: "Laboratory Tests",
-      description: "Schedule laboratory tests and diagnostics.",
+      title: t("appointments_types.laboratory.title"),
+      description: t("appointments_types.laboratory.description"),
       popular: false,
     },
-  ]
+  ];
 
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Appointment <span className="text-green-600">Types</span>
+            {t("appointments_types.title")} <span className="text-green-600">{t("appointments_types.title_highlight")}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We offer a wide range of appointment types to address all your healthcare needs.
+            {t("appointments_types.subtitle")}
           </p>
         </div>
 
@@ -77,7 +81,7 @@ export default function AppointmentsTypes() {
             >
               {type.popular && (
                 <div className="bg-green-600 text-white text-xs font-bold uppercase tracking-wider py-1 px-2 rounded-full inline-block mb-4">
-                  Popular
+                  {t("appointments_types.popular")}
                 </div>
               )}
               <div className="mb-4">{type.icon}</div>
@@ -91,21 +95,19 @@ export default function AppointmentsTypes() {
                     : "border-green-600 text-green-600 hover:bg-green-50 w-full"
                 }
               >
-                Book Now
+                {t("appointments_types.book_now")}
               </Button>
             </div>
           ))}
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-gray-600 mb-6">
-            Don&apos;t see the appointment type you need? We offer many more specialized services.
-          </p>
+          <p className="text-gray-600 mb-6">{t("appointments_types.more_specialties")}</p>
           <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
-            View All Specialties <ArrowRight className="ml-2 h-4 w-4" />
+            {t("appointments_types.view_all")} <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>
     </section>
-  )
+  );
 }

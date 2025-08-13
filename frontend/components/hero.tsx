@@ -17,24 +17,24 @@ export default function Hero() {
           <div className="space-y-8 relative z-10">
             <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full">
               <Clock className="h-4 w-4 mr-2" />
-              <span className="text-sm font-medium">{t('hero.badge')}</span>
+              <span className="text-sm font-medium">{t('hero1.badge')}</span>
             </div>
 
             <h1 
               className="text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
-              dangerouslySetInnerHTML={{ __html: t('hero.title') }}
+              dangerouslySetInnerHTML={{ __html: t('hero1.title') }}
             />
 
             <p className="text-lg text-gray-700 max-w-xl">
-              {t('hero.description')}
+              {t('hero1.description')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="bg-green-600 hover:bg-green-700 h-12 px-6 text-base">
-                {t('hero.cta_get_started')}
+                {t('hero1.cta_get_started')}
               </Button>
               <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 h-12 px-6 text-base">
-                {t('hero.cta_emergency')}
+                {t('hero1.cta_emergency')}
               </Button>
             </div>
 
@@ -51,8 +51,8 @@ export default function Hero() {
                 ))}
               </div>
               <div>
-                <div className="font-bold text-gray-900">{t('hero.users_count')}</div>
-                <div className="text-sm text-gray-600">{t('hero.users_trust')}</div>
+                <div className="font-bold text-gray-900">{t('hero1.users_count')}</div>
+                <div className="text-sm text-gray-600">{t('hero1.users_trust')}</div>
               </div>
             </div>
           </div>
@@ -73,12 +73,12 @@ export default function Hero() {
               </div>
 
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                <h3 className="text-white text-xl font-bold">{t('hero.consultations_title')}</h3>
-                <p className="text-white/80 text-sm mt-2">{t('hero.consultations_desc')}</p>
+                <h3 className="text-white text-xl font-bold">{t('hero1.consultations_title')}</h3>
+                <p className="text-white/80 text-sm mt-2">{t('hero1.consultations_desc')}</p>
               </div>
 
               <div className="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                {t('hero.badge_new')}
+                {t('hero1.badge_new')}
               </div>
             </div>
           </div>

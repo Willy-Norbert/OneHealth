@@ -1,12 +1,19 @@
 "use client";
 
 import { useSidebar } from "@/context/SidebarContext";
-import { Calendar, Users, FileText, Video, Activity, Settings, LogOut } from "lucide-react";
+import {
+  Calendar,
+  Users as UsersIcon,
+  FileText,
+  Video,
+  Activity,
+  Settings,
+  LogOut,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLanguage } from "@/contexts/LanguageContext";
-
 
 export default function DoctorSidebar() {
   const { isExpanded, isHovered, isMobileOpen, setIsHovered, toggleMobileSidebar } = useSidebar();
@@ -14,12 +21,12 @@ export default function DoctorSidebar() {
   const { t } = useLanguage();
 
   const menuItems = [
-    { icon: Activity, label: t("doctor.menu.dashboard"), href: "/doctor" },
-    { icon: Calendar, label: t("doctor.menu.appointments"), href: "/doctor/appointments" },
-    { icon: Users, label: t("doctor.menu.patients"), href: "/doctor/patients" },
-    { icon: Video, label: t("doctor.menu.teleconsultations"), href: "/doctor/teleconsultations" },
-    { icon: FileText, label: t("doctor.menu.prescriptions"), href: "/doctor/prescriptions" },
-    { icon: Settings, label: t("doctor.menu.settings"), href: "/doctor/settings" },
+    { icon: Activity, label: t("doctor1.menu.dashboard"), href: "/doctor" },
+    { icon: Calendar, label: t("doctor1.menu.appointments"), href: "/doctor/appointments" },
+    { icon: UsersIcon, label: t("doctor1.menu.patients"), href: "/doctor/patients" },
+    { icon: Video, label: t("doctor1.menu.teleconsultations"), href: "/doctor/teleconsultations" },
+    { icon: FileText, label: t("doctor1.menu.prescriptions"), href: "/doctor/prescriptions" },
+    { icon: Settings, label: t("doctor1.menu.settings"), href: "/doctor/settings" },
   ];
 
   const isVisible = isExpanded || isHovered;
@@ -50,6 +57,8 @@ export default function DoctorSidebar() {
   );
 
   function SidebarContent() {
+    const { user } = useAuth();
+
     return (
       <div className="flex flex-col h-full">
         {/* Header */}
@@ -59,7 +68,7 @@ export default function DoctorSidebar() {
             {isVisible && (
               <div className="ml-3">
                 <h2 className="text-lg font-bold text-brand-500">HealthLine</h2>
-                <p className="text-xs text-gray-600 dark:text-gray-400">{t("doctor.header.panel")}</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400">{t("doctor1.header.panel")}</p>
               </div>
             )}
           </div>
@@ -70,13 +79,11 @@ export default function DoctorSidebar() {
           <div className="p-4 border-b border-gray-200 dark:border-gray-800">
             <div className="flex items-center">
               <div className="w-10 h-10 bg-brand-100 dark:bg-brand-500/20 rounded-full flex items-center justify-center">
-                <span className="text-brand-500 font-medium">
-                  {user.name.charAt(0)}
-                </span>
+                <span className="text-brand-500 font-medium">{user.name?.charAt(0)}</span>
               </div>
               <div className="ml-3">
                 <p className="font-medium text-sm text-gray-800 dark:text-white">{user.name}</p>
-                <p className="text-xs text-gray-600 dark:text-gray-400">{t("doctor.user.role")}</p>
+                <p className="text-xs text-gray-600 dark:text-gray-400">{t("doctor1.user.role")}</p>
               </div>
             </div>
           </div>
@@ -109,7 +116,7 @@ export default function DoctorSidebar() {
         {/* Logout */}
         <div className="p-4 border-t border-gray-200 dark:border-gray-800">
           <button
-            onClick={logout}
+            onClick={() => console.log("Log out logic here")} // TODO: replace with real logout function
             className="flex items-center w-full px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5 rounded-lg transition-colors"
           >
             <LogOut className="h-5 w-5" />

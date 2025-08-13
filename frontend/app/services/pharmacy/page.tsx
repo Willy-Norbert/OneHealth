@@ -1,4 +1,4 @@
-
+"use client";
 import PharmacyHero from "@/components/services/pharmacy/pharmacy-hero"
 import PharmacyFeatures from "@/components/services/pharmacy/pharmacy-features"
 import PharmacyHowItWorks from "@/components/services/pharmacy/pharmacy-how-it-works"
