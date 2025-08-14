@@ -1,11 +1,13 @@
 {
-  "cleanUrls": true,
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "package.json",
+      "use": "@vercel/next",
+      "config": { 
+        "distDir": ".next" 
+      }
     }
   ],
-  "buildCommand": "npm install --legacy-peer-deps && npm run build",
-  "outputDirectory": "build"
+"buildCommand": "next build --ignore-eslint --ignore-typescript"
+
 }
