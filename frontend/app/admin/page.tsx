@@ -34,7 +34,7 @@ export default function AdminPage() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground">{t("admin.dashboard.title")}</h1>
           <p className="text-muted-foreground mt-2">
-            {t("admin.dashboard.welcome", { name: user.name })}
+            {t("admin.dashboard.welcome")}
           </p>
         </div>
 

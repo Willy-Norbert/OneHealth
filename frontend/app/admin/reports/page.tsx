@@ -47,7 +47,7 @@ const ReportsPage = () => {
   };
 
   const exportReport = (format: string) => {
-    alert(t("reports.exporting", { format }));
+    alert(t("reports.exporting"));
   };
 
   return (
