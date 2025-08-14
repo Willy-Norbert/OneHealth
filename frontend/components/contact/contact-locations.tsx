@@ -1,74 +1,96 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { MapPin, Phone, ExternalLink } from "lucide-react"
+"use client";
+import { MapPin, Phone, Mail, Clock, AlertCircle } from "lucide-react"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { JSX } from "react"
 
-export default function ContactLocations() {
+export default function ContactInfo() {
   const { t } = useLanguage()
 
-  const locations = [
-    {
-      id: 1,
-      name: t("contactLocations.locations.1.name"),
-      address: t("contactLocations.locations.1.address"),
-      phone: t("contactLocations.locations.1.phone"),
-      image: "/placeholder.svg?height=300&width=500&text=Kigali+Headquarters",
-      mapUrl: "https://maps.google.com",
-    },
-    {
-      id: 2,
-      name: t("contactLocations.locations.2.name"),
-      address: t("contactLocations.locations.2.address"),
-      phone: t("contactLocations.locations.2.phone"),
-      image: "/placeholder.svg?height=300&width=500&text=Butaro+Branch",
-      mapUrl: "https://maps.google.com",
-    },
-    {
-      id: 3,
-      name: t("contactLocations.locations.3.name"),
-      address: t("contactLocations.locations.3.address"),
-      phone: t("contactLocations.locations.3.phone"),
-      image: "/placeholder.svg?height=300&width=500&text=Muhima+Center",
-      mapUrl: "https://maps.google.com",
-    },
-  ]
-
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("contactLocations.heading")}</h2>
-          <p className="text-gray-600">{t("contactLocations.description")}</p>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">{t("contactInfo.heading")}</h2>
+          <p className="text-gray-600 dark:text-gray-300">{t("contactInfo.description")}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {locations.map((location) => (
-            <div key={location.id} className="bg-white rounded-xl shadow-md overflow-hidden">
-              <div className="relative h-48">
-                <Image src={location.image || "/placeholder.svg"} alt={location.name} fill className="object-cover" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{location.name}</h3>
-                <div className="space-y-3 mb-4">
-                  <div className="flex items-start">
-                    <MapPin className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-                    <span className="text-gray-700">{location.address}</span>
-                  </div>
-                  <div className="flex items-start">
-                    <Phone className="h-5 w-5 text-green-600 mr-2 mt-0.5" />
-                    <span className="text-gray-700">{location.phone}</span>
-                  </div>
-                </div>
-                <a href={location.mapUrl} target="_blank" rel="noopener noreferrer">
-                  <Button variant="outline" className="w-full border-green-600 text-green-600 hover:bg-green-50">
-                    {t("contactLocations.viewOnMap")} <ExternalLink className="ml-2 h-4 w-4" />
-                  </Button>
-                </a>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <ContactCard
+            icon={<MapPin className="h-6 w-6 text-white" />}
+            title={t("contactInfo.cards.location.title")}
+            details={t("contactInfo.cards.location.details")}
+            color="bg-blue-600"
+          />
+
+          <ContactCard
+            icon={<Phone className="h-6 w-6 text-white" />}
+            title={t("contactInfo.cards.phone.title")}
+            details={t("contactInfo.cards.phone.details")}
+            color="bg-green-600"
+          />
+
+          <ContactCard
+            icon={<Mail className="h-6 w-6 text-white" />}
+            title={t("contactInfo.cards.email.title")}
+            details={t("contactInfo.cards.email.details")}
+            color="bg-purple-600"
+          />
+
+          <ContactCard
+            icon={<Clock className="h-6 w-6 text-white" />}
+            title={t("contactInfo.cards.hours.title")}
+            details={t("contactInfo.cards.hours.details")}
+            color="bg-amber-600"
+            footer={t("contactInfo.cards.hours.footer")}
+          />
+        </div>
+
+        <div className="max-w-3xl mx-auto mt-12 bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 rounded-xl p-6">
+          <div className="flex items-start">
+            <div className="bg-red-100 dark:bg-red-800 p-2 rounded-lg mr-4">
+              <AlertCircle className="h-6 w-6 text-red-600 dark:text-red-400" />
             </div>
-          ))}
+            <div>
+              <h3 className="font-bold text-gray-900 dark:text-gray-100 mb-2">{t("contactInfo.emergency.title")}</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-2">{t("contactInfo.emergency.desc")}</p>
+              <p className="text-red-600 dark:text-red-400 font-bold">{t("contactInfo.emergency.hotline")}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+  )
+}
+
+function ContactCard({
+  icon,
+  title,
+  details,
+  color,
+  footer = null,
+}: {
+  icon: JSX.Element
+  title: string
+  details: string[]
+  color: string
+  footer?: string | null
+}) {
+  return (
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden h-full">
+      <div className={`${color} p-6 flex items-center`}>
+        <div className="bg-white/20 dark:bg-white/10 w-12 h-12 rounded-full flex items-center justify-center">{icon}</div>
+        <h3 className="text-xl font-bold text-white ml-4">{title}</h3>
+      </div>
+      <div className="p-6">
+        <ul className="space-y-2">
+          {details.map((detail, index) => (
+            <li key={index} className="text-gray-700 dark:text-gray-300">
+              {detail}
+            </li>
+          ))}
+        </ul>
+        {footer && <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">{footer}</p>}
+      </div>
+    </div>
   )
 }

@@ -45,14 +45,14 @@ export default function DoctorsSection() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
               {t("doctorsSection.title", "Meet Our Specialists")}
             </h2>
-            <p className="text-gray-600 mt-2 max-w-2xl">
+            <p className="text-gray-600 dark:text-gray-300 mt-2 max-w-2xl">
               {t(
                 "doctorsSection.description",
                 "Our network includes Rwanda's top medical professionals ready to provide you with exceptional care"
@@ -61,7 +61,7 @@ export default function DoctorsSection() {
           </div>
           <Link
             href="/doctors"
-            className="mt-4 md:mt-0 text-green-600 font-medium hover:text-green-700 flex items-center"
+            className="mt-4 md:mt-0 text-green-600 dark:text-green-400 font-medium hover:text-green-700 dark:hover:text-green-300 flex items-center"
           >
             {t("doctorsSection.viewAll", "View all doctors")}
             <svg
@@ -79,7 +79,7 @@ export default function DoctorsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {doctors.map((doctor) => (
             <div key={doctor.id} className="group">
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl">
+              <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl">
                 <div className="relative">
                   <div className="aspect-[3/4] relative">
                     <Image
@@ -93,7 +93,9 @@ export default function DoctorsSection() {
                   {/* Availability badge */}
                   <div
                     className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium ${
-                      doctor.available ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800"
+                      doctor.available
+                        ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+                        : "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200"
                     }`}
                   >
                     {doctor.available
@@ -121,9 +123,9 @@ export default function DoctorsSection() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="font-bold text-lg text-gray-900">{doctor.name}</h3>
-                  <p className="text-green-600 font-medium text-sm">{doctor.specialty}</p>
-                  <p className="text-gray-500 text-sm mt-1">{doctor.hospital}</p>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white">{doctor.name}</h3>
+                  <p className="text-green-600 dark:text-green-400 font-medium text-sm">{doctor.specialty}</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">{doctor.hospital}</p>
 
                   <div className="mt-4 flex items-center">
                     <div className="flex">
@@ -139,7 +141,9 @@ export default function DoctorsSection() {
                         </svg>
                       ))}
                     </div>
-                    <span className="text-gray-500 text-sm ml-2">4.9 (120 {t("doctorsSection.reviews", "reviews")})</span>
+                    <span className="text-gray-500 dark:text-gray-400 text-sm ml-2">
+                      4.9 (120 {t("doctorsSection.reviews", "reviews")})
+                    </span>
                   </div>
                 </div>
               </div>

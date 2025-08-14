@@ -12,17 +12,17 @@ import AboutCta from "@/components/about/about-cta"
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen  bg-white">
-      <div className=" m-10">
-      <Navbar />
-      <AboutHero />
-      <MissionVision />
-      <OurStory />
-      <CoreValues />
-      <OurTeam />
-      <Partners />
-      <Achievements />
-      <AboutCta />
+    <main className="min-h-screen bg-white dark:bg-gray-900">
+      <div className="m-10">
+        <Navbar />
+        <AboutHero />
+        <MissionVision />
+        <OurStory />
+        <CoreValues />
+        <OurTeam />
+        <Partners />
+        <Achievements />
+        <AboutCta />
       </div>
       <Footer />
     </main>

@@ -1,4 +1,3 @@
-
 "use client"
 
 import Link from "next/link"
@@ -22,7 +21,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="bg-white border-b border-gray-100 p-3 sticky top-0 z-50">
+    <header className="bg-white border-b border-gray-100 p-3 sticky top-0 z-50 dark:bg-gray-900 dark:border-gray-700">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-12">
           <Link href="/" className="flex items-center space-x-2">
@@ -30,19 +29,19 @@ export default function Navbar() {
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-900 hover:text-green-600 font-medium">
+            <Link href="/" className="text-gray-900 hover:text-green-600 font-medium dark:text-gray-100 dark:hover:text-green-400">
               {t('nav.home')}
             </Link>
-            <Link href="/services" className="text-gray-900 hover:text-green-600 font-medium">
+            <Link href="/services" className="text-gray-900 hover:text-green-600 font-medium dark:text-gray-100 dark:hover:text-green-400">
               {t('nav.services')}
             </Link>
-            <Link href="/departments" className="text-gray-900 hover:text-green-600 font-medium">
+            <Link href="/departments" className="text-gray-900 hover:text-green-600 font-medium dark:text-gray-100 dark:hover:text-green-400">
               {t('nav.departments')}
             </Link>
-            <Link href="/about" className="text-gray-900 hover:text-green-600 font-medium">
+            <Link href="/about" className="text-gray-900 hover:text-green-600 font-medium dark:text-gray-100 dark:hover:text-green-400">
               {t('nav.about')}
             </Link>
-            <Link href="/contact" className="text-gray-900 hover:text-green-600 font-medium">
+            <Link href="/contact" className="text-gray-900 hover:text-green-600 font-medium dark:text-gray-100 dark:hover:text-green-400">
               {t('nav.contact')}
             </Link>
           </nav>
@@ -59,7 +58,7 @@ export default function Navbar() {
                       onClick={handleLogout}
                       variant="outline"
                       size="sm"
-                      className="text-red-600 border-red-200 hover:bg-red-50"
+                      className="text-red-600 border-red-200 hover:bg-red-50 dark:text-red-400 dark:border-red-600 dark:hover:bg-red-900/30"
                     >
                       <LogOut className="mr-2 h-4 w-4" />
                       {t('nav.logout')}
@@ -67,7 +66,7 @@ export default function Navbar() {
                   </div>
                 ) : (
                   <Link href="/auth">
-                    <Button className="bg-green-600 hover:bg-green-700 hidden md:flex">
+                    <Button className="bg-green-600 hover:bg-green-700 hidden md:flex dark:bg-green-500 dark:hover:bg-green-600">
                       {t('register.buttons.signIn')}
                     </Button>
                   </Link>
@@ -75,7 +74,7 @@ export default function Navbar() {
               </>
             )}
             <ThemeToggleButton />
-            <Button variant="ghost" size="icon" className="md:hidden">
+            <Button variant="ghost" size="icon" className="md:hidden dark:text-gray-100 dark:hover:bg-gray-800">
               <Menu className="h-6 w-6" />
             </Button>
           </div>

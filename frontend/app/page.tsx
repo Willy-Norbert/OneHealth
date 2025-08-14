@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/layouts/navbar"
 import Hero from "@/components/hero"
 import ServiceCards from "@/components/services/service-cards"
@@ -12,18 +11,18 @@ import Footer from "@/components/layouts/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white dark:bg-gray-900">
       <Navbar />
       <div className="relative overflow-hidden container">
-        <div className=" m-10">
-        <Hero />
-        <ServiceCards />
-        <DepartmentSection />
-        <StatsSection />
-        <DoctorsSection />
-        <TestimonialsSection />
-        <CtaSection />
-        <ContactSection />
+        <div className="m-10">
+          <Hero />
+          <ServiceCards />
+          <DepartmentSection />
+          <StatsSection />
+          <DoctorsSection />
+          <TestimonialsSection />
+          <CtaSection />
+          <ContactSection />
         </div>
         <Footer />
       </div>

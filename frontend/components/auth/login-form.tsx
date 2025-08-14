@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react"
 import { useAuth } from "@/contexts/AuthContext"
@@ -46,21 +46,21 @@ export default function LoginForm({ onToggleForm }: LoginFormProps) {
   }
 
   return (
-    <Card className="w-full max-w-md mx-auto">
+    <Card className="w-full max-w-md mx-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl font-bold text-gray-900">{t("loginForm.title")}</CardTitle>
-        <CardDescription className="text-gray-600">{t("loginForm.description")}</CardDescription>
+        <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">{t("loginForm.title")}</CardTitle>
+        <CardDescription className="text-gray-600 dark:text-gray-300">{t("loginForm.description")}</CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
-            <div className="p-3 bg-red-50 border border-red-200 rounded-md">
-              <p className="text-sm text-red-600">{error}</p>
+            <div className="p-3 bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 rounded-md">
+              <p className="text-sm text-red-600 dark:text-red-300">{error}</p>
             </div>
           )}
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               {t("loginForm.emailLabel")}
             </label>
             <Input
@@ -71,12 +71,12 @@ export default function LoginForm({ onToggleForm }: LoginFormProps) {
               onChange={handleChange}
               placeholder={t("loginForm.emailPlaceholder")}
               required
-              className="bg-gray-50 border-gray-200"
+              className="bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-100"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               {t("loginForm.passwordLabel")}
             </label>
             <div className="relative">
@@ -88,7 +88,7 @@ export default function LoginForm({ onToggleForm }: LoginFormProps) {
                 onChange={handleChange}
                 placeholder={t("loginForm.passwordPlaceholder")}
                 required
-                className="bg-gray-50 border-gray-200 pr-10"
+                className="bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-100 pr-10"
               />
               <button
                 type="button"
@@ -96,9 +96,9 @@ export default function LoginForm({ onToggleForm }: LoginFormProps) {
                 className="absolute inset-y-0 right-0 pr-3 flex items-center"
               >
                 {showPassword ? (
-                  <EyeOff className="h-4 w-4 text-gray-400" />
+                  <EyeOff className="h-4 w-4 text-gray-400 dark:text-gray-200" />
                 ) : (
-                  <Eye className="h-4 w-4 text-gray-400" />
+                  <Eye className="h-4 w-4 text-gray-400 dark:text-gray-200" />
                 )}
               </button>
             </div>
@@ -106,7 +106,7 @@ export default function LoginForm({ onToggleForm }: LoginFormProps) {
 
           <Button
             type="submit"
-            className="w-full bg-green-600 hover:bg-green-700"
+            className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600"
             disabled={isSubmitting}
           >
             {isSubmitting ? (
@@ -121,12 +121,12 @@ export default function LoginForm({ onToggleForm }: LoginFormProps) {
 
           {onToggleForm && (
             <div className="text-center">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-600 dark:text-gray-300">
                 {t("loginForm.noAccount")}{" "}
                 <button
                   type="button"
                   onClick={onToggleForm}
-                  className="text-green-600 hover:text-green-700 font-medium"
+                  className="text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 font-medium"
                 >
                   {t("loginForm.signUp")}
                 </button>

@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Star, Calendar } from "lucide-react";
@@ -51,18 +52,22 @@ export default function DepartmentSpecialists() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("departments.meet_doctors_title")}</h2>
-          <p className="text-gray-600">{t("departments.meet_doctors_description")}</p>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            {t("departments.meet_doctors_title")}
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300">
+            {t("departments.meet_doctors_description")}
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {specialists.map((specialist) => (
             <div
               key={specialist.id}
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
             >
               <div className="relative">
                 <div className="aspect-[3/4] relative">
@@ -73,23 +78,23 @@ export default function DepartmentSpecialists() {
                     className="object-cover"
                   />
                 </div>
-                <div className="absolute top-4 right-4 bg-white px-2 py-1 rounded-full text-sm font-medium text-green-600 shadow-md">
+                <div className="absolute top-4 right-4 bg-white dark:bg-gray-700 px-2 py-1 rounded-full text-sm font-medium text-green-600 shadow-md">
                   {specialist.experience}
                 </div>
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900">{specialist.name}</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">{specialist.name}</h3>
                 <p className="text-green-600 font-medium">{specialist.specialty}</p>
-                <p className="text-gray-500 text-sm">{specialist.hospital}</p>
+                <p className="text-gray-500 dark:text-gray-300 text-sm">{specialist.hospital}</p>
 
                 <div className="flex items-center mt-3">
                   <div className="flex items-center">
                     <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                    <span className="ml-1 text-gray-700 font-medium">{specialist.rating}</span>
+                    <span className="ml-1 text-gray-700 dark:text-gray-300 font-medium">{specialist.rating}</span>
                   </div>
-                  <span className="mx-2 text-gray-300">|</span>
-                  <span className="text-gray-500 text-sm">
+                  <span className="mx-2 text-gray-300 dark:text-gray-500">|</span>
+                  <span className="text-gray-500 dark:text-gray-300 text-sm">
                     {t("departments.reviews", { count: specialist.reviewCount })}
                   </span>
                 </div>
@@ -104,7 +109,7 @@ export default function DepartmentSpecialists() {
 
         <div className="text-center mt-12">
           <Link href="/doctors" className="inline-block">
-            <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
+            <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50 dark:hover:bg-gray-700 dark:border-green-500 dark:text-green-400">
               {t("departments.view_all_doctors")}
             </Button>
           </Link>

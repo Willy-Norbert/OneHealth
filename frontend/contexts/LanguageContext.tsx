@@ -15,6 +15,11 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const translations = {
   en: {
+    "cta7": {
+    "title": "Book Your Teleconsultation Today",
+    "subtitle": "Connect with our doctors from the comfort of your home in just a few clicks.",
+    "button": "Book Now"
+  },
     pharmacy_cta: {
       heading: "Get Your Medications Delivered Today",
       description: "Never run out of essential medications again. Order now and experience the convenience of having your prescriptions delivered right to your doorstep.",
@@ -2872,6 +2877,7 @@ const translations = {
       doctor_consulting_with_patient: "Doctor consulting with patient",
     },
     services2: {
+
       title: "Our Services",
       subtitle: "Comprehensive healthcare services designed to meet all your medical needs",
       teleconsultation: {
@@ -3096,7 +3102,7 @@ const translations = {
       learnMore: "Learn more",
     },
 
-    services: {
+    services5: {
       teleconsultation: {
         title: "Teleconsultation",
         description: "Virtual consultations with healthcare professionals from various hospitals",
@@ -3600,6 +3606,12 @@ const translations = {
     }   
 },
   rw: {
+      "cta7": {
+    "title": "Tegura Inama ya Teleconsultation Uyu Munsi",
+    "subtitle": "Vugana n’abaganga bacu utavuye mu rugo mu gihe gito ukoresheje iminsi mike.",
+    "button": "Tegura Ubu"
+  }
+,
     pharmacy_cta: {
       heading: "Bohereza Imiti Yawe Uyu Munsi",
       description: "Ntuzigire ikibazo cyo kubura imiti ikenewe. Tegura itegeko ryawe none maze wungukire uburyo bwo kohereza prescription yawe ku rugo rwawe.",
@@ -5060,6 +5072,7 @@ const translations = {
       },
     },
      "common": {
+      "loading":"biri kuza",
     "continue": "Komeza",
     "back": "Garuka",
     "confirm": "Emeza",
@@ -5223,10 +5236,6 @@ const translations = {
       "notes": "Inyandiko"
     }
   },
-  "common": {
-    "continue": "Komeza",
-    "back": "Garuka"
-  },
     "bookAppointments": {
     "title": "Gufata Rendez-vous",
     "subtitle": "Teganya gahunda yo kuganira na muganga",
@@ -5272,10 +5281,6 @@ const translations = {
       "ussd": "USSD"
     },
     "confirmPay": "Emeza & wishyure"
-  },
-  "common": {
-    "continue": "Komeza",
-    "back": "Subira inyuma"
   },
   "departments": {
     "generalmedicine": "Ubuvuzi rusange",
@@ -6931,7 +6936,7 @@ const translations = {
     },
     
 
-    services: {
+    services5: {
       teleconsultation: {
         title: "Kuganira na Muganga Kuri Telefone",
         desc: "Kuganira na Muganga Kuri Telefone",

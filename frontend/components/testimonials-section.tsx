@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
-import { useLanguage } from "@/contexts/LanguageContext" // adjust path if needed
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function TestimonialsSection() {
   const { t } = useLanguage()
@@ -47,22 +47,17 @@ export default function TestimonialsSection() {
 
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const nextTestimonial = () => {
-    setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
-  }
-
-  const prevTestimonial = () => {
-    setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))
-  }
+  const nextTestimonial = () => setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
+  const prevTestimonial = () => setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
             {t("testimonials.title", "What Our Patients Say")}
           </h2>
-          <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 mt-2 max-w-2xl mx-auto">
             {t(
               "testimonials.subtitle",
               "Real experiences from people who have transformed their healthcare journey with ONE HEALTHLINE CONNECT"
@@ -71,7 +66,7 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-white rounded-2xl shadow-xl p-8 md:p-12">
+          <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
             {/* Quote icon */}
             <div className="absolute -top-6 -left-6 bg-green-600 text-white p-4 rounded-full shadow-lg">
               <Quote className="h-6 w-6" />
@@ -79,7 +74,7 @@ export default function TestimonialsSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
               <div className="md:col-span-1 flex flex-col items-center">
-                <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-green-100">
+                <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-green-100 dark:border-green-800">
                   <Image
                     src={testimonials[activeIndex].image || "/placeholder.svg"}
                     alt={testimonials[activeIndex].name}
@@ -87,16 +82,14 @@ export default function TestimonialsSection() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="font-bold text-gray-900 mt-4">{testimonials[activeIndex].name}</h3>
-                <p className="text-gray-500 text-sm">{testimonials[activeIndex].role}</p>
+                <h3 className="font-bold text-gray-900 dark:text-white mt-4">{testimonials[activeIndex].name}</h3>
+                <p className="text-gray-500 dark:text-gray-400 text-sm">{testimonials[activeIndex].role}</p>
                 <div className="flex mt-2">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
                       xmlns="http://www.w3.org/2000/svg"
-                      className={`h-4 w-4 ${
-                        i < testimonials[activeIndex].rating ? "text-yellow-400" : "text-gray-300"
-                      }`}
+                      className={`h-4 w-4 ${i < testimonials[activeIndex].rating ? "text-yellow-400" : "text-gray-300 dark:text-gray-600"}`}
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
@@ -107,7 +100,7 @@ export default function TestimonialsSection() {
               </div>
 
               <div className="md:col-span-2">
-                <blockquote className="text-gray-700 text-lg italic leading-relaxed">
+                <blockquote className="text-gray-700 dark:text-gray-300 text-lg italic leading-relaxed">
                   &quot;{testimonials[activeIndex].quote}&quot;
                 </blockquote>
               </div>
@@ -119,7 +112,7 @@ export default function TestimonialsSection() {
                 variant="outline"
                 size="icon"
                 onClick={prevTestimonial}
-                className="rounded-full border-gray-200 hover:border-green-600 hover:text-green-600"
+                className="rounded-full border-gray-200 dark:border-gray-600 hover:border-green-600 dark:hover:border-green-400 hover:text-green-600 dark:hover:text-green-400"
                 aria-label={t("testimonials.prev", "Previous testimonial")}
               >
                 <ChevronLeft className="h-5 w-5" />
@@ -129,12 +122,8 @@ export default function TestimonialsSection() {
                   <button
                     key={index}
                     onClick={() => setActiveIndex(index)}
-                    className={`w-2.5 h-2.5 rounded-full ${
-                      index === activeIndex ? "bg-green-600" : "bg-gray-300"
-                    }`}
-                    aria-label={t("testimonials.goto", `Go to testimonial ${index + 1}`, {
-                      index: index + 1,
-                    })}
+                    className={`w-2.5 h-2.5 rounded-full ${index === activeIndex ? "bg-green-600" : "bg-gray-300 dark:bg-gray-600"}`}
+                    aria-label={t("testimonials.goto", `Go to testimonial ${index + 1}`, { index: index + 1 })}
                   />
                 ))}
               </div>
@@ -142,7 +131,7 @@ export default function TestimonialsSection() {
                 variant="outline"
                 size="icon"
                 onClick={nextTestimonial}
-                className="rounded-full border-gray-200 hover:border-green-600 hover:text-green-600"
+                className="rounded-full border-gray-200 dark:border-gray-600 hover:border-green-600 dark:hover:border-green-400 hover:text-green-600 dark:hover:text-green-400"
                 aria-label={t("testimonials.next", "Next testimonial")}
               >
                 <ChevronRight className="h-5 w-5" />

@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Check, Download } from "lucide-react"
-import { useLanguage } from "@/contexts/LanguageContext" // adjust path if needed
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function CtaSection() {
   const { t } = useLanguage()
@@ -17,14 +17,14 @@ export default function CtaSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-900 to-green-900 text-white">
+    <section className="py-20 bg-gradient-to-br from-blue-900 to-green-900 text-white dark:from-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight text-white dark:text-gray-100">
               {t("cta2.title", "Download the ONE HEALTHLINE CONNECT App Today")}
             </h2>
-            <p className="text-white/80 text-lg">
+            <p className="text-white/80 dark:text-gray-300 text-lg">
               {t(
                 "cta.description",
                 "Take control of your healthcare journey with our comprehensive mobile application. Access all our services anytime, anywhere."
@@ -34,27 +34,27 @@ export default function CtaSection() {
             <ul className="space-y-4">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start">
-                  <div className="bg-green-500/20 p-1 rounded-full mr-3 mt-1">
-                    <Check className="h-4 w-4 text-green-400" />
+                  <div className="bg-green-500/20 dark:bg-green-600/20 p-1 rounded-full mr-3 mt-1">
+                    <Check className="h-4 w-4 text-green-400 dark:text-green-300" />
                   </div>
-                  <span>{feature}</span>
+                  <span className="text-white dark:text-gray-200">{feature}</span>
                 </li>
               ))}
             </ul>
 
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
-              <Button className="bg-white text-blue-900 hover:bg-white/90 h-14 px-6">
+              <Button className="bg-white text-blue-900 dark:text-gray-900 hover:bg-white/90 h-14 px-6">
                 <Download className="mr-2 h-5 w-5" /> {t("cta2.download_ios", "Download for iOS")}
               </Button>
-              <Button variant="outline" className="border-white text-green-700 hover:bg-white/90 h-14 px-6">
+              <Button variant="outline" className="border-white text-green-700 dark:text-green-300 hover:bg-white/10 dark:hover:bg-white/10 h-14 px-6">
                 <Download className="mr-2 h-5 w-5" /> {t("cta2.download_android", "Download for Android")}
               </Button>
             </div>
           </div>
 
           <div className="relative">
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-500/20 rounded-full filter blur-3xl"></div>
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-green-500/20 rounded-full filter blur-3xl"></div>
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-500/20 dark:bg-blue-700/20 rounded-full filter blur-3xl"></div>
+            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-green-500/20 dark:bg-green-700/20 rounded-full filter blur-3xl"></div>
 
             <div className="relative z-10">
               <div className="relative h-[36rem] w-[18rem] mx-auto">

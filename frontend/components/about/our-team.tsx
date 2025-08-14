@@ -42,17 +42,17 @@ export default function OurTeam() {
   ]
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">{t("ourTeam.heading")}</h2>
-          <p className="text-gray-600">{t("ourTeam.subheading")}</p>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{t("ourTeam.heading")}</h2>
+          <p className="text-gray-600 dark:text-gray-300">{t("ourTeam.subheading")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {executives.map((executive, index) => (
             <div key={index} className="group">
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl">
+              <div className="bg-white dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg dark:shadow-md transition-all duration-300 hover:shadow-xl dark:hover:shadow-lg">
                 <div className="relative">
                   <div className="aspect-square relative">
                     <Image
@@ -95,9 +95,9 @@ export default function OurTeam() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="font-bold text-lg text-gray-900">{executive.name}</h3>
-                  <p className="text-green-600 font-medium text-sm">{executive.role}</p>
-                  <p className="text-gray-600 mt-3 text-sm">{executive.bio}</p>
+                  <h3 className="font-bold text-lg text-gray-900 dark:text-white">{executive.name}</h3>
+                  <p className="text-green-600 dark:text-green-400 font-medium text-sm">{executive.role}</p>
+                  <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm">{executive.bio}</p>
                 </div>
               </div>
             </div>

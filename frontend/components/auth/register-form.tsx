@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react"
 import { useAuth } from "@/contexts/AuthContext"
@@ -62,21 +62,21 @@ export default function RegisterForm({ onToggleForm }: RegisterFormProps) {
   }
 
   return (
-    <Card className="w-full max-w-md mx-auto">
+    <Card className="w-full max-w-md mx-auto bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
       <CardHeader className="text-center">
-        <CardTitle className="text-2xl font-bold text-gray-900">{t("register.title")}</CardTitle>
-        <CardDescription className="text-gray-600">{t("register.description")}</CardDescription>
+        <CardTitle className="text-2xl font-bold text-gray-900 dark:text-white">{t("register.title")}</CardTitle>
+        <CardDescription className="text-gray-600 dark:text-gray-300">{t("register.description")}</CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
-            <div className="p-3 bg-red-50 border border-red-200 rounded-md">
-              <p className="text-sm text-red-600">{error}</p>
+            <div className="p-3 bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-700 rounded-md">
+              <p className="text-sm text-red-600 dark:text-red-300">{error}</p>
             </div>
           )}
 
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               {t("register.labels.fullName")}
             </label>
             <Input
@@ -87,12 +87,12 @@ export default function RegisterForm({ onToggleForm }: RegisterFormProps) {
               onChange={handleChange}
               placeholder={t("register.placeholders.fullName")}
               required
-              className="bg-gray-50 border-gray-200"
+              className="bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-100"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               {t("register.labels.email")}
             </label>
             <Input
@@ -103,12 +103,12 @@ export default function RegisterForm({ onToggleForm }: RegisterFormProps) {
               onChange={handleChange}
               placeholder={t("register.placeholders.email")}
               required
-              className="bg-gray-50 border-gray-200"
+              className="bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-100"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               {t("register.labels.password")}
             </label>
             <div className="relative">
@@ -120,7 +120,7 @@ export default function RegisterForm({ onToggleForm }: RegisterFormProps) {
                 onChange={handleChange}
                 placeholder={t("register.placeholders.password")}
                 required
-                className="bg-gray-50 border-gray-200 pr-10"
+                className="bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-100 pr-10"
               />
               <button
                 type="button"
@@ -128,16 +128,16 @@ export default function RegisterForm({ onToggleForm }: RegisterFormProps) {
                 className="absolute inset-y-0 right-0 pr-3 flex items-center"
               >
                 {showPassword ? (
-                  <EyeOff className="h-4 w-4 text-gray-400" />
+                  <EyeOff className="h-4 w-4 text-gray-400 dark:text-gray-200" />
                 ) : (
-                  <Eye className="h-4 w-4 text-gray-400" />
+                  <Eye className="h-4 w-4 text-gray-400 dark:text-gray-200" />
                 )}
               </button>
             </div>
           </div>
 
           <div>
-            <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="role" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               {t("register.labels.accountType")}
             </label>
             <select
@@ -145,7 +145,7 @@ export default function RegisterForm({ onToggleForm }: RegisterFormProps) {
               name="role"
               value={formData.role}
               onChange={(e) => setFormData(prev => ({ ...prev, role: e.target.value }))}
-              className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-md text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
             >
               <option value="patient">{t("register.roles.patient")}</option>
               <option value="doctor">{t("register.roles.doctor")}</option>
@@ -154,7 +154,7 @@ export default function RegisterForm({ onToggleForm }: RegisterFormProps) {
           </div>
 
           <div>
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               {t("register.labels.confirmPassword")}
             </label>
             <div className="relative">
@@ -166,7 +166,7 @@ export default function RegisterForm({ onToggleForm }: RegisterFormProps) {
                 onChange={handleChange}
                 placeholder={t("register.placeholders.confirmPassword")}
                 required
-                className="bg-gray-50 border-gray-200 pr-10"
+                className="bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600 text-gray-900 dark:text-gray-100 pr-10"
               />
               <button
                 type="button"
@@ -174,9 +174,9 @@ export default function RegisterForm({ onToggleForm }: RegisterFormProps) {
                 className="absolute inset-y-0 right-0 pr-3 flex items-center"
               >
                 {showConfirmPassword ? (
-                  <EyeOff className="h-4 w-4 text-gray-400" />
+                  <EyeOff className="h-4 w-4 text-gray-400 dark:text-gray-200" />
                 ) : (
-                  <Eye className="h-4 w-4 text-gray-400" />
+                  <Eye className="h-4 w-4 text-gray-400 dark:text-gray-200" />
                 )}
               </button>
             </div>
@@ -184,7 +184,7 @@ export default function RegisterForm({ onToggleForm }: RegisterFormProps) {
 
           <Button
             type="submit"
-            className="w-full bg-green-600 hover:bg-green-700"
+            className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600"
             disabled={isSubmitting}
           >
             {isSubmitting ? (
@@ -199,12 +199,12 @@ export default function RegisterForm({ onToggleForm }: RegisterFormProps) {
 
           {onToggleForm && (
             <div className="text-center">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-600 dark:text-gray-300">
                 {t("register.alreadyHaveAccount")}{" "}
                 <button
                   type="button"
                   onClick={onToggleForm}
-                  className="text-green-600 hover:text-green-700 font-medium"
+                  className="text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300 font-medium"
                 >
                   {t("register.buttons.signIn")}
                 </button>

@@ -14,21 +14,21 @@ import ServicesCta from "@/components/services/services-cta"
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <div className="m-10">
-      <Navbar />
-      <ServicesHero />
-      <ServicesOverview />
-      <TeleconsultationService />
-      <AppointmentService />
-      <EmergencyService />
-      <PharmacyService />
-      <AiDoctorService />
-      <HowItWorks />
-      <ServicesPricing />
-      <ServicesFaq />
-      <ServicesCta />
-        </div>
+    <main className="min-h-screen bg-white dark:bg-gray-900">
+      <div className="m-10 text-gray-900 dark:text-gray-100">
+        <Navbar />
+        <ServicesHero />
+        <ServicesOverview />
+        <TeleconsultationService />
+        <AppointmentService />
+        <EmergencyService />
+        <PharmacyService />
+        <AiDoctorService />
+        <HowItWorks />
+        <ServicesPricing />
+        <ServicesFaq />
+        <ServicesCta />
+      </div>
       <Footer />
     </main>
   )

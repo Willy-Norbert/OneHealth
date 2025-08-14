@@ -10,7 +10,7 @@ import ContactCta from "@/components/contact/contact-cta"
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white dark:bg-gray-900 dark:text-gray-100">
       <Navbar />
       <ContactHero />
       <ContactForm />
