@@ -67,8 +67,12 @@ export default function DoctorSidebar() {
             <Activity className="h-8 w-8 text-brand-500" />
             {isVisible && (
               <div className="ml-3">
-                <h2 className="text-lg font-bold text-brand-500">HealthLine</h2>
-                <p className="text-xs text-gray-600 dark:text-gray-400">{t("doctor1.header.panel")}</p>
+                <img 
+                  src="/irabaruta-logo.png" 
+                  alt="Irabaruta" 
+                  className="h-8 w-auto" 
+                />
+                <p className="text-xs text-muted-foreground">{t("doctor1.header.panel")}</p>
               </div>
             )}
           </div>

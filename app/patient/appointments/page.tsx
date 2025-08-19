@@ -195,11 +195,11 @@ export default function BookAppointments() {
                 key={field.key}
                 type={field.type}
                 placeholder={field.placeholder}
-                value={appointmentData.patientInfo[field.key]}
+                value={appointmentData.patientInfo[field.key as keyof typeof appointmentData.patientInfo]}
                 onChange={(e) =>
                   setAppointmentData({
                     ...appointmentData,
-                    patientInfo: { ...appointmentData.patientInfo, [field.key]: e.target.value },
+                    patientInfo: { ...appointmentData.patientInfo, [field.key]: e.target.value } as any,
                   })
                 }
                 className={`p-3 border border-border rounded-lg ${field.colSpan ? "md:col-span-2" : ""}`}

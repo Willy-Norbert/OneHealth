@@ -60,7 +60,11 @@ export default function PatientSidebar() {
             <Heart className="h-8 w-8 text-healthcare-primary" />
             {isVisible && (
               <div className="ml-3">
-                <h2 className="text-lg font-bold text-healthcare-primary">HealthLine</h2>
+                <img 
+                  src="/irabaruta-logo.png" 
+                  alt="Irabaruta" 
+                  className="h-8 w-auto" 
+                />
                 <p className="text-xs text-muted-foreground">{t("patient.header.panel")}</p>
               </div>
             )}
