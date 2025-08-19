@@ -1,379 +1,356 @@
 "use client";
 
 import { useState } from "react";
-import { Video, Phone, Calendar, CreditCard, FileText, History } from "lucide-react";
-import HealthCard from "@/components/common/HealthCard";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useRouter } from "next/navigation";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import ProgressIndicator from "@/components/dashboard/ProgressIndicator";
+import { 
+  Video, 
+  Calendar, 
+  Clock, 
+  User, 
+  FileText, 
+  CreditCard,
+  CheckCircle,
+  ArrowLeft,
+  ArrowRight
+} from 'lucide-react';
 
-const consultationTypes = [
-  { id: "general", nameKey: "consultations.general", fee: "10,000 RWF" },
-  { id: "cardiology", nameKey: "consultations.cardiology", fee: "25,000 RWF" },
-  { id: "gynecology", nameKey: "consultations.gynecology", fee: "20,000 RWF" },
-  { id: "mental-health", nameKey: "consultations.mentalHealth", fee: "18,000 RWF" },
-  { id: "pediatrics", nameKey: "consultations.pediatrics", fee: "15,000 RWF" },
-];
-
-const insuranceOptions = [
-  "Mutuelle de Santé", "RAMA", "MMI", "RSSB", "Radiant Insurance",
-  "UAP Insurance", "SANLAM", "Britam", "Prime Insurance", "Cash Payment"
-];
-
-const paymentMethods = [
-  "mobileMoney",
-  "bankTransfer",
-  "ussdPayment"
-];
-
-export default function Teleconsultation() {
-  const { t } = useLanguage();
-
-  const [step, setStep] = useState(1);
+export default function TeleconsultationPage() {
+  const router = useRouter();
+  const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
-    hospital: "",
-    consultationType: "",
-    insurance: "",
-    patientInfo: {
-      fullName: "",
-      age: "",
-      nationalId: "",
-      phone: "",
-      weight: "",
-      gender: "",
-      symptoms: "",
-    },
-    paymentMethod: "",
-    callType: "video"
+    specialty: '',
+    doctor: '',
+    date: '',
+    time: '',
+    symptoms: '',
+    urgency: 'routine',
+    paymentMethod: ''
   });
 
-  const nextStep = () => setStep(step + 1);
-  const prevStep = () => setStep(step - 1);
+  const steps = [
+    'Doctor Selection',
+    'Appointment Details', 
+    'Medical Information',
+    'Payment & Confirmation'
+  ];
 
-  // Controlled input change handler for patient info
-  const handlePatientInfoChange = (field: string, value: string) => {
-    setFormData(prev => ({
-      ...prev,
-      patientInfo: {
-        ...prev.patientInfo,
-        [field]: value
-      }
-    }));
+  const specialties = [
+    { id: 'general', name: 'General Medicine', available: 12 },
+    { id: 'cardiology', name: 'Cardiology', available: 5 },
+    { id: 'dermatology', name: 'Dermatology', available: 8 },
+    { id: 'pediatrics', name: 'Pediatrics', available: 6 }
+  ];
+
+  const availableDoctors = [
+    { 
+      id: '1', 
+      name: 'Dr. Sarah Johnson', 
+      specialty: 'General Medicine', 
+      rating: 4.8, 
+      experience: '12 years',
+      nextAvailable: 'Today, 2:30 PM'
+    },
+    { 
+      id: '2', 
+      name: 'Dr. Michael Brown', 
+      specialty: 'Cardiology', 
+      rating: 4.9, 
+      experience: '15 years',
+      nextAvailable: 'Tomorrow, 10:00 AM'
+    }
+  ];
+
+  const handleNext = () => {
+    if (currentStep < steps.length) {
+      setCurrentStep(currentStep + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentStep > 1) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
+
+  const handleStepClick = (step: number) => {
+    if (step <= currentStep) {
+      setCurrentStep(step);
+    }
+  };
+
+  const renderStepContent = () => {
+    switch (currentStep) {
+      case 1:
+        return (
+          <div className="space-y-6">
+            <div>
+              <Label className="text-base font-medium mb-4 block">Select Specialty</Label>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {specialties.map((specialty) => (
+                  <Card 
+                    key={specialty.id}
+                    className={`cursor-pointer transition-all hover:shadow-md ${
+                      formData.specialty === specialty.id ? 'ring-2 ring-primary bg-primary/5' : ''
+                    }`}
+                    onClick={() => setFormData({...formData, specialty: specialty.id})}
+                  >
+                    <CardContent className="p-4">
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <h3 className="font-medium">{specialty.name}</h3>
+                          <p className="text-sm text-muted-foreground">{specialty.available} doctors available</p>
+                        </div>
+                        <Badge variant="secondary">{specialty.available}</Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            
+            <div>
+              <Label className="text-base font-medium mb-4 block">Choose Doctor</Label>
+              <div className="space-y-4">
+                {availableDoctors.map((doctor) => (
+                  <Card 
+                    key={doctor.id}
+                    className={`cursor-pointer transition-all hover:shadow-md ${
+                      formData.doctor === doctor.id ? 'ring-2 ring-primary bg-primary/5' : ''
+                    }`}
+                    onClick={() => setFormData({...formData, doctor: doctor.id})}
+                  >
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                          <User className="w-6 h-6 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="font-medium">{doctor.name}</h3>
+                          <p className="text-sm text-muted-foreground">{doctor.specialty} • {doctor.experience}</p>
+                          <div className="flex items-center gap-2 mt-1">
+                            <Badge variant="outline">★ {doctor.rating}</Badge>
+                            <span className="text-xs text-muted-foreground">Next: {doctor.nextAvailable}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      case 2:
+        return (
+          <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <Label htmlFor="date">Preferred Date</Label>
+                <Input 
+                  type="date" 
+                  id="date"
+                  value={formData.date}
+                  onChange={(e) => setFormData({...formData, date: e.target.value})}
+                  className="mt-2"
+                />
+              </div>
+              <div>
+                <Label htmlFor="time">Preferred Time</Label>
+                <Input 
+                  type="time" 
+                  id="time"
+                  value={formData.time}
+                  onChange={(e) => setFormData({...formData, time: e.target.value})}
+                  className="mt-2"
+                />
+              </div>
+            </div>
+            
+            <div>
+              <Label className="text-base font-medium mb-4 block">Urgency Level</Label>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[
+                  { id: 'routine', name: 'Routine', desc: 'Within next week' },
+                  { id: 'urgent', name: 'Urgent', desc: 'Within 24 hours' },
+                  { id: 'emergency', name: 'Emergency', desc: 'Immediate attention' }
+                ].map((urgency) => (
+                  <Card 
+                    key={urgency.id}
+                    className={`cursor-pointer transition-all hover:shadow-md ${
+                      formData.urgency === urgency.id ? 'ring-2 ring-primary bg-primary/5' : ''
+                    }`}
+                    onClick={() => setFormData({...formData, urgency: urgency.id})}
+                  >
+                    <CardContent className="p-4 text-center">
+                      <h3 className="font-medium">{urgency.name}</h3>
+                      <p className="text-sm text-muted-foreground">{urgency.desc}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      case 3:
+        return (
+          <div className="space-y-6">
+            <div>
+              <Label htmlFor="symptoms">Describe your symptoms</Label>
+              <Textarea 
+                id="symptoms"
+                placeholder="Please describe your symptoms, concerns, or reason for consultation..."
+                value={formData.symptoms}
+                onChange={(e) => setFormData({...formData, symptoms: e.target.value})}
+                className="mt-2 min-h-32"
+              />
+            </div>
+            
+            <Card className="bg-muted/50">
+              <CardContent className="p-4">
+                <div className="flex items-start gap-3">
+                  <FileText className="w-5 h-5 text-primary mt-1" />
+                  <div>
+                    <h4 className="font-medium mb-2">Medical History Upload (Optional)</h4>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Upload relevant medical records, test results, or previous prescriptions to help your doctor.
+                    </p>
+                    <Button variant="outline" size="sm">
+                      Upload Files
+                    </Button>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        );
+
+      case 4:
+        return (
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  Consultation Summary
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Label className="text-sm font-medium text-muted-foreground">Doctor</Label>
+                    <p className="font-medium">Dr. Sarah Johnson</p>
+                  </div>
+                  <div>
+                    <Label className="text-sm font-medium text-muted-foreground">Specialty</Label>
+                    <p className="font-medium">General Medicine</p>
+                  </div>
+                  <div>
+                    <Label className="text-sm font-medium text-muted-foreground">Date & Time</Label>
+                    <p className="font-medium">{formData.date} at {formData.time}</p>
+                  </div>
+                  <div>
+                    <Label className="text-sm font-medium text-muted-foreground">Consultation Fee</Label>
+                    <p className="font-medium">$75.00</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div>
+              <Label className="text-base font-medium mb-4 block">Payment Method</Label>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  { id: 'card', name: 'Credit/Debit Card', icon: CreditCard },
+                  { id: 'insurance', name: 'Insurance', icon: FileText }
+                ].map((payment) => (
+                  <Card 
+                    key={payment.id}
+                    className={`cursor-pointer transition-all hover:shadow-md ${
+                      formData.paymentMethod === payment.id ? 'ring-2 ring-primary bg-primary/5' : ''
+                    }`}
+                    onClick={() => setFormData({...formData, paymentMethod: payment.id})}
+                  >
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3">
+                        <payment.icon className="w-5 h-5 text-primary" />
+                        <span className="font-medium">{payment.name}</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      default:
+        return null;
+    }
   };
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-foreground mb-2">{t("teleconsultation.title")}</h1>
-        <p className="text-muted-foreground">{t("teleconsultation.subtitle")}</p>
+    <div className="p-6 max-w-4xl mx-auto">
+      <div className="mb-8">
+        <Button 
+          variant="ghost" 
+          onClick={() => router.back()}
+          className="mb-4"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back
+        </Button>
+        
+        <div className="flex items-center gap-4 mb-2">
+          <Video className="w-8 h-8 text-primary" />
+          <h1 className="text-3xl font-bold text-foreground">Book Teleconsultation</h1>
+        </div>
+        <p className="text-muted-foreground">Connect with healthcare professionals from anywhere</p>
       </div>
 
-      {/* Progress Steps */}
-      <div className="flex items-center justify-between mb-8">
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-          <div key={num} className={`flex items-center ${num !== 8 ? 'flex-1' : ''}`}>
-            <div
-              onClick={() => {
-                if (num <= step) setStep(num);
-              }}
-              className={`w-8 h-8 rounded-full flex items-center justify-center text-sm cursor-pointer ${
-                step >= num ? 'bg-healthcare-primary text-black' : 'bg-muted text-muted-foreground'
-              }`}
-            >
-              {num}
-            </div>
-            {num !== 8 && (
-              <div className={`flex-1 h-1 mx-1 ${step > num ? 'bg-healthcare-primary' : 'bg-muted'}`} />
-            )}
-          </div>
-        ))}
+      <ProgressIndicator 
+        steps={steps} 
+        currentStep={currentStep}
+        onStepClick={handleStepClick}
+      />
+
+      <Card>
+        <CardContent className="p-6">
+          {renderStepContent()}
+        </CardContent>
+      </Card>
+
+      <div className="flex justify-between mt-6">
+        <Button 
+          variant="outline" 
+          onClick={handlePrevious}
+          disabled={currentStep === 1}
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Previous
+        </Button>
+        
+        <Button 
+          onClick={currentStep === steps.length ? () => router.push('/patient/appointments') : handleNext}
+          disabled={
+            (currentStep === 1 && (!formData.specialty || !formData.doctor)) ||
+            (currentStep === 2 && (!formData.date || !formData.time)) ||
+            (currentStep === 3 && !formData.symptoms) ||
+            (currentStep === 4 && !formData.paymentMethod)
+          }
+        >
+          {currentStep === steps.length ? 'Book Consultation' : 'Next'}
+          {currentStep !== steps.length && <ArrowRight className="w-4 h-4 ml-2" />}
+        </Button>
       </div>
-
-      {/* Step 1: Select Hospital/Clinic */}
-      {step === 1 && (
-        <HealthCard className="p-6">
-          <h2 className="text-xl font-semibold mb-4">{t("teleconsultation.steps.selectHospital")}</h2>
-          <div className="space-y-3">
-            {[
-              "King Faisal Hospital",
-              "Rwanda Military Hospital",
-              "University Teaching Hospital",
-              "Kibagabaga Hospital"
-            ].map((hospital) => (
-              <div
-                key={hospital}
-                className={`p-4 border rounded-lg cursor-pointer transition-colors ${
-                  formData.hospital === hospital ? 'border-healthcare-primary bg-healthcare-primary/10' : 'border-border hover:border-healthcare-primary/50'
-                }`}
-                onClick={() => setFormData(prev => ({ ...prev, hospital }))}
-              >
-                <h3 className="font-medium">{hospital}</h3>
-                <p className="text-sm text-muted-foreground">{t("teleconsultation.available")}</p>
-              </div>
-            ))}
-          </div>
-          <button
-            onClick={nextStep}
-            disabled={!formData.hospital}
-            className="mt-6 bg-healthcare-primary text-black px-6 py-2 rounded-lg disabled:opacity-50"
-          >
-            {t("common.continue")}
-          </button>
-        </HealthCard>
-      )}
-
-      {/* Step 2: Choose Consultation Type */}
-      {step === 2 && (
-        <HealthCard className="p-6">
-          <h2 className="text-xl font-semibold mb-4">{t("teleconsultation.steps.chooseConsultationType")}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {consultationTypes.map((type) => (
-              <div
-                key={type.id}
-                className={`p-4 border rounded-lg cursor-pointer transition-colors ${
-                  formData.consultationType === type.id ? 'border-healthcare-primary bg-healthcare-primary/10' : 'border-border hover:border-healthcare-primary/50'
-                }`}
-                onClick={() => setFormData({...formData, consultationType: type.id})}
-              >
-                <h3 className="font-medium">{t(type.nameKey)}</h3>
-                <p className="text-sm text-muted-foreground">{t("teleconsultation.fee")}: {type.fee}</p>
-              </div>
-            ))}
-          </div>
-          <div className="flex gap-4 mt-6">
-            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t("common.back")}</button>
-            <button
-              onClick={nextStep}
-              disabled={!formData.consultationType}
-              className="bg-healthcare-primary text-black px-6 py-2 rounded-lg disabled:opacity-50"
-            >
-              {t("common.continue")}
-            </button>
-          </div>
-        </HealthCard>
-      )}
-
-      {/* Step 3: Select Insurance */}
-      {step === 3 && (
-        <HealthCard className="p-6">
-          <h2 className="text-xl font-semibold mb-4">{t("teleconsultation.steps.selectInsurance")}</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {insuranceOptions.map((insurance) => (
-              <div
-                key={insurance}
-                className={`p-3 border rounded-lg cursor-pointer transition-colors text-center ${
-                  formData.insurance === insurance ? 'border-healthcare-primary bg-healthcare-primary/10' : 'border-border hover:border-healthcare-primary/50'
-                }`}
-                onClick={() => setFormData({...formData, insurance})}
-              >
-                <span className="text-sm font-medium">{insurance}</span>
-              </div>
-            ))}
-          </div>
-          <div className="flex gap-4 mt-6">
-            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t("common.back")}</button>
-            <button
-              onClick={nextStep}
-              disabled={!formData.insurance}
-              className="bg-healthcare-primary text-black px-6 py-2 rounded-lg disabled:opacity-50"
-            >
-              {t("common.continue")}
-            </button>
-          </div>
-        </HealthCard>
-      )}
-
-      {/* Step 4: Patient Information */}
-      {step === 4 && (
-        <HealthCard className="p-6">
-          <h2 className="text-xl font-semibold mb-4">{t("teleconsultation.steps.patientInfo")}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input
-              type="text"
-              placeholder={t("teleconsultation.patientInfo.fullName")}
-              className="p-3 border border-border rounded-lg"
-              value={formData.patientInfo.fullName}
-              onChange={e => handlePatientInfoChange("fullName", e.target.value)}
-            />
-            <input
-              type="number"
-              placeholder={t("teleconsultation.patientInfo.age")}
-              className="p-3 border border-border rounded-lg"
-              value={formData.patientInfo.age}
-              onChange={e => handlePatientInfoChange("age", e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder={t("teleconsultation.patientInfo.nationalId")}
-              className="p-3 border border-border rounded-lg"
-              value={formData.patientInfo.nationalId}
-              onChange={e => handlePatientInfoChange("nationalId", e.target.value)}
-            />
-            <input
-              type="tel"
-              placeholder={t("teleconsultation.patientInfo.phone")}
-              className="p-3 border border-border rounded-lg"
-              value={formData.patientInfo.phone}
-              onChange={e => handlePatientInfoChange("phone", e.target.value)}
-            />
-            <input
-              type="number"
-              placeholder={t("teleconsultation.patientInfo.weight")}
-              className="p-3 border border-border rounded-lg"
-              value={formData.patientInfo.weight}
-              onChange={e => handlePatientInfoChange("weight", e.target.value)}
-            />
-            <select
-              className="p-3 border border-border rounded-lg"
-              value={formData.patientInfo.gender}
-              onChange={e => handlePatientInfoChange("gender", e.target.value)}
-            >
-              <option value="">{t("teleconsultation.patientInfo.selectGender")}</option>
-              <option value="male">{t("teleconsultation.patientInfo.male")}</option>
-              <option value="female">{t("teleconsultation.patientInfo.female")}</option>
-            </select>
-          </div>
-          <div className="mt-4">
-            <textarea
-              placeholder={t("teleconsultation.patientInfo.symptoms")}
-              className="w-full p-3 border border-border rounded-lg h-24"
-              value={formData.patientInfo.symptoms}
-              onChange={e => handlePatientInfoChange("symptoms", e.target.value)}
-            ></textarea>
-          </div>
-          <div className="flex gap-4 mt-6">
-            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t("common.back")}</button>
-            <button onClick={nextStep} className="bg-healthcare-primary text-black px-6 py-2 rounded-lg">{t("common.continue")}</button>
-          </div>
-        </HealthCard>
-      )}
-
-      {/* Step 5: Payment */}
-      {step === 5 && (
-        <HealthCard className="p-6">
-          <h2 className="text-xl font-semibold mb-4">{t("teleconsultation.steps.paymentMethod")}</h2>
-          <div className="space-y-4">
-            {paymentMethods.map((method) => (
-              <div
-                key={method}
-                className={`p-4 border rounded-lg cursor-pointer transition-colors ${
-                  formData.paymentMethod === method ? 'border-healthcare-primary bg-healthcare-primary/10' : 'border-border hover:border-healthcare-primary/50'
-                }`}
-                onClick={() => setFormData({...formData, paymentMethod: method})}
-              >
-                <div className="flex items-center">
-                  <CreditCard className="w-5 h-5 mr-3" />
-                  <span>{t(`teleconsultation.paymentMethods.${method}`)}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="flex gap-4 mt-6">
-            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t("common.back")}</button>
-            <button
-              onClick={nextStep}
-              disabled={!formData.paymentMethod}
-              className="bg-healthcare-primary text-black px-6 py-2 rounded-lg disabled:opacity-50"
-            >
-              {t("teleconsultation.payAndContinue")}
-            </button>
-          </div>
-        </HealthCard>
-      )}
-
-      {/* Step 6: Join Consultation */}
-      {step === 6 && (
-        <HealthCard className="p-6">
-          <h2 className="text-xl font-semibold mb-4">{t("teleconsultation.steps.joinConsultation")}</h2>
-          <div className="text-center space-y-6">
-            <div className="space-y-4">
-              <div className="flex justify-center gap-4">
-                <button
-                  onClick={() => setFormData({...formData, callType: "video"})}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-lg border ${
-                    formData.callType === "video" ? 'border-healthcare-primary bg-healthcare-primary/10' : 'border-border'
-                  }`}
-                >
-                  <Video className="w-5 h-5" />
-                  {t("teleconsultation.callTypes.video")}
-                </button>
-                <button
-                  onClick={() => setFormData({...formData, callType: "phone"})}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-lg border ${
-                    formData.callType === "phone" ? 'border-healthcare-primary bg-healthcare-primary/10' : 'border-border'
-                  }`}
-                >
-                  <Phone className="w-5 h-5" />
-                  {t("teleconsultation.callTypes.phone")}
-                </button>
-              </div>
-              <div className="p-4 bg-muted rounded-lg">
-                <p className="text-sm">{t("teleconsultation.joinInstructions")}</p>
-              </div>
-            </div>
-            <button className="bg-success-500 text-black px-8 py-3 rounded-lg">
-              {t("teleconsultation.joinNow")}
-            </button>
-          </div>
-          <div className="flex gap-4 mt-6">
-            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t("common.back")}</button>
-            <button onClick={nextStep} className="bg-healthcare-primary text-black px-6 py-2 rounded-lg">{t("common.continue")}</button>
-          </div>
-        </HealthCard>
-      )}
-
-      {/* Step 7: Follow-up Options */}
-      {step === 7 && (
-        <HealthCard className="p-6">
-          <h2 className="text-xl font-semibold mb-4">{t("teleconsultation.steps.followUpOptions")}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 border rounded-lg text-center">
-              <FileText className="w-8 h-8 mx-auto mb-2 text-healthcare-primary" />
-              <h3 className="font-medium">{t("teleconsultation.followUp.digitalPrescription")}</h3>
-              <p className="text-sm text-muted-foreground">{t("teleconsultation.followUp.receiveMedications")}</p>
-            </div>
-            <div className="p-4 border rounded-lg text-center">
-              <Calendar className="w-8 h-8 mx-auto mb-2 text-healthcare-primary" />
-              <h3 className="font-medium">{t("teleconsultation.followUp.scheduleFollowUp")}</h3>
-              <p className="text-sm text-muted-foreground">{t("teleconsultation.followUp.bookNextAppointment")}</p>
-            </div>
-            <div className="p-4 border rounded-lg text-center">
-              <History className="w-8 h-8 mx-auto mb-2 text-healthcare-primary" />
-              <h3 className="font-medium">{t("teleconsultation.followUp.medicalRecords")}</h3>
-              <p className="text-sm text-muted-foreground">{t("teleconsultation.followUp.viewNotes")}</p>
-            </div>
-          </div>
-          <div className="flex gap-4 mt-6">
-            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t("common.back")}</button>
-            <button onClick={nextStep} className="bg-healthcare-primary text-black px-6 py-2 rounded-lg">{t("common.continue")}</button>
-          </div>
-        </HealthCard>
-      )}
-
-      {/* Step 8: Medical History */}
-      {step === 8 && (
-        <HealthCard className="p-6">
-          <h2 className="text-xl font-semibold mb-4">{t("teleconsultation.steps.medicalHistory")}</h2>
-          <div className="space-y-4">
-            <div className="p-4 bg-muted rounded-lg">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="font-medium">{t("teleconsultation.history.doctorName", { name: "Dr. Jean Mugabo" })} - {t("teleconsultation.history.department.cardiology")}</h3>
-                  <p className="text-sm text-muted-foreground">King Faisal Hospital</p>
-                  <p className="text-sm text-muted-foreground">{t("teleconsultation.history.date", { date: "March 15, 2024" })}</p>
-                </div>
-                <span className="px-2 py-1 bg-success-100 text-success-700 text-xs rounded">{t("teleconsultation.history.status.completed")}</span>
-              </div>
-              <div className="mt-3">
-                <p className="text-sm"><strong>{t("teleconsultation.history.diagnosis")}:</strong> Hypertension monitoring</p>
-                <p className="text-sm"><strong>{t("teleconsultation.history.medications")}:</strong> Amlodipine 5mg daily</p>
-                <p className="text-sm"><strong>{t("teleconsultation.history.notes")}:</strong> Blood pressure stable, continue medication</p>
-              </div>
-            </div>
-          </div>
-          <button className="mt-6 bg-healthcare-primary text-black px-6 py-2 rounded-lg">
-            {t("teleconsultation.completeConsultation")}
-          </button>
-        </HealthCard>
-      )}
     </div>
   );
 }

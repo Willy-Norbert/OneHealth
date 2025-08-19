@@ -1,258 +1,250 @@
 "use client";
 
-import React, { useState } from 'react';
-import { Users, UserPlus, Edit, Trash2, Shield, UserCheck, Ban } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { 
+  Users, 
+  Search, 
+  Filter, 
+  MoreHorizontal, 
+  UserCheck, 
+  UserX, 
+  Mail,
+  Phone,
+  MapPin,
+  Calendar,
+  Edit,
+  Trash2
+} from "lucide-react";
 
-const UsersManagement = () => {
-  const [users, setUsers] = useState([
+export default function UsersPage() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedTab, setSelectedTab] = useState("all");
+  const [expandedUser, setExpandedUser] = useState<string | null>(null);
+
+  const users = [
     {
-      id: 1,
+      id: "1",
       name: "Dr. Sarah Johnson",
-      email: "sarah.johnson@healthline.com",
+      email: "sarah.johnson@irabaruta.com",
       role: "doctor",
       status: "active",
-      createdAt: "2024-01-15",
-      specialization: "Cardiology"
+      phone: "+250 788 123 456",
+      location: "Kigali",
+      joinDate: "2023-01-15",
+      specialty: "Cardiology",
+      patients: 127
     },
     {
-      id: 2,
+      id: "2", 
       name: "John Doe",
       email: "john.doe@email.com",
       role: "patient",
       status: "active",
-      createdAt: "2024-02-20",
-      specialization: null
+      phone: "+250 788 987 654",
+      location: "Butare",
+      joinDate: "2023-03-22",
+      lastVisit: "2023-12-01"
     },
     {
-      id: 3,
+      id: "3",
       name: "Admin User",
-      email: "admin@healthline.com",
+      email: "admin@irabaruta.com", 
       role: "admin",
       status: "active",
-      createdAt: "2024-01-01",
-      specialization: null
+      phone: "+250 788 555 111",
+      location: "Kigali",
+      joinDate: "2022-12-01"
     }
-  ]);
-
-  const { t } = useLanguage();
-
-  const [filter, setFilter] = useState('all');
+  ];
 
   const filteredUsers = users.filter(user => {
-    if (filter === 'all') return true;
-    return user.role === filter;
+    const matchesSearch = user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         user.email.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesTab = selectedTab === "all" || user.role === selectedTab;
+    return matchesSearch && matchesTab;
   });
 
-  const handleStatusToggle = (userId: number) => {
-    setUsers(users.map(user => 
-      user.id === userId 
-        ? { ...user, status: user.status === 'active' ? 'inactive' : 'active' }
-        : user
-    ));
+  const toggleUserExpansion = (userId: string) => {
+    setExpandedUser(expandedUser === userId ? null : userId);
   };
 
-  const handleDeleteUser = (userId: number) => {
-    setUsers(users.filter(user => user.id !== userId));
+  const getRoleColor = (role: string) => {
+    switch (role) {
+      case "doctor": return "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300";
+      case "patient": return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300";
+      case "admin": return "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300";
+      default: return "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300";
+    }
+  };
+
+  const getStatusColor = (status: string) => {
+    return status === "active" 
+      ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300"
+      : "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300";
   };
 
   return (
-    <div className="p-6 max-w-7xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-foreground mb-2">{t('admin.users.title')}</h1>
-        <p className="text-muted-foreground">{t('admin.users.subtitle')}</p>
+    <div className="p-6 space-y-6">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <h1 className="text-3xl font-bold text-foreground">User Management</h1>
+          <p className="text-muted-foreground">Manage doctors, patients, and administrators</p>
+        </div>
+        <Button className="gap-2">
+          <Users className="w-4 h-4" />
+          Add New User
+        </Button>
       </div>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div className="bg-card p-6 rounded-lg border border-border">
-          <div className="flex items-center">
-            <Users className="h-8 w-8 text-primary" />
-            <div className="ml-4">
-              <p className="text-2xl font-bold text-foreground">{users.length}</p>
-              <p className="text-muted-foreground">{t('admin.users.stats.totalUsers')}</p>
+      <Card>
+        <CardHeader>
+          <div className="flex flex-col md:flex-row gap-4 justify-between">
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <Input
+                placeholder="Search users..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10"
+              />
             </div>
+            <Button variant="outline" size="sm" className="gap-2">
+              <Filter className="w-4 h-4" />
+              Filters
+            </Button>
           </div>
-        </div>
-        <div className="bg-card p-6 rounded-lg border border-border">
-          <div className="flex items-center">
-            <UserCheck className="h-8 w-8 text-blue-500" />
-            <div className="ml-4">
-              <p className="text-2xl font-bold text-foreground">{users.filter(u => u.role === 'doctor').length}</p>
-              <p className="text-muted-foreground">{t('admin.users.stats.doctors')}</p>
-            </div>
-          </div>
-        </div>
-        <div className="bg-card p-6 rounded-lg border border-border">
-          <div className="flex items-center">
-            <Users className="h-8 w-8 text-green-500" />
-            <div className="ml-4">
-              <p className="text-2xl font-bold text-foreground">{users.filter(u => u.role === 'patient').length}</p>
-              <p className="text-muted-foreground">{t('admin.users.stats.patients')}</p>
-            </div>
-          </div>
-        </div>
-        <div className="bg-card p-6 rounded-lg border border-border">
-          <div className="flex items-center">
-            <Shield className="h-8 w-8 text-purple-500" />
-            <div className="ml-4">
-              <p className="text-2xl font-bold text-foreground">{users.filter(u => u.role === 'admin').length}</p>
-              <p className="text-muted-foreground">{t('admin.users.stats.admins')}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        </CardHeader>
+        
+        <CardContent>
+          <Tabs value={selectedTab} onValueChange={setSelectedTab}>
+            <TabsList className="grid w-full grid-cols-4">
+              <TabsTrigger value="all">All Users ({users.length})</TabsTrigger>
+              <TabsTrigger value="doctor">Doctors ({users.filter(u => u.role === 'doctor').length})</TabsTrigger>
+              <TabsTrigger value="patient">Patients ({users.filter(u => u.role === 'patient').length})</TabsTrigger>
+              <TabsTrigger value="admin">Admins ({users.filter(u => u.role === 'admin').length})</TabsTrigger>
+            </TabsList>
 
-      {/* Controls */}
-      <div className="bg-card p-6 rounded-lg border border-border mb-6">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div className="flex gap-2">
-            <button
-              onClick={() => setFilter('all')}
-              className={`px-4 py-2 rounded-md transition-colors ${
-                filter === 'all' 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'bg-muted text-muted-foreground hover:bg-muted/80'
-              }`}
-            >
-              {t('admin.users.filters.all')}
-            </button>
-            <button
-              onClick={() => setFilter('doctor')}
-              className={`px-4 py-2 rounded-md transition-colors ${
-                filter === 'doctor' 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'bg-muted text-muted-foreground hover:bg-muted/80'
-              }`}
-            >
-              {t('admin.users.filters.doctor')}
-            </button>
-            <button
-              onClick={() => setFilter('patient')}
-              className={`px-4 py-2 rounded-md transition-colors ${
-                filter === 'patient' 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'bg-muted text-muted-foreground hover:bg-muted/80'
-              }`}
-            >
-              {t('admin.users.filters.patient')}
-            </button>
-            <button
-              onClick={() => setFilter('admin')}
-              className={`px-4 py-2 rounded-md transition-colors ${
-                filter === 'admin' 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'bg-muted text-muted-foreground hover:bg-muted/80'
-              }`}
-            >
-              {t('admin.users.filters.admin')}
-            </button>
-          </div>
-          <button className="bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors flex items-center gap-2">
-            <UserPlus className="h-4 w-4" />
-            {t('admin.users.buttons.addNewUser')}
-          </button>
-        </div>
-      </div>
-
-      {/* Users Table */}
-      <div className="bg-card rounded-lg border border-border overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead className="bg-muted/50">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  {t('admin.users.table.user')}
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  {t('admin.users.table.role')}
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  {t('admin.users.table.status')}
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  {t('admin.users.table.created')}
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                  {t('admin.users.table.actions')}
-                </th>
-              </tr>
-            </thead>
-            <tbody className="bg-card divide-y divide-border">
-              {filteredUsers.map((user) => (
-                <tr key={user.id} className="hover:bg-muted/50">
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center">
-                      <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <span className="text-primary font-medium">
-                          {user.name.charAt(0)}
-                        </span>
-                      </div>
-                      <div className="ml-4">
-                        <div className="text-sm font-medium text-foreground">
-                          {user.name}
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          {user.email}
-                        </div>
-                        {user.specialization && (
-                          <div className="text-xs text-blue-600">
-                            {user.specialization}
+            <TabsContent value={selectedTab} className="mt-6">
+              <div className="space-y-4">
+                {filteredUsers.map((user) => (
+                  <Card 
+                    key={user.id}
+                    className="transition-all duration-200 hover:shadow-md"
+                  >
+                    <CardContent className="p-4">
+                      <div 
+                        className="flex items-center justify-between cursor-pointer"
+                        onClick={() => toggleUserExpansion(user.id)}
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                            <Users className="w-6 h-6 text-primary" />
                           </div>
-                        )}
+                          <div>
+                            <div className="flex items-center gap-2 mb-1">
+                              <h3 className="font-semibold text-foreground">{user.name}</h3>
+                              <Badge className={getRoleColor(user.role)}>
+                                {user.role}
+                              </Badge>
+                              <Badge className={getStatusColor(user.status)}>
+                                {user.status}
+                              </Badge>
+                            </div>
+                            <p className="text-sm text-muted-foreground">{user.email}</p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-center gap-2">
+                          <Button variant="ghost" size="sm">
+                            <Edit className="w-4 h-4" />
+                          </Button>
+                          <Button variant="ghost" size="sm">
+                            <MoreHorizontal className="w-4 h-4" />
+                          </Button>
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                      user.role === 'admin' 
-                        ? 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200'
-                        : user.role === 'doctor'
-                        ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
-                        : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-                    }`}>
-                      {t(`admin.users.roles.${user.role}`)}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                      user.status === 'active'
-                        ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-                        : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
-                    }`}>
-                      {t(`admin.users.statuses.${user.status}`)}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-muted-foreground">
-                    {new Date(user.createdAt).toLocaleDateString()}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                    <div className="flex space-x-2">
-                      <button className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">
-                        <Edit className="h-4 w-4" />
-                      </button>
-                      <button 
-                        onClick={() => handleStatusToggle(user.id)}
-                        className="text-yellow-600 hover:text-yellow-900 dark:text-yellow-400 dark:hover:text-yellow-300"
-                      >
-                        <Ban className="h-4 w-4" />
-                      </button>
-                      <button 
-                        onClick={() => handleDeleteUser(user.id)}
-                        className="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+
+                      {expandedUser === user.id && (
+                        <div className="mt-4 pt-4 border-t border-border animate-fade-in">
+                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div className="flex items-center gap-2">
+                              <Phone className="w-4 h-4 text-muted-foreground" />
+                              <span className="text-sm">{user.phone}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <MapPin className="w-4 h-4 text-muted-foreground" />
+                              <span className="text-sm">{user.location}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Calendar className="w-4 h-4 text-muted-foreground" />
+                              <span className="text-sm">Joined {user.joinDate}</span>
+                            </div>
+                          </div>
+                          
+                          {user.role === "doctor" && (
+                            <div className="mt-4 p-3 bg-muted/50 rounded-lg">
+                              <div className="flex justify-between items-center">
+                                <div>
+                                  <p className="text-sm font-medium">Specialty: {user.specialty}</p>
+                                  <p className="text-sm text-muted-foreground">Active Patients: {user.patients}</p>
+                                </div>
+                                <Button size="sm" variant="outline">
+                                  View Profile
+                                </Button>
+                              </div>
+                            </div>
+                          )}
+                          
+                          {user.role === "patient" && user.lastVisit && (
+                            <div className="mt-4 p-3 bg-muted/50 rounded-lg">
+                              <p className="text-sm">
+                                <span className="font-medium">Last Visit:</span> {user.lastVisit}
+                              </p>
+                            </div>
+                          )}
+
+                          <div className="flex gap-2 mt-4">
+                            <Button size="sm" variant="outline" className="gap-2">
+                              <Mail className="w-3 h-3" />
+                              Send Message
+                            </Button>
+                            <Button 
+                              size="sm" 
+                              variant="outline"
+                              className={user.status === 'active' ? 'text-red-600 hover:text-red-700' : 'text-green-600 hover:text-green-700'}
+                            >
+                              {user.status === 'active' ? (
+                                <>
+                                  <UserX className="w-3 h-3 mr-1" />
+                                  Deactivate
+                                </>
+                              ) : (
+                                <>
+                                  <UserCheck className="w-3 h-3 mr-1" />
+                                  Activate
+                                </>
+                              )}
+                            </Button>
+                            <Button size="sm" variant="outline" className="text-red-600 hover:text-red-700">
+                              <Trash2 className="w-3 h-3 mr-1" />
+                              Delete
+                            </Button>
+                          </div>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
+        </CardContent>
+      </Card>
     </div>
   );
-};
-
-export default UsersManagement;
+}

@@ -146,9 +146,16 @@ export default function AdminPage() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>
-            <h1 className="text-4xl font-bold text-foreground mb-2">
-              Admin Dashboard
-            </h1>
+            <div className="flex items-center gap-4 mb-2">
+              <img 
+                src="/irabaruta-logo.png" 
+                alt="Irabaruta" 
+                className="h-10 w-auto"
+              />
+              <h1 className="text-4xl font-bold text-foreground">
+                Admin Dashboard
+              </h1>
+            </div>
             <p className="text-muted-foreground text-lg">
               Welcome back, {user.name}! Here's what's happening with Irabaruta today.
             </p>

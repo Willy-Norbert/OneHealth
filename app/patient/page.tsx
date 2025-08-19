@@ -163,10 +163,10 @@ export default function PatientPage() {
   ];
 
   const recentActivity = [
-    { id: 1, activity: t("dashboard1.activity.prescriptionFilled"), details: "Antibiotics - King Faisal Hospital", time: t("dashboard1.activity.hoursAgo", {count: 2}), type: "medication", icon: Pill },
-    { id: 2, activity: t("dashboard1.activity.appointmentConfirmed"), details: "Dr. Sarah Johnson - Cardiology", time: t("dashboard1.activity.daysAgo", {count: 1}), type: "appointment", icon: Calendar },
-    { id: 3, activity: t("dashboard1.activity.healthReportGenerated"), details: "AI Health Assistant analysis", time: t("dashboard1.activity.daysAgo", {count: 3}), type: "health", icon: Activity },
-    { id: 4, activity: t("dashboard1.activity.teleconsultationCompleted"), details: "Dr. Michael Brown - 30 minutes", time: t("dashboard1.activity.weeksAgo", {count: 1}), type: "consultation", icon: Video }
+    { id: 1, activity: t("dashboard1.activity.prescriptionFilled"), details: "Antibiotics - King Faisal Hospital", time: "2 hours ago", type: "medication", icon: Pill },
+    { id: 2, activity: t("dashboard1.activity.appointmentConfirmed"), details: "Dr. Sarah Johnson - Cardiology", time: "1 day ago", type: "appointment", icon: Calendar },
+    { id: 3, activity: t("dashboard1.activity.healthReportGenerated"), details: "AI Health Assistant analysis", time: "3 days ago", type: "health", icon: Activity },
+    { id: 4, activity: t("dashboard1.activity.teleconsultationCompleted"), details: "Dr. Michael Brown - 30 minutes", time: "1 week ago", type: "consultation", icon: Video }
   ];
 
   return (
@@ -175,9 +175,16 @@ export default function PatientPage() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>
-            <h1 className="text-4xl font-bold text-foreground mb-2">
-              {t("dashboard1.welcomeBack", { name: user.name })}
-            </h1>
+            <div className="flex items-center gap-4 mb-2">
+              <img 
+                src="/irabaruta-logo.png" 
+                alt="Irabaruta" 
+                className="h-10 w-auto"
+              />
+              <h1 className="text-4xl font-bold text-foreground">
+                Welcome back, {user.name}!
+              </h1>
+            </div>
             <p className="text-muted-foreground text-lg">
               {t("dashboard1.healthJourneySubtitle")}
             </p>

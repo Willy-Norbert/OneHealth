@@ -164,9 +164,16 @@ export default function DoctorPage() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>
-            <h1 className="text-4xl font-bold text-foreground mb-2">
-              Welcome back, Dr. {user.name?.split(' ')[1] || user.name}
-            </h1>
+            <div className="flex items-center gap-4 mb-2">
+              <img 
+                src="/irabaruta-logo.png" 
+                alt="Irabaruta" 
+                className="h-10 w-auto"
+              />
+              <h1 className="text-4xl font-bold text-foreground">
+                Welcome back, Dr. {user.name?.split(' ')[1] || user.name}
+              </h1>
+            </div>
             <p className="text-muted-foreground text-lg">
               {currentTime.toLocaleDateString('en-US', { 
                 weekday: 'long', 
