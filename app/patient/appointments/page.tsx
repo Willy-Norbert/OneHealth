@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar, Clock, MapPin, CreditCard, Check } from "lucide-react";
+import { MapPin, Check } from "lucide-react";
 import HealthCard from "@/components/common/HealthCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -21,13 +21,20 @@ export default function BookAppointments() {
     type: "",
     hospital: "",
     department: "",
-    patientInfo: {},
-    dateTime: "",
+    patientInfo: {
+      fullName: "",
+      nationalId: "",
+      email: "",
+      phone: "",
+      address: "",
+    },
+    date: "",
+    time: "",
     payment: ""
   });
 
-  const nextStep = () => setStep(step + 1);
-  const prevStep = () => setStep(step - 1);
+  const nextStep = () => setStep((s) => s + 1);
+  const prevStep = () => setStep((s) => s - 1);
 
   return (
     <div className="space-y-6">
@@ -40,9 +47,11 @@ export default function BookAppointments() {
       <div className="flex items-center justify-between mb-8">
         {[1, 2, 3, 4, 5, 6].map((num) => (
           <div key={num} className={`flex items-center ${num !== 6 ? 'flex-1' : ''}`}>
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-              step >= num ? 'bg-healthcare-primary text-white' : 'bg-muted text-muted-foreground'
-            }`}>
+            <div
+              className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
+                step >= num ? 'bg-healthcare-primary text-white' : 'bg-muted text-muted-foreground'
+              }`}
+            >
               {step > num ? <Check className="w-4 h-4" /> : num}
             </div>
             {num !== 6 && <div className={`flex-1 h-1 mx-2 ${step > num ? 'bg-healthcare-primary' : 'bg-muted'}`} />}
@@ -58,8 +67,10 @@ export default function BookAppointments() {
             {["In-Clinic", "Teleconsultation", "Follow-up"].map((type) => (
               <div
                 key={type}
-                className={`p-4 border rounded-lg cursor-pointer transition-colors ${
-                  appointmentData.type === type ? 'border-healthcare-primary bg-healthcare-primary/10' : 'border-border hover:border-healthcare-primary/50'
+                className={`p-4 border rounded-lg cursor-pointer transition-all ${
+                  appointmentData.type === type
+                    ? "border-healthcare-primary bg-healthcare-primary/20 ring-2 ring-healthcare-primary"
+                    : "border-border hover:border-healthcare-primary/50"
                 }`}
                 onClick={() => setAppointmentData({ ...appointmentData, type })}
               >
@@ -75,7 +86,11 @@ export default function BookAppointments() {
           <button
             onClick={nextStep}
             disabled={!appointmentData.type}
-            className="mt-6 bg-healthcare-primary text-white px-6 py-2 rounded-lg disabled:opacity-50"
+            className={`mt-6 px-6 py-2 rounded-lg transition-colors ${
+              !appointmentData.type
+                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : "bg-healthcare-primary hover:bg-healthcare-primary/90 text-white"
+            }`}
           >
             {t("common.continue")}
           </button>
@@ -90,8 +105,10 @@ export default function BookAppointments() {
             {hospitals.map((hospital) => (
               <div
                 key={hospital.id}
-                className={`p-4 border rounded-lg cursor-pointer transition-colors ${
-                  appointmentData.hospital === hospital.name ? 'border-healthcare-primary bg-healthcare-primary/10' : 'border-border hover:border-healthcare-primary/50'
+                className={`p-4 border rounded-lg cursor-pointer transition-all ${
+                  appointmentData.hospital === hospital.name
+                    ? "border-healthcare-primary bg-healthcare-primary/20 ring-2 ring-healthcare-primary"
+                    : "border-border hover:border-healthcare-primary/50"
                 }`}
                 onClick={() => setAppointmentData({ ...appointmentData, hospital: hospital.name })}
               >
@@ -106,11 +123,17 @@ export default function BookAppointments() {
             ))}
           </div>
           <div className="flex gap-4 mt-6">
-            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t("common.back")}</button>
+            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">
+              {t("common.back")}
+            </button>
             <button
               onClick={nextStep}
               disabled={!appointmentData.hospital}
-              className="bg-healthcare-primary text-white px-6 py-2 rounded-lg disabled:opacity-50"
+              className={`px-6 py-2 rounded-lg transition-colors ${
+                !appointmentData.hospital
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-healthcare-primary hover:bg-healthcare-primary/90 text-white"
+              }`}
             >
               {t("common.continue")}
             </button>
@@ -126,8 +149,10 @@ export default function BookAppointments() {
             {departments.map((dept) => (
               <div
                 key={dept}
-                className={`p-4 border rounded-lg cursor-pointer transition-colors ${
-                  appointmentData.department === dept ? 'border-healthcare-primary bg-healthcare-primary/10' : 'border-border hover:border-healthcare-primary/50'
+                className={`p-4 border rounded-lg cursor-pointer transition-all ${
+                  appointmentData.department === dept
+                    ? "border-healthcare-primary bg-healthcare-primary/20 ring-2 ring-healthcare-primary"
+                    : "border-border hover:border-healthcare-primary/50"
                 }`}
                 onClick={() => setAppointmentData({ ...appointmentData, department: dept })}
               >
@@ -136,11 +161,17 @@ export default function BookAppointments() {
             ))}
           </div>
           <div className="flex gap-4 mt-6">
-            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t("common.back")}</button>
+            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">
+              {t("common.back")}
+            </button>
             <button
               onClick={nextStep}
               disabled={!appointmentData.department}
-              className="bg-healthcare-primary text-white px-6 py-2 rounded-lg disabled:opacity-50"
+              className={`px-6 py-2 rounded-lg transition-colors ${
+                !appointmentData.department
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-healthcare-primary hover:bg-healthcare-primary/90 text-white"
+              }`}
             >
               {t("common.continue")}
             </button>
@@ -153,15 +184,43 @@ export default function BookAppointments() {
         <HealthCard className="p-6">
           <h2 className="text-xl font-semibold mb-4">{t("bookAppointments.steps.patientInfo")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="text" placeholder={t("bookAppointments.patientInfo.fullName")} className="p-3 border border-border rounded-lg" />
-            <input type="text" placeholder={t("bookAppointments.patientInfo.nationalId")} className="p-3 border border-border rounded-lg" />
-            <input type="email" placeholder={t("bookAppointments.patientInfo.email")} className="p-3 border border-border rounded-lg" />
-            <input type="tel" placeholder={t("bookAppointments.patientInfo.phone")} className="p-3 border border-border rounded-lg" />
-            <input type="text" placeholder={t("bookAppointments.patientInfo.address")} className="p-3 border border-border rounded-lg md:col-span-2" />
+            {[
+              { key: "fullName", type: "text", placeholder: t("bookAppointments.patientInfo.fullName") },
+              { key: "nationalId", type: "text", placeholder: t("bookAppointments.patientInfo.nationalId") },
+              { key: "email", type: "email", placeholder: t("bookAppointments.patientInfo.email") },
+              { key: "phone", type: "tel", placeholder: t("bookAppointments.patientInfo.phone") },
+              { key: "address", type: "text", placeholder: t("bookAppointments.patientInfo.address"), colSpan: 2 },
+            ].map((field) => (
+              <input
+                key={field.key}
+                type={field.type}
+                placeholder={field.placeholder}
+                value={appointmentData.patientInfo[field.key]}
+                onChange={(e) =>
+                  setAppointmentData({
+                    ...appointmentData,
+                    patientInfo: { ...appointmentData.patientInfo, [field.key]: e.target.value },
+                  })
+                }
+                className={`p-3 border border-border rounded-lg ${field.colSpan ? "md:col-span-2" : ""}`}
+              />
+            ))}
           </div>
           <div className="flex gap-4 mt-6">
-            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t("common.back")}</button>
-            <button onClick={nextStep} className="bg-healthcare-primary text-white px-6 py-2 rounded-lg">{t("common.continue")}</button>
+            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">
+              {t("common.back")}
+            </button>
+            <button
+              onClick={nextStep}
+              disabled={!appointmentData.patientInfo.fullName || !appointmentData.patientInfo.phone}
+              className={`px-6 py-2 rounded-lg transition-colors ${
+                !appointmentData.patientInfo.fullName || !appointmentData.patientInfo.phone
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-healthcare-primary hover:bg-healthcare-primary/90 text-white"
+              }`}
+            >
+              {t("common.continue")}
+            </button>
           </div>
         </HealthCard>
       )}
@@ -173,11 +232,21 @@ export default function BookAppointments() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium mb-2">{t("bookAppointments.dateTime.preferredDate")}</label>
-              <input type="date" className="w-full p-3 border border-border rounded-lg" />
+              <input
+                type="date"
+                value={appointmentData.date}
+                onChange={(e) => setAppointmentData({ ...appointmentData, date: e.target.value })}
+                className="w-full p-3 border border-border rounded-lg"
+              />
             </div>
             <div>
               <label className="block text-sm font-medium mb-2">{t("bookAppointments.dateTime.preferredTime")}</label>
-              <select className="w-full p-3 border border-border rounded-lg">
+              <select
+                value={appointmentData.time}
+                onChange={(e) => setAppointmentData({ ...appointmentData, time: e.target.value })}
+                className="w-full p-3 border border-border rounded-lg"
+              >
+                <option value="">--</option>
                 <option>9:00 AM</option>
                 <option>10:00 AM</option>
                 <option>11:00 AM</option>
@@ -188,8 +257,20 @@ export default function BookAppointments() {
             </div>
           </div>
           <div className="flex gap-4 mt-6">
-            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t("common.back")}</button>
-            <button onClick={nextStep} className="bg-healthcare-primary text-white px-6 py-2 rounded-lg">{t("common.continue")}</button>
+            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">
+              {t("common.back")}
+            </button>
+            <button
+              onClick={nextStep}
+              disabled={!appointmentData.date || !appointmentData.time}
+              className={`px-6 py-2 rounded-lg transition-colors ${
+                !appointmentData.date || !appointmentData.time
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-healthcare-primary hover:bg-healthcare-primary/90 text-white"
+              }`}
+            >
+              {t("common.continue")}
+            </button>
           </div>
         </HealthCard>
       )}
@@ -204,14 +285,21 @@ export default function BookAppointments() {
               <p>{t("bookAppointments.type")}: {appointmentData.type}</p>
               <p>{t("bookAppointments.hospital")}: {appointmentData.hospital}</p>
               <p>{t("bookAppointments.department")}: {appointmentData.department}</p>
+              <p>{t("bookAppointments.date")}: {appointmentData.date} {appointmentData.time}</p>
               <p>{t("bookAppointments.fee")}: 15,000 RWF</p>
             </div>
             <div>
               <h4 className="font-medium mb-2">{t("bookAppointments.paymentMethod")}</h4>
               <div className="space-y-2">
                 {["Mobile Money", "Bank Transfer", "Insurance", "USSD"].map((method) => (
-                  <label key={method} className="flex items-center">
-                    <input type="radio" name="payment" className="mr-2" />
+                  <label key={method} className="flex items-center cursor-pointer">
+                    <input
+                      type="radio"
+                      name="payment"
+                      checked={appointmentData.payment === method}
+                      onChange={() => setAppointmentData({ ...appointmentData, payment: method })}
+                      className="mr-2"
+                    />
                     {t(`bookAppointments.paymentMethods.${method.replace(/\s+/g, "").toLowerCase()}`)}
                   </label>
                 ))}
@@ -219,8 +307,19 @@ export default function BookAppointments() {
             </div>
           </div>
           <div className="flex gap-4 mt-6">
-            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t("common.back")}</button>
-            <button className="bg-healthcare-primary text-white px-6 py-2 rounded-lg">{t("bookAppointments.confirmPay")}</button>
+            <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">
+              {t("common.back")}
+            </button>
+            <button
+              disabled={!appointmentData.payment}
+              className={`px-6 py-2 rounded-lg transition-colors ${
+                !appointmentData.payment
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-healthcare-primary hover:bg-healthcare-primary/90 text-white"
+              }`}
+            >
+              {t("bookAppointments.confirmPay")}
+            </button>
           </div>
         </HealthCard>
       )}

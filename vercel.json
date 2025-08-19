@@ -7,7 +7,5 @@
         "distDir": ".next" 
       }
     }
-  ],
-"buildCommand": "next build --ignore-eslint --ignore-typescript"
-
+  ]
 }
