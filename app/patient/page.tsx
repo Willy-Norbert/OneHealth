@@ -18,9 +18,7 @@ import {
   Phone,
   Activity,
   Bell,
-  MessageSquare,
   User,
-  AlertCircle,
   CheckCircle,
   ChevronRight,
   Zap
@@ -46,13 +44,11 @@ export default function PatientPage() {
     );
   }
 
-  if (!user || user.role !== "patient") {
-    return null;
-  }
+  if (!user || user.role !== "patient") return null;
 
   const stats = [
     {
-      title: "Upcoming Appointments",
+      title: t("dashboard1.upcomingAppointments"),
       value: 3,
       change: "+1",
       trend: "up" as const,
@@ -61,16 +57,16 @@ export default function PatientPage() {
       onClick: () => router.push("/patient/appointments")
     },
     {
-      title: "Active Prescriptions",
+      title: t("dashboard1.activePrescriptions"),
       value: 2,
-      change: "unchanged",
+      change: t("dashboard1.unchanged"),
       trend: "neutral" as const,
       icon: Pill,
       color: "text-orange-600",
       onClick: () => router.push("/patient/pharmacy")
     },
     {
-      title: "Health Score",
+      title: t("dashboard1.healthScore"),
       value: `${healthScore}%`,
       change: "+2%",
       trend: "up" as const,
@@ -79,9 +75,9 @@ export default function PatientPage() {
       onClick: () => router.push("/patient/ai-assistant")
     },
     {
-      title: "Emergency Contacts",
+      title: t("dashboard1.emergencyContacts"),
       value: 5,
-      change: "Ready",
+      change: t("dashboard1.ready"),
       trend: "neutral" as const,
       icon: Phone,
       color: "text-red-600",
@@ -92,45 +88,45 @@ export default function PatientPage() {
   const quickActions = [
     {
       icon: Calendar,
-      title: "Book Appointment",
-      description: "Schedule a consultation with available doctors",
+      title: t("dashboard1.quickActions.bookAppointment"),
+      description: t("dashboard1.quickActions.bookAppointmentDesc"),
       onClick: () => router.push("/patient/appointments"),
       variant: "primary" as const
     },
     {
       icon: Video,
-      title: "Start Teleconsultation",
-      description: "Connect with your doctor via video call",
+      title: t("dashboard1.quickActions.startTeleconsultation"),
+      description: t("dashboard1.quickActions.startTeleconsultationDesc"),
       onClick: () => router.push("/patient/teleconsultation"),
       variant: "secondary" as const,
-      badge: "Available"
+      badge: t("dashboard1.quickActions.available")
     },
     {
       icon: Heart,
-      title: "AI Health Assistant",
-      description: "Get personalized health insights and recommendations",
+      title: t("dashboard1.quickActions.aiHealthAssistant"),
+      description: t("dashboard1.quickActions.aiHealthAssistantDesc"),
       onClick: () => router.push("/patient/ai-assistant"),
       variant: "default" as const,
-      badge: "New"
+      badge: t("dashboard1.quickActions.new")
     },
     {
       icon: Pill,
-      title: "Order Medications",
-      description: "Refill prescriptions and order medications",
+      title: t("dashboard1.quickActions.orderMedications"),
+      description: t("dashboard1.quickActions.orderMedicationsDesc"),
       onClick: () => router.push("/patient/pharmacy"),
       variant: "default" as const
     },
     {
       icon: Phone,
-      title: "Emergency Services",
-      description: "Access emergency contacts and services",
+      title: t("dashboard1.quickActions.emergencyServices"),
+      description: t("dashboard1.quickActions.emergencyServicesDesc"),
       onClick: () => router.push("/patient/emergency"),
       variant: "default" as const
     },
     {
       icon: Clock,
-      title: "Medical History",
-      description: "View your complete medical records and history",
+      title: t("dashboard1.quickActions.medicalHistory"),
+      description: t("dashboard1.quickActions.medicalHistoryDesc"),
       onClick: () => router.push("/patient/history"),
       variant: "default" as const
     }
@@ -139,20 +135,20 @@ export default function PatientPage() {
   const upcomingAppointments = [
     {
       id: 1,
-      date: "Today",
+      date: t("dashboard1.appointment.today"),
       time: "2:30 PM",
       doctor: "Dr. Sarah Johnson",
-      department: "Cardiology",
-      type: "Follow-up",
+      department: t("departments.cardiology"),
+      type: t("dashboard1.appointment.followUp"),
       status: "confirmed"
     },
     {
       id: 2,
-      date: "Tomorrow", 
+      date: t("dashboard1.appointment.tomorrow"), 
       time: "10:00 AM",
       doctor: "Dr. Michael Brown",
-      department: "General Medicine",
-      type: "Teleconsultation",
+      department: t("departments.generalMedicine"),
+      type: t("dashboard1.appointment.teleconsultation"),
       status: "confirmed"
     },
     {
@@ -160,17 +156,17 @@ export default function PatientPage() {
       date: "Dec 25",
       time: "3:15 PM", 
       doctor: "Dr. Emily Davis",
-      department: "Dermatology",
-      type: "Consultation",
+      department: t("departments.dermatology"),
+      type: t("dashboard1.appointment.consultation"),
       status: "pending"
     }
   ];
 
   const recentActivity = [
-    { id: 1, activity: "Prescription filled", details: "Antibiotics - King Faisal Hospital", time: "2 hours ago", type: "medication", icon: Pill },
-    { id: 2, activity: "Appointment confirmed", details: "Dr. Sarah Johnson - Cardiology", time: "1 day ago", type: "appointment", icon: Calendar },
-    { id: 3, activity: "Health report generated", details: "AI Health Assistant analysis", time: "3 days ago", type: "health", icon: Activity },
-    { id: 4, activity: "Teleconsultation completed", details: "Dr. Michael Brown - 30 minutes", time: "1 week ago", type: "consultation", icon: Video }
+    { id: 1, activity: t("dashboard1.activity.prescriptionFilled"), details: "Antibiotics - King Faisal Hospital", time: t("dashboard1.activity.hoursAgo", {count: 2}), type: "medication", icon: Pill },
+    { id: 2, activity: t("dashboard1.activity.appointmentConfirmed"), details: "Dr. Sarah Johnson - Cardiology", time: t("dashboard1.activity.daysAgo", {count: 1}), type: "appointment", icon: Calendar },
+    { id: 3, activity: t("dashboard1.activity.healthReportGenerated"), details: "AI Health Assistant analysis", time: t("dashboard1.activity.daysAgo", {count: 3}), type: "health", icon: Activity },
+    { id: 4, activity: t("dashboard1.activity.teleconsultationCompleted"), details: "Dr. Michael Brown - 30 minutes", time: t("dashboard1.activity.weeksAgo", {count: 1}), type: "consultation", icon: Video }
   ];
 
   return (
@@ -180,21 +176,21 @@ export default function PatientPage() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
           <div>
             <h1 className="text-4xl font-bold text-foreground mb-2">
-              Welcome back, {user.name}!
+              {t("dashboard1.welcomeBack", { name: user.name })}
             </h1>
             <p className="text-muted-foreground text-lg">
-              Your health journey with Irabaruta continues. Stay healthy, stay informed.
+              {t("dashboard1.healthJourneySubtitle")}
             </p>
           </div>
           <div className="flex items-center gap-3">
             <Button variant="outline" size="sm" className="gap-2">
               <Bell className="w-4 h-4" />
-              Alerts
+              {t("dashboard1.alerts")}
               <Badge variant="secondary" className="ml-1">2</Badge>
             </Button>
             <Button className="gap-2" onClick={() => router.push("/patient/ai-assistant")}>
               <Zap className="w-4 h-4" />
-              AI Assistant
+              {t("dashboard1.aiAssistant")}
             </Button>
           </div>
         </div>
@@ -204,11 +200,11 @@ export default function PatientPage() {
           <div className="flex items-center gap-3">
             <CheckCircle className="w-5 h-5 text-green-600" />
             <div className="flex-1">
-              <p className="font-medium text-green-900 dark:text-green-100">Your health is looking great!</p>
-              <p className="text-sm text-green-700 dark:text-green-300">Your health score improved by 2% this week. Keep up the good work!</p>
+              <p className="font-medium text-green-900 dark:text-green-100">{t("dashboard1.healthBanner.title")}</p>
+              <p className="text-sm text-green-700 dark:text-green-300">{t("dashboard1.healthBanner.subtitle")}</p>
             </div>
             <Button variant="ghost" size="sm" className="text-green-700 dark:text-green-300">
-              View Details
+              {t("dashboard1.healthBanner.viewDetails")}
               <ChevronRight className="w-4 h-4 ml-1" />
             </Button>
           </div>
@@ -231,10 +227,10 @@ export default function PatientPage() {
               <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle className="flex items-center gap-2">
                   <Calendar className="w-5 h-5 text-primary" />
-                  Upcoming Appointments
+                  {t("dashboard1.upcomingAppointments")}
                 </CardTitle>
                 <Button variant="ghost" size="sm" onClick={() => router.push("/patient/appointments")}>
-                  View All
+                  {t("dashboard1.viewAll")}
                   <ChevronRight className="w-4 h-4 ml-1" />
                 </Button>
               </CardHeader>
@@ -266,15 +262,15 @@ export default function PatientPage() {
                         </div>
                       </div>
                       <div className="text-right">
-                        {appointment.type === "Teleconsultation" && (
+                        {appointment.type === t("dashboard1.appointment.teleconsultation") && (
                           <Button size="sm" variant="outline" className="mb-2">
                             <Video className="w-3 h-3 mr-1" />
-                            Join
+                            {t("dashboard1.join")}
                           </Button>
                         )}
-                        {appointment.date === "Today" && (
+                        {appointment.date === t("dashboard1.appointment.today") && (
                           <Badge variant="secondary" className="text-xs">
-                            Today
+                            {t("dashboard1.today")}
                           </Badge>
                         )}
                       </div>
@@ -291,7 +287,7 @@ export default function PatientPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Activity className="w-5 h-5 text-primary" />
-                  Recent Activity
+                  {t("dashboard1.recentActivity")}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -314,7 +310,7 @@ export default function PatientPage() {
 
         {/* Quick Actions Grid */}
         <div>
-          <h2 className="text-2xl font-semibold text-foreground mb-6">Quick Actions</h2>
+          <h2 className="text-2xl font-semibold text-foreground mb-6">{t("dashboard1.quickActions.title")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {quickActions.map((action, index) => (
               <div key={index} className="animate-scale-in" style={{ animationDelay: `${index * 50}ms` }}>
@@ -330,7 +326,7 @@ export default function PatientPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Heart className="w-5 h-5 text-primary" />
-                Health Insights
+                {t("dashboard1.healthInsights")}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -339,25 +335,25 @@ export default function PatientPage() {
                   <div className="w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/20 mx-auto mb-3 flex items-center justify-center">
                     <Heart className="w-8 h-8 text-green-600" />
                   </div>
-                  <p className="font-medium text-foreground">Heart Rate</p>
+                  <p className="font-medium text-foreground">{t("dashboard1.healthInsightsheartRate")}</p>
                   <p className="text-2xl font-bold text-green-600">72 BPM</p>
-                  <p className="text-xs text-muted-foreground">Normal range</p>
+                  <p className="text-xs text-muted-foreground">{t("dashboard1.healthInsightsnormalRange")}</p>
                 </div>
                 <div className="text-center p-4 rounded-lg bg-muted/30">
                   <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/20 mx-auto mb-3 flex items-center justify-center">
                     <Activity className="w-8 h-8 text-blue-600" />
                   </div>
-                  <p className="font-medium text-foreground">Steps Today</p>
+                  <p className="font-medium text-foreground">{t("dashboard1.healthInsightsstepsToday")}</p>
                   <p className="text-2xl font-bold text-blue-600">8,540</p>
-                  <p className="text-xs text-muted-foreground">Goal: 10,000</p>
+                  <p className="text-xs text-muted-foreground">{t("dashboard1.healthInsightsstepGoal")}</p>
                 </div>
                 <div className="text-center p-4 rounded-lg bg-muted/30">
                   <div className="w-16 h-16 rounded-full bg-purple-100 dark:bg-purple-900/20 mx-auto mb-3 flex items-center justify-center">
                     <Zap className="w-8 h-8 text-purple-600" />
                   </div>
-                  <p className="font-medium text-foreground">Sleep Quality</p>
+                  <p className="font-medium text-foreground">{t("dashboard1.healthInsightssleepQuality")}</p>
                   <p className="text-2xl font-bold text-purple-600">85%</p>
-                  <p className="text-xs text-muted-foreground">7.5 hours</p>
+                  <p className="text-xs text-muted-foreground">{t("dashboard1.healthInsightssleepHours")}</p>
                 </div>
               </div>
             </CardContent>

@@ -15,6 +15,72 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const translations = {
   en: {
+    "dashboard1": {
+    "welcomeBack": "Welcome back, {{name}}!",
+    "healthJourneySubtitle": "Your health journey with Irabaruta continues. Stay healthy, stay informed.",
+    "alerts": "Alerts",
+    "aiAssistant": "AI Assistant",
+    "healthBanner": {
+      "title": "Your health is looking great!",
+      "subtitle": "Your health score improved by 2% this week. Keep up the good work!",
+      "viewDetails": "View Details"
+    },
+    "upcomingAppointments": "Upcoming Appointments",
+    "activePrescriptions": "Active Prescriptions",
+    "healthScore": "Health Score",
+    "emergencyContacts": "Emergency Contacts",
+    "unchanged": "Unchanged",
+    "ready": "Ready",
+    "quickActions": {
+      "title": "Quick Actions",
+      "bookAppointment": "Book Appointment",
+      "bookAppointmentDesc": "Schedule a consultation with available doctors",
+      "startTeleconsultation": "Start Teleconsultation",
+      "startTeleconsultationDesc": "Connect with your doctor via video call",
+      "available": "Available",
+      "aiHealthAssistant": "AI Health Assistant",
+      "aiHealthAssistantDesc": "Get personalized health insights and recommendations",
+      "new": "New",
+      "orderMedications": "Order Medications",
+      "orderMedicationsDesc": "Refill prescriptions and order medications",
+      "emergencyServices": "Emergency Services",
+      "emergencyServicesDesc": "Access emergency contacts and services",
+      "medicalHistory": "Medical History",
+      "medicalHistoryDesc": "View your complete medical records and history"
+    },
+    "appointment": {
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "followUp": "Follow-up",
+      "teleconsultation": "Teleconsultation",
+      "consultation": "Consultation"
+    },
+    "departments": {
+      "cardiology": "Cardiology",
+      "generalMedicine": "General Medicine",
+      "dermatology": "Dermatology"
+    },
+    "viewAll": "View All",
+    "join": "Join",
+    "today": "Today",
+    "recentActivity": "Recent Activity",
+    "healthInsights": "Health Insights",
+    "healthInsightsheartRate": "Heart Rate",
+    "healthInsightsnormalRange": "Normal range",
+    "healthInsightsstepsToday": "Steps Today",
+    "healthInsightsstepGoal": "Goal: 10,000",
+    "healthInsightssleepQuality": "Sleep Quality",
+    "healthInsightssleepHours": "7.5 hours",
+    "activity": {
+      "prescriptionFilled": "Prescription filled",
+      "appointmentConfirmed": "Appointment confirmed",
+      "healthReportGenerated": "Health report generated",
+      "teleconsultationCompleted": "Teleconsultation completed",
+      "hoursAgo": "{{count}} hours ago",
+      "daysAgo": "{{count}} days ago",
+      "weeksAgo": "{{count}} week ago"
+    }
+  },
     "cta7": {
     "title": "Book Your Teleconsultation Today",
     "subtitle": "Connect with our doctors from the comfort of your home in just a few clicks.",
@@ -3603,9 +3669,74 @@ const translations = {
       user: {
         admin: "Admin"
       }
-    }   
-},
+    }   },
   rw: {
+    "dashboard1": {
+    "welcomeBack": "Murakaza neza, {{name}}!",
+    "healthJourneySubtitle": "Urugendo rwawe rw’ubuzima na Irabaruta rurakomeje. Gira ubuzima bwiza, ube mu makuru.",
+    "alerts": "Amakuru",
+    "aiAssistant": "Umufasha w’Ubwenge bw’Ubukorano",
+    "healthBanner": {
+      "title": "Ubuzima bwawe buri hejuru!",
+      "subtitle": "Ijanisha ry’ubuzima bwawe ryazamutseho 2% muri iki cyumweru. Komeza ugire neza!",
+      "viewDetails": "Reba ibisobanuro"
+    },
+    "upcomingAppointments": "Inama zitegerejwe",
+    "activePrescriptions": "Imiti iriho",
+    "healthScore": "Ijanisha ry’ubuzima",
+    "emergencyContacts": "Abagufasha mu buryo bwihutirwa",
+    "unchanged": "Ntacyo bihinduye",
+    "ready": "Biteguye",
+    "quickActions": {
+      "title": "Ibikorwa Byihuse",
+      "bookAppointment": "Tegura inama",
+      "bookAppointmentDesc": "Shyiraho gahunda yo kuganira n’abaganga baboneka",
+      "startTeleconsultation": "Tangira Inama Kuri Video",
+      "startTeleconsultationDesc": "Vugana n’umuganga wawe ukoresheje video",
+      "available": "Biboneka",
+      "aiHealthAssistant": "Umufasha w’Ubwenge bw’Ubukorano",
+      "aiHealthAssistantDesc": "Fata inama z’ubuzima bwite n’imyanzuro",
+      "new": "Nshya",
+      "orderMedications": "Tegura imiti",
+      "orderMedicationsDesc": "Saba imiti ndetse unononsore izisanzwe",
+      "emergencyServices": "Serivisi z’Inshingano",
+      "emergencyServicesDesc": "Shaka abagufasha mu buryo bwihutirwa",
+      "medicalHistory": "Amateka y’ubuzima",
+      "medicalHistoryDesc": "Reba amateka yose y’ubuzima bwawe"
+    },
+    "appointment": {
+      "today": "Uyu munsi",
+      "tomorrow": "Ejo",
+      "followUp": "Gukurikirana",
+      "teleconsultation": "Inama Kuri Video",
+      "consultation": "Kuganira n’umuganga"
+    },
+    "departments": {
+      "cardiology": "Ubuvuzi bw’umutima",
+      "generalMedicine": "Ubuvuzi rusange",
+      "dermatology": "Ubuvuzi bw’uruhu"
+    },
+    "viewAll": "Reba byose",
+    "join": "Jya",
+    "today": "Uyu munsi",
+    "recentActivity": "Ibikorwa by’ingenzi",
+    "healthInsights": "Amakuru y’Ubuzima",
+    "healthInsightsheartRate": "Umuvuduko w’amaraso",
+    "healthInsightsnormalRange": "Bisanzwe",
+    "healthInsightsstepsToday": "Intambwe z’umunsi",
+    "healthInsightsstepGoal": "Intego: 10,000",
+    "healthInsightssleepQuality": "Ubwiza bw’ikiruhuko",
+    "healthInsightssleepHours": "Amasaha 7.5",
+    "activity": {
+      "prescriptionFilled": "Imiti yuzuye",
+      "appointmentConfirmed": "Inama yemejwe",
+      "healthReportGenerated": "Raporo y’ubuzima yakozwe",
+      "teleconsultationCompleted": "Inama kuri video yarangiye",
+      "hoursAgo": "Mu masaha {{count}} ashize",
+      "daysAgo": "Mu minsi {{count}} ishize",
+      "weeksAgo": "Mu cyumweru {{count}} gishize"
+    }
+  },
       "cta7": {
     "title": "Tegura Inama ya Teleconsultation Uyu Munsi",
     "subtitle": "Vugana n’abaganga bacu utavuye mu rugo mu gihe gito ukoresheje iminsi mike.",
