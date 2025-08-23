@@ -91,7 +91,7 @@ export default function EmergencyRequest() {
               <div
                 key={type.id}
                 className={`p-4 border rounded-lg cursor-pointer transition-colors ${
-                  emergencyData.type === type.id ? 'border-healthcare-primary bg-healthcare-primary/10' : 'border-border hover:border-healthcare-primary/50'
+                  emergencyData.type === type.id ? 'border-green-900 bg-green-border-green-900/10' : 'border-border hover:border-green-900/50'
                 }`}
                 onClick={() => setEmergencyData({ ...emergencyData, type: type.id })}
               >
@@ -102,7 +102,7 @@ export default function EmergencyRequest() {
           <button
             onClick={nextStep}
             disabled={!emergencyData.type}
-            className="mt-6 bg-error-500 text-white px-6 py-2 rounded-lg disabled:opacity-50"
+            className="mt-6 bg-error-500 text-green-600 bg-green-950 px-6 py-2 rounded-lg disabled:opacity-50"
           >
             {t('emergency1.continue')}
           </button>
@@ -118,11 +118,11 @@ export default function EmergencyRequest() {
               <div
                 key={help.id}
                 className={`p-6 border rounded-lg cursor-pointer transition-colors text-center ${
-                  emergencyData.helpType === help.id ? 'border-healthcare-primary bg-healthcare-primary/10' : 'border-border hover:border-healthcare-primary/50'
+                  emergencyData.helpType === help.id ? 'border-green-900 bg-green-border-green-900/10' : 'border-border hover:border-green-900/50'
                 }`}
                 onClick={() => setEmergencyData({ ...emergencyData, helpType: help.id })}
               >
-                <help.icon className="h-8 w-8 mx-auto mb-3 text-healthcare-primary" />
+                <help.icon className="h-8 w-8 mx-auto mb-3 text-green-border-green-900" />
                 <h3 className="font-medium">{t(help.nameKey)}</h3>
               </div>
             ))}
@@ -132,7 +132,7 @@ export default function EmergencyRequest() {
             <button
               onClick={nextStep}
               disabled={!emergencyData.helpType}
-              className="bg-error-500 text-white px-6 py-2 rounded-lg disabled:opacity-50"
+              className="bg-error-500 text-green-600 bg-green-950 px-6 py-2 rounded-lg disabled:opacity-50"
             >
               {t('emergency1.continue')}
             </button>
@@ -145,8 +145,8 @@ export default function EmergencyRequest() {
         <HealthCard className="p-6">
           <h2 className="text-xl font-semibold mb-4">{t('emergency1.share_location')}</h2>
           <div className="space-y-6">
-            <button className="w-full p-4 border-2 border-dashed border-healthcare-primary rounded-lg text-center hover:bg-healthcare-primary/5">
-              <MapPin className="h-8 w-8 mx-auto mb-2 text-healthcare-primary" />
+            <button className="w-full p-4 border-2 border-dashed border-green-900 rounded-lg text-center hover:bg-green-border-green-900/5">
+              <MapPin className="h-8 w-8 mx-auto mb-2 text-green-border-green-900" />
               <h3 className="font-medium">{t('emergency1.use_gps')}</h3>
               <p className="text-sm text-muted-foreground">{t('emergency1.gps_description')}</p>
             </button>
@@ -165,7 +165,7 @@ export default function EmergencyRequest() {
           </div>
           <div className="flex gap-4 mt-6">
             <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t('emergency1.back')}</button>
-            <button onClick={nextStep} className="bg-error-500 text-white px-6 py-2 rounded-lg">{t('emergency1.continue')}</button>
+            <button onClick={nextStep} className="bg-error-500 text-green-600 bg-green-950 px-6 py-2 rounded-lg">{t('emergency1.continue')}</button>
           </div>
         </HealthCard>
       )}
@@ -186,11 +186,11 @@ export default function EmergencyRequest() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <button className="flex items-center justify-center p-4 border border-border rounded-lg hover:border-healthcare-primary">
+              <button className="flex items-center justify-center p-4 border border-border rounded-lg hover:border-green-900">
                 <Camera className="h-5 w-5 mr-2" />
                 {t('emergency1.take_photo')}
               </button>
-              <button className="flex items-center justify-center p-4 border border-border rounded-lg hover:border-healthcare-primary">
+              <button className="flex items-center justify-center p-4 border border-border rounded-lg hover:border-green-900">
                 <Mic className="h-5 w-5 mr-2" />
                 {t('emergency1.record_voice_note')}
               </button>
@@ -198,7 +198,7 @@ export default function EmergencyRequest() {
           </div>
           <div className="flex gap-4 mt-6">
             <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">{t('emergency1.back')}</button>
-            <button onClick={nextStep} className="bg-error-500 text-white px-6 py-2 rounded-lg">{t('emergency1.continue')}</button>
+            <button onClick={nextStep} className="bg-error-500 text-green-600 bg-green-950 px-6 py-2 rounded-lg">{t('emergency1.continue')}</button>
           </div>
         </HealthCard>
       )}
@@ -212,7 +212,7 @@ export default function EmergencyRequest() {
               <div
                 key={level.id}
                 className={`p-6 border rounded-lg cursor-pointer transition-colors text-center ${
-                  emergencyData.severity === level.id ? 'border-healthcare-primary bg-healthcare-primary/10' : 'border-border hover:border-healthcare-primary/50'
+                  emergencyData.severity === level.id ? 'border-green-900 bg-green-border-green-900/10' : 'border-border hover:border-green-900/50'
                 }`}
                 onClick={() => setEmergencyData({ ...emergencyData, severity: level.id })}
               >
@@ -228,7 +228,7 @@ export default function EmergencyRequest() {
             <button
               onClick={nextStep}
               disabled={!emergencyData.severity}
-              className="bg-error-500 text-white px-6 py-2 rounded-lg disabled:opacity-50"
+              className="bg-error-500 text-green-600 bg-green-950 px-6 py-2 rounded-lg disabled:opacity-50"
             >
               {t('emergency1.submit_request')}
             </button>
@@ -275,7 +275,7 @@ export default function EmergencyRequest() {
             </div>
 
             <div className="flex gap-4">
-              <button className="flex-1 bg-error-500 text-white py-3 rounded-lg">
+              <button className="flex-1 bg-error-500 text-green-600 bg-green-950 py-3 rounded-lg">
                 {t('emergency1.call_hotline')}
               </button>
               <button className="flex-1 border border-border py-3 rounded-lg">

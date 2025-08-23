@@ -57,13 +57,12 @@ export default function PatientSidebar() {
         {/* Header */}
         <div className="p-6 border-b border-border">
           <div className="flex items-center">
-            <Heart className="h-8 w-8 text-healthcare-primary" />
             {isVisible && (
               <div className="ml-3">
                 <img 
                   src="/irabaruta-logo.png" 
                   alt="Irabaruta" 
-                  className="h-8 w-auto" 
+                  className="h-20 w-20 " 
                 />
                 <p className="text-xs text-muted-foreground">{t("patient.header.panel")}</p>
               </div>
@@ -75,8 +74,8 @@ export default function PatientSidebar() {
         {isVisible && user && (
           <div className="p-4 border-b border-border">
             <div className="flex items-center">
-              <div className="w-10 h-10 bg-healthcare-primary/20 rounded-full flex items-center justify-center">
-                <span className="text-healthcare-primary font-medium">
+              <div className="w-10 h-10 bg-bg-green-500/20 rounded-full flex items-center justify-center">
+                <span className="text-bg-green-500 font-medium">
                   {user.name.charAt(0)}
                 </span>
               </div>
@@ -99,7 +98,7 @@ export default function PatientSidebar() {
                     href={item.href}
                     className={`flex items-center px-3 py-2 rounded-lg transition-colors ${
                       isActive
-                        ? "bg-healthcare-primary text-white"
+                        ? "bg-bg-green-500 text-green-400"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground"
                     }`}
                   >

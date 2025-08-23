@@ -86,7 +86,7 @@ export default function DoctorPrescriptions() {
           <h1 className="text-3xl font-bold text-foreground mb-2">{t("prescriptions1.title")}</h1>
           <p className="text-muted-foreground">{t("prescriptions1.subtitle")}</p>
         </div>
-        <button className="bg-healthcare-primary text-white px-6 py-3 rounded-lg flex items-center gap-2">
+        <button className="bg-bg-green-500 text-white px-6 py-3 rounded-lg flex items-center gap-2">
           <Plus className="h-5 w-5" />
           {t("prescriptions1.newPrescription")}
         </button>
@@ -100,7 +100,7 @@ export default function DoctorPrescriptions() {
             <input
               type="text"
               placeholder={t("prescriptions1.searchPlaceholder")}
-              className="w-full pl-10 pr-4 py-2 border border-border rounded-lg focus:border-healthcare-primary focus:outline-none"
+              className="w-full pl-10 pr-4 py-2 border border-border rounded-lg focus:border-bg-green-500 focus:outline-none"
             />
           </div>
           <div className="flex gap-2">
@@ -139,7 +139,7 @@ export default function DoctorPrescriptions() {
                 <button className="p-2 text-success-500 hover:bg-success-100 rounded">
                   <Download className="h-4 w-4" />
                 </button>
-                <button className="p-2 text-healthcare-primary hover:bg-healthcare-primary/10 rounded">
+                <button className="p-2 text-bg-green-500 hover:bg-bg-green-500/10 rounded">
                   <Send className="h-4 w-4" />
                 </button>
                 <button className="p-2 text-error-500 hover:bg-error-100 rounded">
@@ -168,16 +168,16 @@ export default function DoctorPrescriptions() {
               </div>
 
               <div className="flex gap-3 pt-3 border-t border-border">
-                <button className="text-sm text-healthcare-primary hover:underline">
+                <button className="text-sm text-bg-green-500 hover:underline">
                   {t("prescriptions1.viewFull")}
                 </button>
-                <button className="text-sm text-healthcare-primary hover:underline">
+                <button className="text-sm text-bg-green-500 hover:underline">
                   {t("prescriptions1.exportPdf")}
                 </button>
-                <button className="text-sm text-healthcare-primary hover:underline">
+                <button className="text-sm text-bg-green-500 hover:underline">
                   {t("prescriptions1.sendPharmacy")}
                 </button>
-                <button className="text-sm text-healthcare-primary hover:underline">
+                <button className="text-sm text-bg-green-500 hover:underline">
                   {t("prescriptions1.duplicate")}
                 </button>
               </div>
@@ -189,11 +189,11 @@ export default function DoctorPrescriptions() {
       {/* Pagination */}
       <div className="flex justify-center">
         <div className="flex items-center gap-2">
-          <button className="px-3 py-2 border border-border rounded-lg hover:border-healthcare-primary">
+          <button className="px-3 py-2 border border-border rounded-lg hover:border-bg-green-500">
             {t("prescriptions1.pagination.previous")}
           </button>
           <span className="px-3 py-2">{t("prescriptions1.pagination.pageInfo")}</span>
-          <button className="px-3 py-2 border border-border rounded-lg hover:border-healthcare-primary">
+          <button className="px-3 py-2 border border-border rounded-lg hover:border-bg-green-500">
             {t("prescriptions1.pagination.next")}
           </button>
         </div>

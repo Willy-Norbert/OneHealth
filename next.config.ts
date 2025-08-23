@@ -8,6 +8,9 @@ const nextConfig = {
     // Ignore TypeScript errors during builds
     ignoreBuildErrors: true,
   },
+  images: {
+    domains: ["www.shutterstock.com"], // ✅ allow external images from Shutterstock
+  },
 };
 
 module.exports = nextConfig;

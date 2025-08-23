@@ -90,7 +90,7 @@ export default function DoctorPatients() {
             <input
               type="text"
               placeholder={t("patients.searchPlaceholder")}
-              className="w-full pl-10 pr-4 py-2 border border-border rounded-lg focus:border-healthcare-primary focus:outline-none"
+              className="w-full pl-10 pr-4 py-2 border border-border rounded-lg focus:border-bg-green-500 focus:outline-none"
             />
           </div>
           <div className="flex gap-2">
@@ -118,8 +118,8 @@ export default function DoctorPatients() {
           <HealthCard key={patient.id} className="p-6 hover:shadow-theme-lg transition-shadow">
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-healthcare-primary/10 rounded-full flex items-center justify-center mr-3">
-                  <User className="h-6 w-6 text-healthcare-primary" />
+                <div className="w-12 h-12 bg-bg-green-500/10 rounded-full flex items-center justify-center mr-3">
+                  <User className="h-6 w-6 text-bg-green-500" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">{patient.name}</h3>
@@ -170,15 +170,15 @@ export default function DoctorPatients() {
             </div>
 
             <div className="flex gap-2 mt-4 pt-4 border-t border-border">
-              <button className="flex-1 flex items-center justify-center gap-1 px-3 py-2 bg-healthcare-primary text-white rounded-lg text-sm">
+              <button className="flex-1 flex items-center justify-center gap-1 px-3 py-2 bg-bg-green-500 text-white rounded-lg text-sm">
                 <FileText className="h-4 w-4" />
                 {t("patients.actions.viewFile")}
               </button>
-              <button className="flex items-center justify-center gap-1 px-3 py-2 border border-border rounded-lg text-sm hover:border-healthcare-primary">
+              <button className="flex items-center justify-center gap-1 px-3 py-2 border border-border rounded-lg text-sm hover:border-bg-green-500">
                 <Phone className="h-4 w-4" />
                 {t("patients.actions.call")}
               </button>
-              <button className="flex items-center justify-center gap-1 px-3 py-2 border border-border rounded-lg text-sm hover:border-healthcare-primary">
+              <button className="flex items-center justify-center gap-1 px-3 py-2 border border-border rounded-lg text-sm hover:border-bg-green-500">
                 <Video className="h-4 w-4" />
                 {t("patients.actions.video")}
               </button>
@@ -190,13 +190,13 @@ export default function DoctorPatients() {
       {/* Pagination */}
       <div className="flex justify-center">
         <div className="flex items-center gap-2">
-          <button className="px-3 py-2 border border-border rounded-lg hover:border-healthcare-primary">
+          <button className="px-3 py-2 border border-border rounded-lg hover:border-bg-green-500">
             {t("patients.pagination.previous")}
           </button>
           <span className="px-3 py-2">
             {t("patients.pagination.pageInfo")}
           </span>
-          <button className="px-3 py-2 border border-border rounded-lg hover:border-healthcare-primary">
+          <button className="px-3 py-2 border border-border rounded-lg hover:border-bg-green-500">
             {t("patients.pagination.next")}
           </button>
         </div>

@@ -64,13 +64,12 @@ export default function DoctorSidebar() {
         {/* Header */}
         <div className="p-6 border-b border-gray-200 dark:border-gray-800">
           <div className="flex items-center">
-            <Activity className="h-8 w-8 text-brand-500" />
             {isVisible && (
               <div className="ml-3">
                 <img 
                   src="/irabaruta-logo.png" 
                   alt="Irabaruta" 
-                  className="h-8 w-auto" 
+                  className="h-20 w-20 "  
                 />
                 <p className="text-xs text-muted-foreground">{t("doctor1.header.panel")}</p>
               </div>
@@ -86,7 +85,7 @@ export default function DoctorSidebar() {
                 <span className="text-brand-500 font-medium">{user.name?.charAt(0)}</span>
               </div>
               <div className="ml-3">
-                <p className="font-medium text-sm text-gray-800 dark:text-white">{user.name}</p>
+                <p className="font-medium text-sm text-gray-800 dark:text-green-600">{user.name}</p>
                 <p className="text-xs text-gray-600 dark:text-gray-400">{t("doctor1.user.role")}</p>
               </div>
             </div>
@@ -104,7 +103,7 @@ export default function DoctorSidebar() {
                     href={item.href}
                     className={`flex items-center px-3 py-2 rounded-lg transition-colors ${
                       isActive
-                        ? "bg-brand-500 text-white"
+                        ? "bg-brand-500 text-green-600"
                         : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/5"
                     }`}
                   >

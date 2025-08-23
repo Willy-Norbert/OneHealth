@@ -53,11 +53,11 @@ export default function UserDropdown() {
           <Image
             width={44}
             height={44}
-            src="/images/user/default-avatar.jpg"
+            src="https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg"
             alt="User"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = "/images/user/default-avatar.jpg";
+              target.src = "https://www.shutterstock.com/image-vector/blank-avatar-photo-place-holder-600nw-1095249842.jpg";
             }}
           />
         </span>

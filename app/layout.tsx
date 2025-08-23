@@ -1,4 +1,3 @@
-
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
@@ -26,18 +25,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} 
+          bg-gray-50 text-gray-800 
+        suppressHydrationWarning
+          dark:bg-gray-900 dark:text-gray-100
+          transition-colors duration-300`}
+        suppressHydrationWarning
+      >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="container">
-            {/* Wrap the whole app in LanguageProvider */}
-            <LanguageProvider>
-              <AuthProvider>
-                {children}
-                <CookieConsent />
-                <BackToTop />
-              </AuthProvider>
-            </LanguageProvider>
-          </div>
+          {/* Wrap the whole app in LanguageProvider */}
+          <LanguageProvider>
+            <AuthProvider>
+              {children}
+              <CookieConsent />
+              <BackToTop />
+            </AuthProvider>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

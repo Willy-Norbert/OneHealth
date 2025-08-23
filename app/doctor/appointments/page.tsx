@@ -76,12 +76,12 @@ export default function DoctorAppointments() {
               </div>
               <div className="flex gap-2">
                 {appointment.type === "Teleconsultation" ? (
-                  <button className="bg-healthcare-primary text-black px-4 py-2 rounded-lg flex items-center gap-2">
+                  <button className="bg-bg-green-500 text-black px-4 py-2 rounded-lg flex items-center gap-2">
                     <Video className="w-4 h-4" />
                     {t("appointments1.joinCall")}
                   </button>
                 ) : (
-                  <button className="bg-healthcare-primary text-black px-4 py-2 rounded-lg">
+                  <button className="bg-bg-green-500 text-black px-4 py-2 rounded-lg">
                     {t("appointments1.viewDetails")}
                   </button>
                 )}

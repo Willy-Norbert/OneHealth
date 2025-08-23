@@ -21,7 +21,7 @@ export default function Home() {
           <StatsSection />
           <DoctorsSection />
           <TestimonialsSection />
-          <CtaSection />
+          {/* <CtaSection /> */}
           <ContactSection />
         </div>
         <Footer />

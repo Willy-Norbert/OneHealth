@@ -1779,7 +1779,7 @@ const translations = {
     },
     "confirmPay": "Confirm & Pay"
   },
-  "departments": {
+  "departments1": {
     "generalmedicine": "General Medicine",
     "pediatrics": "Pediatrics",
     "gynecology": "Gynecology",
@@ -5413,7 +5413,7 @@ const translations = {
     },
     "confirmPay": "Emeza & wishyure"
   },
-  "departments": {
+  "departments1": {
     "generalmedicine": "Ubuvuzi rusange",
     "pediatrics": "Indwara z’abana",
     "gynecology": "Ubuvuzi bw’abagore",

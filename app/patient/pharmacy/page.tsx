@@ -57,13 +57,13 @@ export default function PharmacyOrders() {
           <div key={num} className={`flex items-center ${num !== 8 ? "flex-1" : ""}`}>
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center text-sm ${
-                step >= num ? "bg-healthcare-primary text-black" : "bg-muted text-muted-foreground"
+                step >= num ? "bg-green-900 text-green-100" : "bg-muted text-muted-foreground"
               }`}
             >
               {num}
             </div>
             {num !== 8 && (
-              <div className={`flex-1 h-1 mx-1 ${step > num ? "bg-healthcare-primary" : "bg-muted"}`} />
+              <div className={`flex-1 h-1 mx-1 ${step > num ? "bg-green-900" : "bg-muted"}`} />
             )}
           </div>
         ))}
@@ -79,8 +79,8 @@ export default function PharmacyOrders() {
                 key={pharmacy.id}
                 className={`p-4 border rounded-lg cursor-pointer transition-colors ${
                   selectedPharmacy?.id === pharmacy.id
-                    ? "border-healthcare-primary bg-healthcare-primary/10"
-                    : "border-border hover:border-healthcare-primary/50"
+                    ? "border-greebg-green-900 bg-green-900/10"
+                    : "border-border hover:border-greebg-green-900/50"
                 }`}
                 onClick={() => setSelectedPharmacy(pharmacy)}
               >
@@ -117,7 +117,7 @@ export default function PharmacyOrders() {
           <button
             onClick={nextStep}
             disabled={!selectedPharmacy}
-            className="mt-6 bg-healthcare-primary text-black px-6 py-2 rounded-lg disabled:opacity-50"
+            className="mt-6 bg-green-900 text-black px-6 py-2 rounded-lg disabled:opacity-50"
           >
             {t("common.continue")}
           </button>
@@ -172,7 +172,7 @@ export default function PharmacyOrders() {
             <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">
               {t("common.back")}
             </button>
-            <button onClick={nextStep} className="bg-healthcare-primary text-black px-6 py-2 rounded-lg">
+            <button onClick={nextStep} className="bg-green-900 text-black px-6 py-2 rounded-lg">
               {t("common.continue")}
             </button>
           </div>
@@ -188,7 +188,7 @@ export default function PharmacyOrders() {
               <Upload className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
               <h3 className="font-medium mb-2">{t("pharmacyOrders.uploadEPrescription")}</h3>
               <p className="text-sm text-muted-foreground mb-4">{t("pharmacyOrders.dragDropOrBrowse")}</p>
-              <button className="bg-healthcare-primary text-black px-6 py-2 rounded-lg">
+              <button className="bg-green-900 text-black px-6 py-2 rounded-lg">
                 {t("pharmacyOrders.chooseFile")}
               </button>
             </div>
@@ -213,7 +213,7 @@ export default function PharmacyOrders() {
                     className="p-3 border border-border rounded-lg"
                   />
                 </div>
-                <button className="text-healthcare-primary text-sm">+ {t("pharmacyOrders.addMedication")}</button>
+                <button className="text-greebg-green-900 text-sm">+ {t("pharmacyOrders.addMedication")}</button>
               </div>
             </div>
           </div>
@@ -221,7 +221,7 @@ export default function PharmacyOrders() {
             <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">
               {t("common.back")}
             </button>
-            <button onClick={nextStep} className="bg-healthcare-primary text-black px-6 py-2 rounded-lg">
+            <button onClick={nextStep} className="bg-green-900 text-black px-6 py-2 rounded-lg">
               {t("common.continue")}
             </button>
           </div>
@@ -243,7 +243,7 @@ export default function PharmacyOrders() {
                 </div>
                 <div className="text-right">
                   <p className="font-medium">2,000 RWF</p>
-                  <button className="text-sm text-healthcare-primary">{t("pharmacyOrders.requestClarification")}</button>
+                  <button className="text-sm text-greebg-green-900">{t("pharmacyOrders.requestClarification")}</button>
                 </div>
               </div>
             </div>
@@ -257,7 +257,7 @@ export default function PharmacyOrders() {
                 </div>
                 <div className="text-right">
                   <p className="font-medium">3,500 RWF</p>
-                  <button className="text-sm text-healthcare-primary">{t("pharmacyOrders.requestClarification")}</button>
+                  <button className="text-sm text-greebg-green-900">{t("pharmacyOrders.requestClarification")}</button>
                 </div>
               </div>
             </div>
@@ -272,7 +272,7 @@ export default function PharmacyOrders() {
             <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">
               {t("common.back")}
             </button>
-            <button onClick={nextStep} className="bg-healthcare-primary text-black px-6 py-2 rounded-lg">
+            <button onClick={nextStep} className="bg-green-900 text-black px-6 py-2 rounded-lg">
               {t("common.confirm")}
             </button>
           </div>
@@ -324,7 +324,7 @@ export default function PharmacyOrders() {
             <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">
               {t("common.back")}
             </button>
-            <button onClick={nextStep} className="bg-healthcare-primary text-black px-6 py-2 rounded-lg">
+            <button onClick={nextStep} className="bg-green-900 text-black px-6 py-2 rounded-lg">
               {t("pharmacyOrders.processPayment")}
             </button>
           </div>
@@ -336,16 +336,16 @@ export default function PharmacyOrders() {
         <HealthCard className="p-6">
           <h2 className="text-xl font-semibold mb-4">{t("pharmacyOrders.steps.deliveryOptions")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 border rounded-lg cursor-pointer hover:border-healthcare-primary">
+            <div className="p-4 border rounded-lg cursor-pointer hover:border-greebg-green-900">
               <div className="flex items-center mb-3">
-                <Package className="w-6 h-6 mr-3 text-healthcare-primary" />
+                <Package className="w-6 h-6 mr-3 text-greebg-green-900" />
                 <h3 className="font-medium">{t("pharmacyOrders.pickupAtPharmacy")}</h3>
               </div>
               <p className="text-sm text-muted-foreground">{t("pharmacyOrders.pickupDetails")}</p>
             </div>
-            <div className="p-4 border rounded-lg cursor-pointer hover:border-healthcare-primary">
+            <div className="p-4 border rounded-lg cursor-pointer hover:border-greebg-green-900">
               <div className="flex items-center mb-3">
-                <Truck className="w-6 h-6 mr-3 text-healthcare-primary" />
+                <Truck className="w-6 h-6 mr-3 text-greebg-green-900" />
                 <h3 className="font-medium">{t("pharmacyOrders.homeDelivery")}</h3>
               </div>
               <p className="text-sm text-muted-foreground">{t("pharmacyOrders.homeDeliveryDetails")}</p>
@@ -362,7 +362,7 @@ export default function PharmacyOrders() {
             <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">
               {t("common.back")}
             </button>
-            <button onClick={nextStep} className="bg-healthcare-primary text-black px-6 py-2 rounded-lg">
+            <button onClick={nextStep} className="bg-green-900 text-black px-6 py-2 rounded-lg">
               {t("common.continue")}
             </button>
           </div>
@@ -400,7 +400,7 @@ export default function PharmacyOrders() {
             <button onClick={prevStep} className="px-6 py-2 border border-border rounded-lg">
               {t("common.back")}
             </button>
-            <button onClick={nextStep} className="bg-healthcare-primary text-black px-6 py-2 rounded-lg">
+            <button onClick={nextStep} className="bg-green-900 text-black px-6 py-2 rounded-lg">
               {t("pharmacyOrders.viewHistory")}
             </button>
           </div>
@@ -428,7 +428,7 @@ export default function PharmacyOrders() {
                     {t("pharmacyOrders.orders.order1.status")}
                   </span>
                   <p className="text-sm font-medium mt-1">5,500 RWF</p>
-                  <button className="text-xs text-healthcare-primary mt-1">{t("pharmacyOrders.viewReceipt")}</button>
+                  <button className="text-xs text-greebg-green-900 mt-1">{t("pharmacyOrders.viewReceipt")}</button>
                 </div>
               </div>
             </div>
@@ -447,12 +447,12 @@ export default function PharmacyOrders() {
                     {t("pharmacyOrders.orders.order2.status")}
                   </span>
                   <p className="text-sm font-medium mt-1">2,000 RWF</p>
-                  <button className="text-xs text-healthcare-primary mt-1">{t("pharmacyOrders.viewReceipt")}</button>
+                  <button className="text-xs text-greebg-green-900 mt-1">{t("pharmacyOrders.viewReceipt")}</button>
                 </div>
               </div>
             </div>
           </div>
-          <button className="mt-6 bg-healthcare-primary text-black px-6 py-2 rounded-lg">
+          <button className="mt-6 bg-green-900 text-black px-6 py-2 rounded-lg">
             {t("pharmacyOrders.placeNewOrder")}
           </button>
         </HealthCard>

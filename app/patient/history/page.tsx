@@ -190,7 +190,7 @@ export default function MedicalHistory() {
 
       {/* Load More */}
       <div className="text-center">
-        <button className="bg-healthcare-primary text-white px-6 py-3 rounded-lg hover:bg-healthcare-primary/90 transition-colors">
+        <button className="bg-healthcare-primary text-green-600 bg-green-900 px-6 py-3 rounded-lg hover:bg-healthcare-primary/90 transition-colors">
           {t('medicalHistory.load_more')}
         </button>
       </div>
@@ -200,7 +200,7 @@ export default function MedicalHistory() {
         <h2 className="text-lg font-semibold mb-4">{t('medicalHistory.export_title')}</h2>
         <p className="text-muted-foreground mb-4">{t('medicalHistory.export_description')}</p>
         <div className="flex gap-4">
-          <button className="flex items-center gap-2 bg-healthcare-primary text-white px-4 py-2 rounded-lg" aria-label={t('medicalHistory.download_pdf')}>
+          <button className="flex items-center gap-2 bg-healthcare-primary text-green-600 bg-green-900 px-4 py-2 rounded-lg" aria-label={t('medicalHistory.download_pdf')}>
             <Download className="h-4 w-4" />
             {t('medicalHistory.download_pdf')}
           </button>

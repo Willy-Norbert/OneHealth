@@ -1,62 +1,104 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+"use client";
 
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function NotFound() {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const lightGif =
+    "https://i.pinimg.com/originals/cc/4d/aa/cc4daa9d54c97a1badec1f0fd9a327dc.gif";
+  const darkGif =
+    "https://cdn.dribbble.com/userupload/25724019/file/original-5f26ebb903866b4d2badc22f3e8938aa.gif";
+
+  // Prevent rendering until mounted (avoids hydration mismatch)
+  const gifSrc = !mounted ? lightGif : theme === "dark" ? darkGif : lightGif;
+
   return (
-    <>
-  
-      <main className="min-h-[70vh] flex items-center justify-center bg-gray-50 px-4">
-        <div className="max-w-md w-full text-center">
-          <div className="relative mx-auto w-32 h-32 mb-8">
-            <div className="absolute inset-0 bg-green-600 rounded-tl-xl rounded-br-xl opacity-20"></div>
-            <div className="absolute inset-4 bg-blue-600 rounded-tr-xl rounded-bl-xl opacity-20"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-6xl font-bold text-gray-900">404</span>
-            </div>
-          </div>
-
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Page Not Found</h1>
-
-          <p className="text-gray-600 mb-8">The page you are looking for doesn&apos;t exist or has been moved.</p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-green-600 hover:bg-green-700">
-              <Link href="/">Return Home</Link>
-            </Button>
-
-            <Button asChild variant="outline">
-              <Link href="/contact">Contact Support</Link>
-            </Button>
-          </div>
-
-          <div className="mt-12">
-            <h2 className="text-lg font-medium text-gray-900 mb-4">You might be looking for:</h2>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/services" className="text-blue-600 hover:underline">
-                  Our Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/doctors" className="text-blue-600 hover:underline">
-                  Find a Doctor
-                </Link>
-              </li>
-              <li>
-                <Link href="/appointments" className="text-blue-600 hover:underline">
-                  Book an Appointment
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-blue-600 hover:underline">
-                  Frequently Asked Questions
-                </Link>
-              </li>
-            </ul>
-          </div>
+    <main className="min-h-screen flex items-center justify-center px-6 py-12 transition-colors duration-300 bg-gray-50 dark:bg-gray-950">
+      <div className="max-w-lg w-full text-center space-y-6">
+        {/* 404 Illustration */}
+        <div className="mx-auto w-64 h-64 relative">
+          <Image
+            src={gifSrc}
+            alt="404 Illustration"
+            fill
+            unoptimized
+            className="object-contain rounded-xl"
+          />
         </div>
-      </main>
-    </>
-  )
+
+        {/* Heading */}
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">
+          Oops! Page Not Found
+        </h1>
+
+        {/* Description */}
+        <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto">
+          The page you’re looking for doesn’t exist, was moved, or might be
+          temporarily unavailable.
+        </p>
+
+        {/* Actions */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <Button asChild className="bg-green-600 hover:bg-green-700">
+            <Link href="/">Return Home</Link>
+          </Button>
+
+          <Button asChild variant="outline" className="dark:border-gray-600">
+            <Link href="/contact">Contact Support</Link>
+          </Button>
+        </div>
+
+        {/* Suggested Links */}
+        <div className="pt-8">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-200 mb-3">
+            You might be looking for:
+          </h2>
+          <ul className="space-y-2">
+            <li>
+              <Link
+                href="/services"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Our Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/doctors"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Find a Doctor
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/appointments"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Book an Appointment
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/faq"
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                Frequently Asked Questions
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  );
 }

@@ -44,7 +44,7 @@ export default function DoctorSettings() {
       {/* Profile Information */}
       <HealthCard className="p-6">
         <div className="flex items-center mb-6">
-          <User className="h-6 w-6 text-healthcare-primary mr-3" />
+          <User className="h-6 w-6 text-green-bg-green-500 mr-3" />
           <h2 className="text-xl font-semibold">{t("settings.profileInformation")}</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -109,7 +109,7 @@ export default function DoctorSettings() {
       {/* Working Hours */}
       <HealthCard className="p-6">
         <div className="flex items-center mb-6">
-          <Clock className="h-6 w-6 text-healthcare-primary mr-3" />
+          <Clock className="h-6 w-6 text-green-bg-green-500 mr-3" />
           <h2 className="text-xl font-semibold">{t("settings.workingHours")}</h2>
         </div>
         <div className="space-y-4">
@@ -144,7 +144,7 @@ export default function DoctorSettings() {
       {/* Notification Preferences */}
       <HealthCard className="p-6">
         <div className="flex items-center mb-6">
-          <Bell className="h-6 w-6 text-healthcare-primary mr-3" />
+          <Bell className="h-6 w-6 text-green-bg-green-500 mr-3" />
           <h2 className="text-xl font-semibold">{t("settings.notificationPreferences")}</h2>
         </div>
         <div className="space-y-4">
@@ -173,7 +173,7 @@ export default function DoctorSettings() {
               </div>
               <label className="relative inline-flex items-center cursor-pointer">
                 <input type="checkbox" className="sr-only peer" defaultChecked={enabled} />
-                <div className="w-11 h-6 bg-muted peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-healthcare-primary"></div>
+                <div className="w-11 h-6 bg-muted peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
               </label>
             </div>
           ))}
@@ -183,7 +183,7 @@ export default function DoctorSettings() {
       {/* Language & Region */}
       <HealthCard className="p-6">
         <div className="flex items-center mb-6">
-          <Globe className="h-6 w-6 text-healthcare-primary mr-3" />
+          <Globe className="h-6 w-6 text-green-bg-green-500 mr-3" />
           <h2 className="text-xl font-semibold">{t("settings.languageRegion")}</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -209,7 +209,7 @@ export default function DoctorSettings() {
       {/* Security */}
       <HealthCard className="p-6">
         <div className="flex items-center mb-6">
-          <Shield className="h-6 w-6 text-healthcare-primary mr-3" />
+          <Shield className="h-6 w-6 text-green-bg-green-500 mr-3" />
           <h2 className="text-xl font-semibold">{t("settings.security")}</h2>
         </div>
         <div className="space-y-4">
@@ -246,7 +246,7 @@ export default function DoctorSettings() {
 
       {/* Save Changes */}
       <div className="flex justify-end">
-        <button className="bg-healthcare-primary text-white px-8 py-3 rounded-lg flex items-center gap-2">
+        <button className="bg-green-500 text-white px-8 py-3 rounded-lg flex items-center gap-2">
           <Save className="h-5 w-5" />
           {t("settings.saveChanges")}
         </button>

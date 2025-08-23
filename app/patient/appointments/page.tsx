@@ -49,12 +49,12 @@ export default function BookAppointments() {
           <div key={num} className={`flex items-center ${num !== 6 ? 'flex-1' : ''}`}>
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
-                step >= num ? 'bg-healthcare-primary text-white' : 'bg-muted text-muted-foreground'
+                step >= num ? 'bg-green-900 text-green-400' : 'bg-muted text-muted-foreground'
               }`}
             >
               {step > num ? <Check className="w-4 h-4" /> : num}
             </div>
-            {num !== 6 && <div className={`flex-1 h-1 mx-2 ${step > num ? 'bg-healthcare-primary' : 'bg-muted'}`} />}
+            {num !== 6 && <div className={`flex-1 h-1 mx-2 ${step > num ? 'bg-green-900' : 'bg-muted'}`} />}
           </div>
         ))}
       </div>
@@ -69,7 +69,7 @@ export default function BookAppointments() {
                 key={type}
                 className={`p-4 border rounded-lg cursor-pointer transition-all ${
                   appointmentData.type === type
-                    ? "border-healthcare-primary bg-healthcare-primary/20 ring-2 ring-healthcare-primary"
+                    ? "border-healthcare-primary bg-green-900/20 ring-2 ring-healthcare-primary"
                     : "border-border hover:border-healthcare-primary/50"
                 }`}
                 onClick={() => setAppointmentData({ ...appointmentData, type })}
@@ -89,7 +89,7 @@ export default function BookAppointments() {
             className={`mt-6 px-6 py-2 rounded-lg transition-colors ${
               !appointmentData.type
                 ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-healthcare-primary hover:bg-healthcare-primary/90 text-white"
+                : "bg-green-900 hover:bg-green-900/90 text-green-400"
             }`}
           >
             {t("common.continue")}
@@ -107,7 +107,7 @@ export default function BookAppointments() {
                 key={hospital.id}
                 className={`p-4 border rounded-lg cursor-pointer transition-all ${
                   appointmentData.hospital === hospital.name
-                    ? "border-healthcare-primary bg-healthcare-primary/20 ring-2 ring-healthcare-primary"
+                    ? "border-healthcare-primary bg-green-900/20 ring-2 ring-healthcare-primary"
                     : "border-border hover:border-healthcare-primary/50"
                 }`}
                 onClick={() => setAppointmentData({ ...appointmentData, hospital: hospital.name })}
@@ -132,7 +132,7 @@ export default function BookAppointments() {
               className={`px-6 py-2 rounded-lg transition-colors ${
                 !appointmentData.hospital
                   ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  : "bg-healthcare-primary hover:bg-healthcare-primary/90 text-white"
+                  : "bg-green-900 hover:bg-green-900/90 text-green-400"
               }`}
             >
               {t("common.continue")}
@@ -151,7 +151,7 @@ export default function BookAppointments() {
                 key={dept}
                 className={`p-4 border rounded-lg cursor-pointer transition-all ${
                   appointmentData.department === dept
-                    ? "border-healthcare-primary bg-healthcare-primary/20 ring-2 ring-healthcare-primary"
+                    ? "border-healthcare-primary bg-green-900/20 ring-2 ring-healthcare-primary"
                     : "border-border hover:border-healthcare-primary/50"
                 }`}
                 onClick={() => setAppointmentData({ ...appointmentData, department: dept })}
@@ -170,7 +170,7 @@ export default function BookAppointments() {
               className={`px-6 py-2 rounded-lg transition-colors ${
                 !appointmentData.department
                   ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  : "bg-healthcare-primary hover:bg-healthcare-primary/90 text-white"
+                  : "bg-green-900 hover:bg-green-900/90 text-green-400"
               }`}
             >
               {t("common.continue")}
@@ -216,7 +216,7 @@ export default function BookAppointments() {
               className={`px-6 py-2 rounded-lg transition-colors ${
                 !appointmentData.patientInfo.fullName || !appointmentData.patientInfo.phone
                   ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  : "bg-healthcare-primary hover:bg-healthcare-primary/90 text-white"
+                  : "bg-green-900 hover:bg-green-900/90 text-green-400"
               }`}
             >
               {t("common.continue")}
@@ -266,7 +266,7 @@ export default function BookAppointments() {
               className={`px-6 py-2 rounded-lg transition-colors ${
                 !appointmentData.date || !appointmentData.time
                   ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  : "bg-healthcare-primary hover:bg-healthcare-primary/90 text-white"
+                  : "bg-green-900 hover:bg-green-900/90 text-green-400"
               }`}
             >
               {t("common.continue")}
@@ -315,7 +315,7 @@ export default function BookAppointments() {
               className={`px-6 py-2 rounded-lg transition-colors ${
                 !appointmentData.payment
                   ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  : "bg-healthcare-primary hover:bg-healthcare-primary/90 text-white"
+                  : "bg-green-900 hover:bg-green-900/90 text-green-400"
               }`}
             >
               {t("bookAppointments.confirmPay")}

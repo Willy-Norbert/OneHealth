@@ -19,7 +19,7 @@ export default function DoctorTeleconsultations() {
           <div className="p-4 border rounded-lg">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <Video className="w-5 h-5 text-healthcare-primary mr-3" />
+                <Video className="w-5 h-5 text-bg-green-500 mr-3" />
                 <div>
                   <p className="font-medium">Jane Smith - Mental Health</p>
                   <p className="text-sm text-muted-foreground">
@@ -27,7 +27,7 @@ export default function DoctorTeleconsultations() {
                   </p>
                 </div>
               </div>
-              <button className="bg-healthcare-primary text-black px-4 py-2 rounded-lg">
+              <button className="bg-bg-green-500 text-black px-4 py-2 rounded-lg">
                 {t("teleconsultations1.startCall")}
               </button>
             </div>
