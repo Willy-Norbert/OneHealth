@@ -3784,8 +3784,57 @@ const translations = {
       "hoursAgo": "Mu masaha {{count}} ashize",
       "daysAgo": "Mu minsi {{count}} ishize",
       "weeksAgo": "Mu cyumweru {{count}} gishize"
-    }
+     }
   },
+    "hospitalsSection": {
+      "title": "Reba Amavuriro Yacu y'Inzobere",
+      "description": "Uruyoboro rwacu rugizwe n'amavuriro akomeye ya Leta y'u Rwanda kandi yiteguye gukugeza ubuvuzi buhanitse",
+      "viewAll": "Reba amavuriro yose",
+      "available": "Arahari",
+      "unavailable": "Ntarahari", 
+      "book": "Tegura",
+      "view": "Reba",
+      "doctors": "abaganga",
+      "types": {
+        "university": "Ibitaro bya Kaminuza",
+        "specialized": "Ibitaro byihariye",
+        "district": "Ibitaro by'Akarere"
+      }
+    },
+    "hospitals": {
+      "title": "Amavuriro Dukorana",
+      "subtitle": "Shakisha kandi uhuze n'amavuriro akomeye ya Leta y'u Rwanda",
+      "searchPlaceholder": "Shakisha amavuriro...",
+      "allLocations": "Ahantu Hose",
+      "allTypes": "Amoko Yose",
+      "results": "amavuriro yabonetse",
+      "available": "Arahari",
+      "unavailable": "Ntarahari",
+      "doctors": "abaganga",
+      "viewDetails": "Reba Ubushake",
+      "bookAppointment": "Tegura Inama",
+      "noResults": "Nta mavuriro yabonetse",
+      "noResultsMessage": "Gerageza gukosora uburyo bwo gushakisha cyangwa akayunguruzo"
+    },
+    "hospital": {
+      "backToHospitals": "Subira ku Mavuriro",
+      "available": "Arahari",
+      "unavailable": "Ntarahari",
+      "contactInfo": "Amakuru yo Kuvugana",
+      "bookAppointment": "Tegura Inama",
+      "callNow": "Hamagara Ubu",
+      "servicesSpecialties": "Serivisi n'Ubushobozi",
+      "services": "Serivisi",
+      "specialties": "Ubushobozi",
+      "departments": "Amashami",
+      "headedBy": "Ayobowe na",
+      "ourDoctors": "Abaganga Bacu",
+      "bookWithDoctor": "Tegura Inama",
+      "viewAllDoctors": "Reba Abaganga Bose",
+      "facilities": "Ibyuzuzanye",
+      "accreditations": "Icyemezo",
+      "achievements": "Ibyagezweho"
+    },
       "cta7": {
     "title": "Tegura Inama ya Teleconsultation Uyu Munsi",
     "subtitle": "Vugana n’abaganga bacu utavuye mu rugo mu gihe gito ukoresheje iminsi mike.",
