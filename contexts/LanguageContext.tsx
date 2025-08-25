@@ -8,7 +8,7 @@ export type Language = 'en' | 'rw';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: (key: string, fallback?: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -79,6 +79,55 @@ const translations = {
       "hoursAgo": "{{count}} hours ago",
       "daysAgo": "{{count}} days ago",
       "weeksAgo": "{{count}} week ago"
+    },
+    "hospitalsSection": {
+      "title": "View Our Specialist Hospitals",
+      "description": "Our network includes Rwanda's top healthcare institutions ready to provide you with exceptional medical care",
+      "viewAll": "View all hospitals",
+      "available": "Available",
+      "unavailable": "Unavailable", 
+      "book": "Book",
+      "view": "View",
+      "doctors": "doctors",
+      "types": {
+        "university": "University Hospital",
+        "specialized": "Specialized Hospital",
+        "district": "District Hospital"
+      }
+    },
+    "hospitals": {
+      "title": "Our Partner Hospitals",
+      "subtitle": "Find and connect with Rwanda's leading healthcare institutions",
+      "searchPlaceholder": "Search hospitals...",
+      "allLocations": "All Locations",
+      "allTypes": "All Types",
+      "results": "hospitals found",
+      "available": "Available",
+      "unavailable": "Unavailable",
+      "doctors": "doctors",
+      "viewDetails": "View Details",
+      "bookAppointment": "Book Appointment",
+      "noResults": "No hospitals found",
+      "noResultsMessage": "Try adjusting your search criteria or filters"
+    },
+    "hospital": {
+      "backToHospitals": "Back to Hospitals",
+      "available": "Available",
+      "unavailable": "Unavailable",
+      "contactInfo": "Contact Information",
+      "bookAppointment": "Book Appointment",
+      "callNow": "Call Now",
+      "servicesSpecialties": "Services & Specialties",
+      "services": "Services",
+      "specialties": "Specialties",
+      "departments": "Departments",
+      "headedBy": "Headed by",
+      "ourDoctors": "Our Doctors",
+      "bookWithDoctor": "Book Appointment",
+      "viewAllDoctors": "View All Doctors",
+      "facilities": "Facilities",
+      "accreditations": "Accreditations",
+      "achievements": "Achievements"
     }
   },
     "cta7": {

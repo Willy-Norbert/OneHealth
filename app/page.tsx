@@ -3,7 +3,7 @@ import Hero from "@/components/hero"
 import ServiceCards from "@/components/services/service-cards"
 import DepartmentSection from "@/components/department-section"
 import StatsSection from "@/components/stats-section"
-import DoctorsSection from "@/components/doctors/doctors-section"
+import HospitalsSection from "@/components/hospitals/hospitals-section"
 import TestimonialsSection from "@/components/testimonials-section"
 import CtaSection from "@/components/cta-section"
 import ContactSection from "@/components/contact-section"
@@ -19,7 +19,7 @@ export default function Home() {
           <ServiceCards />
           <DepartmentSection />
           <StatsSection />
-          <DoctorsSection />
+          <HospitalsSection />
           <TestimonialsSection />
           {/* <CtaSection /> */}
           <ContactSection />
