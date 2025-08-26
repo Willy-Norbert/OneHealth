@@ -17,7 +17,7 @@ export default function PatientSidebar() {
   const menuItems = [
     { icon: Calendar, label: t("patient.menu.dashboard"), href: "/patient" },
     { icon: Calendar, label: t("patient.menu.bookAppointment"), href: "/patient/appointments" },
-    { icon: Video, label: t("patient.menu.teleconsultation"), href: "/patient/teleconsultation" },
+    // { icon: Video, label: t("patient.menu.teleconsultation"), href: "/patient/teleconsultation" },
     { icon: Pill, label: t("patient.menu.pharmacyOrders"), href: "/patient/pharmacy" },
     { icon: Heart, label: t("patient.menu.aiAssistant"), href: "/patient/ai-assistant" },
     { icon: Phone, label: t("patient.menu.emergency"), href: "/patient/emergency" },
